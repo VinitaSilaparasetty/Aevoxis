@@ -14,13 +14,13 @@ const methodology = [
   {
     icon: <Lightbulb className="w-6 h-6" />,
     title: "Agentic Intelligence",
-    description: "Wir gehen über einfache Chatbots hinaus. Wir entwickeln autonome Agenten, die „denken", „schlussfolgern" und komplexe Geschäftslogiken ausführen können.",
+    description: "Wir gehen über einfache Chatbots hinaus. Wir entwickeln autonome Agenten, die "denken", "schlussfolgern" und komplexe Geschäftslogiken ausführen können.",
     variant: "blue",
   },
   {
     icon: <Users className="w-6 h-6" />,
     title: "Human-in-the-Loop",
-    description: "Wir setzen uns für KI mit „begrenztem Risiko" ein. Unsere Systeme sind darauf ausgelegt, intelligente Vorschläge zu liefern, während die Entscheidungsgewalt in menschlichen Händen bleibt.",
+    description: "Wir setzen uns für KI mit "begrenztem Risiko" ein. Unsere Systeme sind darauf ausgelegt, intelligente Vorschläge zu liefern, während die Entscheidungsgewalt in menschlichen Händen bleibt.",
     variant: "teal",
   },
 ];
@@ -76,8 +76,8 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aevoxis wurde gegründet, um die Lücke zwischen „experimenteller KI" und
-                „produktionsreifer Intelligenz" zu schließen.
+                Aevoxis wurde gegründet, um die Lücke zwischen "experimenteller KI" und
+                "produktionsreifer Intelligenz" zu schließen.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-10">

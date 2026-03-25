@@ -26,7 +26,7 @@ const services = [
     icon: <Shield className="w-8 h-8" />,
     title: "Technische Compliance & Auditierung nach dem EU AI Act",
     subtitle: "Die Deadline im August 2026 ist da.",
-    description: "Wir helfen deutschen Unternehmen dabei, ihre „Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.",
+    description: "Wir helfen deutschen Unternehmen dabei, ihre "Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.",
     variant: "cyan",
     features: [
       { title: "Technische Gap-Analyse", description: "Prüfung bestehender Modellarchitekturen zur Identifizierung von Verstößen gegen die Standards der BNetzA." },
@@ -50,7 +50,7 @@ const services = [
   {
     id: "efficiency",
     icon: <Zap className="w-8 h-8" />,
-    title: "Industrielle Effizienz & „Energy-Gain"-Automatisierung",
+    title: "Industrielle Effizienz & "Energy-Gain"-Automatisierung",
     subtitle: "Überleben durch Optimierung.",
     description: "In einer Ära hoher Energiekosten verwandeln wir Ihre Betriebsdaten in ein wettbewerbsfähiges Schutzschild.",
     variant: "cyan",
@@ -65,7 +65,7 @@ const services = [
     icon: <Brain className="w-8 h-8" />,
     title: "Agentic Process Mining & Wissenssicherung",
     subtitle: "Lösungen für den demografischen Wandel.",
-    description: "Wenn Ihre erfahrenen Experten in den Ruhestand gehen, digitalisieren wir deren „implizites Wissen" in aktive digitale Mitarbeiter.",
+    description: "Wenn Ihre erfahrenen Experten in den Ruhestand gehen, digitalisieren wir deren "implizites Wissen" in aktive digitale Mitarbeiter.",
     variant: "blue",
     features: [
       { title: "Knowledge Capture Agents", description: "Autonome Agenten, die erfahrene Ingenieure begleiten, um komplexe Entscheidungslogiken zu digitalisieren." },
