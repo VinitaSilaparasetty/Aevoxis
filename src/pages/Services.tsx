@@ -50,7 +50,7 @@ const services = [
   {
     id: "efficiency",
     icon: <Zap className="w-8 h-8" />,
-    title: "Industrielle Effizienz & "Energy-Gain"-Automatisierung",
+    title: 'Industrielle Effizienz & "Energy-Gain"-Automatisierung',
     subtitle: "Überleben durch Optimierung.",
     description: "In einer Ära hoher Energiekosten verwandeln wir Ihre Betriebsdaten in ein wettbewerbsfähiges Schutzschild.",
     variant: "cyan",
