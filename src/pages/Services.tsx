@@ -26,7 +26,7 @@ const services = [
     icon: <Shield className="w-8 h-8" />,
     title: "Technische Compliance & Auditierung nach dem EU AI Act",
     subtitle: "Die Deadline im August 2026 ist da.",
-    description: "Wir helfen deutschen Unternehmen dabei, ihre "Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.",
+    description: 'Wir helfen deutschen Unternehmen dabei, ihre "Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.',
     variant: "cyan",
     features: [
       { title: "Technische Gap-Analyse", description: "Prüfung bestehender Modellarchitekturen zur Identifizierung von Verstößen gegen die Standards der BNetzA." },
