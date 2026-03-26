@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,18 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export default function ContactPage() {
+  useEffect(() => {
+    const loadTally = () => {
+      if (typeof (window as any).Tally !== "undefined") {
+        (window as any).Tally.loadEmbeds();
+      } else {
+        document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((el: any) => {
+          el.src = el.dataset.tallySrc;
+        });
+      }
+    };
+    loadTally();
+  }, []);
   return (
     <main className="min-h-screen frosted-glass-bg">
       <Header />
