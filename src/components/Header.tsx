@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
+  { name: "Startseite", href: "/" },
+  { name: "Leistungen", href: "/services" },
   { name: "Über uns", href: "/about" },
   { name: "Impressum", href: "/impressum" },
 ];
