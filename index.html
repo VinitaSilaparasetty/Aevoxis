@@ -9,9 +9,72 @@
     <meta property="og:title" content="Aevoxis Solutions" />
     <meta property="og:description" content="Spezialisierte KI-Beratung für den deutschen Mittelstand." />
     <meta property="og:type" content="website" />
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/silktide-consent-manager.css">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="/silktide-consent-manager.js"></script>
+    <script>
+      silktideCookieBannerManager.updateCookieBannerConfig({
+        background: {
+          showBackground: true
+        },
+        cookieIcon: {
+          position: "bottomLeft"
+        },
+        cookieTypes: [
+          {
+            id: "essenziell_technisch_notwendig",
+            name: "Essenziell / Technisch Notwendig",
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;color:#39434c;font-weight:700;\">Diese Cookies sind für den sicheren und funktionsfähigen Betrieb dieser Website technisch erforderlich (gemäß § 25 Abs. 2 TDDDG). Sie ermöglichen Basisfunktionen wie den sicheren Login, die Verwaltung Ihrer Privatsphäre-Einstellungen und die zuverlässige Übermittlung Ihrer Formularanfragen an unsere Server in der EU. Diese Technologien sind einwilligungsfrei und können nicht deaktiviert werden.</span></p>",
+            required: true,
+            onAccept: function() {
+              console.log('Essenziell / Technisch Notwendig accepted');
+            }
+          },
+          {
+            id: "analyse_performance",
+            name: "Analyse & Performance",
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen zu zählen, damit wir die Leistung von Aevoxis messen und verbessern können (gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 TDDDG).</span></p>",
+            required: false,
+            onAccept: function() {
+              if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+              }
+              if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({ 'event': 'consent_accepted_analyse_performance' });
+              }
+            },
+            onReject: function() {
+              if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', { analytics_storage: 'denied' });
+              }
+            }
+          }
+        ],
+        text: {
+          banner: {
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">Datenschutz & KI-Transparenz — Wir verwenden technisch notwendige Cookies sowie — mit Ihrer Einwilligung — Analysetools, um Ihr Nutzererlebnis zu verbessern. Als KI-natives Projekt der Smart eG verarbeiten wir Interaktionsdaten auch zur Optimierung unserer spezialisierten KI-Modelle. Gemäß dem EU AI Act 2026 weisen wir darauf hin, dass diese Seite KI-generierte Inhalte und automatisierte Logik nutzt.</span></p>",
+            acceptAllButtonText: "Akzeptiere alles",
+            acceptAllButtonAccessibleLabel: "Akzeptieren Sie alle Cookies",
+            rejectNonEssentialButtonText: "Nicht essentiell ablehnen",
+            rejectNonEssentialButtonAccessibleLabel: "Nicht essentiell ablehnen",
+            preferencesButtonText: "Präferenzen",
+            preferencesButtonAccessibleLabel: "Einstellungen umschalten"
+          },
+          preferences: {
+            title: "Privatsphäre- & KI-Einstellungen",
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">Bei Aevoxis legen wir Wert auf technische Transparenz. Sie haben das Recht zu kontrollieren, wie Ihre Daten verwendet werden. Unten können Sie spezifische Kategorien von Cookies und der Datenverarbeitung aktivieren oder deaktivieren.</span></p>",
+            creditLinkText: "Mit Integrität gebaut",
+            creditLinkAccessibleLabel: "Mit Integrität gebaut"
+          }
+        },
+        position: {
+          banner: "center"
+        }
+      });
+    </script>
+    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
   </body>
 </html>
