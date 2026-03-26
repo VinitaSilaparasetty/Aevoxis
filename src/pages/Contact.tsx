@@ -48,6 +48,24 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+
+          <div className="mt-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Schreiben Sie uns</h2>
+            <div className="premium-card premium-card-blue p-8">
+              <div className="relative z-10">
+                <iframe
+                  data-tally-src="https://tally.so/embed/gDL9AO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
+                  width="100%"
+                  height="1017"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Kontakt"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
