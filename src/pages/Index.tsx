@@ -70,10 +70,10 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-tight text-balance mb-8 tracking-tight">
-            Architektin der
+            Where Deep Research Meets
             <br />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Digitalen Souveränität
+              Scalable AI
             </span>
           </h1>
 
