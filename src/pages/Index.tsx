@@ -3,7 +3,7 @@ import { ArrowRight, Shield, Cpu, Zap, Brain, FileText, CheckCircle } from "luci
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { DataStream } from "@/components/DataStream";
+
 import { ServiceCard } from "@/components/ServiceCard";
 
 const services = [
@@ -46,7 +46,7 @@ const services = [
 
 const trustBadges = [
   { label: "Google Developer Expert", sublabel: "Machine Learning" },
-  { label: "AWS Community Builder", sublabel: "Cloud & AI" },
+  { label: "AWS Community Builder", sublabel: "Machine Learning" },
   { label: "DSGVO-konform", sublabel: "by Design" },
   { label: "EU AI Act 2026", sublabel: "Compliant Ready" },
 ];
@@ -61,7 +61,7 @@ export default function HomePage() {
         <div className="glass-shape w-64 h-64 -top-32 -left-32 rotate-12 opacity-40" />
         <div className="glass-shape w-96 h-96 -bottom-48 -right-48 -rotate-12 opacity-30" />
         <div className="glass-shape w-48 h-48 top-1/4 right-1/4 rotate-45 opacity-20" />
-        <DataStream />
+
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/80 backdrop-blur-sm border border-accent/20 mb-10 shadow-sm">

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Cpu, Zap, Brain, FileText, CheckCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -95,6 +96,16 @@ const trustPremium = [
 ];
 
 export default function ServicesPage() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && (window as any).Tally) {
+      (window as any).Tally.loadEmbeds();
+    } else {
+      document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((el) => {
+        (el as HTMLIFrameElement).src = (el as HTMLIFrameElement).dataset.tallySrc || "";
+      });
+    }
+  }, []);
+
   return (
     <main className="min-h-screen frosted-glass-bg">
       <Header />
@@ -174,26 +185,45 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Trust Section */}
+      {/* Custom Solution Card with Contact Form */}
       <section className="relative py-32">
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 tracking-tight">
-            Der Aevoxis Solutions-Standard
-          </h2>
-          <div className="space-y-4 mb-12">
-            {trustPremium.map((item) => (
-              <div key={item} className="flex items-center gap-4 justify-center">
-                <CheckCircle className="w-5 h-5 text-accent" />
-                <span className="text-lg text-foreground">{item}</span>
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="premium-card premium-card-cyan p-10 sm:p-14">
+            <div className="relative z-10">
+              <div className="text-center mb-10">
+                <Sparkles className="w-8 h-8 text-accent mx-auto mb-4" />
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 tracking-tight">
+                  Individuelle Lösung gesucht?
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                  Sie haben eine spezielle Anforderung, die nicht in unsere Standardleistungen passt?
+                  Beschreiben Sie Ihr Projekt und wir entwickeln eine maßgeschneiderte KI-Lösung für Sie.
+                </p>
               </div>
-            ))}
+
+              <div className="space-y-4 mb-10 max-w-md mx-auto">
+                {trustPremium.map((item) => (
+                  <div key={item} className="flex items-center gap-4">
+                    <CheckCircle className="w-5 h-5 text-accent shrink-0" />
+                    <span className="text-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-2xl bg-background/50 backdrop-blur-sm border border-border p-6">
+                <iframe
+                  data-tally-src="https://tally.so/embed/gDL9AO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
+                  width="100%"
+                  height="1017"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Kontakt"
+                />
+              </div>
+            </div>
           </div>
-          <Button asChild size="lg" className="rounded-2xl px-10 py-7 text-lg shadow-lg shadow-primary/20">
-            <Link to="/contact">
-              Projekt besprechen
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </Button>
         </div>
       </section>
 
