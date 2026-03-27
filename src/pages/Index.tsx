@@ -78,7 +78,7 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed mb-14 text-pretty">
-            Aevoxis implementiert verifizierbare, rechtskonforme und industrielle KI-Intelligenz
+            Aevoxis Solutions implementiert verifizierbare, rechtskonforme und industrielle KI-Intelligenz
             für den deutschen Mittelstand. Von EU AI Act Compliance bis zu souveränen KI-Ökosystemen.
           </p>
 
