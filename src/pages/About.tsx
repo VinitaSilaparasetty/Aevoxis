@@ -76,7 +76,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aevoxis wurde gegründet, um die Lücke zwischen "experimenteller KI" und
+                Aevoxis Solutions wurde gegründet, um die Lücke zwischen "experimenteller KI" und
                 "produktionsreifer Intelligenz" zu schließen.
               </p>
 
