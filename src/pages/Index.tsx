@@ -47,8 +47,8 @@ const services = [
 const trustBadges = [
   { label: "Google Developer Expert", sublabel: "Machine Learning" },
   { label: "AWS Community Builder", sublabel: "Machine Learning" },
-  { label: "DSGVO-konform", sublabel: "by Design" },
-  { label: "EU AI Act 2026", sublabel: "Compliant Ready" },
+  { label: "DSGVO", sublabel: "Engineered for Alignment" },
+  { label: "EU AI Act", sublabel: "Architected for Alignment" },
 ];
 
 export default function HomePage() {

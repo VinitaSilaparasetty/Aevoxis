@@ -90,7 +90,7 @@ const services = [
 ];
 
 const trustPremium = [
-  "DSGVO-konform durch Design.",
+  "Entwickelt für DSGVO-Alignment.",
   "Skalierbar über moderne Cloud- oder On-Prem-Architekturen.",
   "Verifizierbar durch eine lückenlose technische Dokumentation.",
 ];
