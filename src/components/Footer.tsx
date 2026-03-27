@@ -91,7 +91,7 @@ export function Footer() {
                 </div>
                 <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-colors">
                   <p className="text-xs font-semibold text-primary mb-1">DSGVO & EU AI Act</p>
-                  <p className="text-xs text-muted-foreground">Compliance Ready</p>
+                  <p className="text-xs text-muted-foreground">Architected for Alignment</p>
                 </div>
               </div>
             </div>
