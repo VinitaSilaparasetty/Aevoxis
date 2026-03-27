@@ -49,7 +49,7 @@ const whyAevoxis = [
 const credentials = [
   { label: "MSc Data Science", institution: "Newcastle University" },
   { label: "Google Developer Expert", institution: "Machine Learning" },
-  { label: "AWS Community Builder", institution: "Cloud & AI Services" },
+  { label: "AWS Community Builder", institution: "Machine Learning" },
   { label: "Published Author", institution: "Tech & AI Publications" },
 ];
 
