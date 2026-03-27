@@ -102,7 +102,7 @@ export default function AboutPage() {
                       <span className="text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">VS</span>
                     </div>
                     <h2 className="text-2xl font-bold text-foreground mb-2">Vinita Silaparasetty</h2>
-                    <p className="text-primary font-medium">Gründerin & Lead AI Architect</p>
+                    <p className="text-primary font-medium"><p className="text-primary font-medium">Gründerin & Applied AI Scientist</p></p>
                   </div>
 
                   <div className="space-y-4">
