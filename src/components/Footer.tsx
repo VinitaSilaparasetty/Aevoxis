@@ -99,7 +99,7 @@ export function Footer() {
 
           <div className="mt-20 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Aevoxis – Ein Projekt der Smart eG, Berlin. Alle Rechte vorbehalten.
+              &copy; {new Date().getFullYear()} Aevoxis Solutions – Ein Projekt der Smart eG, Berlin. Alle Rechte vorbehalten.
             </p>
             <div className="flex items-center gap-8 text-sm text-muted-foreground">
               <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
