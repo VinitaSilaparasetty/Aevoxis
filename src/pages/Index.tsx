@@ -78,14 +78,14 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed mb-14 text-pretty">
-            Aevoxis Solutions implementiert verifizierbare, rechtskonforme und industrielle KI-Intelligenz
-            für den deutschen Mittelstand. Von EU AI Act Compliance bis zu souveränen KI-Ökosystemen.
+            Aevoxis Solutions entwickelt verifizierbare, rechtskonforme und industrielle KI-Workflows
+            für deutsche KMU. Von EU AI Act Alignment bis zu souveränen KI-Ökosystemen.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
             <Button asChild size="lg" className="rounded-2xl px-10 py-7 text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
               <Link to="/contact">
-                Strategische Beratung anfragen
+                Projekt anfragen
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
@@ -211,7 +211,7 @@ export default function HomePage() {
           </p>
           <Button asChild size="lg" className="rounded-2xl px-10 py-7 text-lg shadow-lg shadow-primary/20">
             <Link to="/contact">
-              Jetzt Beratungsgespräch vereinbaren
+              Jetzt Projekt starten
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </Button>
