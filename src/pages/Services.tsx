@@ -157,7 +157,7 @@ export default function ServicesPage() {
                       <p className="text-lg text-muted-foreground leading-relaxed mb-8">{service.description}</p>
                       <Button asChild className="rounded-2xl px-8 py-6 shadow-lg shadow-primary/20">
                         <Link to="/contact">
-                          Beratung anfragen
+                          Projekt anfragen
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                       </Button>

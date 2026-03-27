@@ -211,7 +211,7 @@ export default function HomePage() {
           </p>
           <Button asChild size="lg" className="rounded-2xl px-10 py-7 text-lg shadow-lg shadow-primary/20">
             <Link to="/contact">
-              Jetzt Beratungsgespräch vereinbaren
+              Jetzt Projekt starten
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </Button>
