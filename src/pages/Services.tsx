@@ -96,6 +96,16 @@ const trustPremium = [
 ];
 
 export default function ServicesPage() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && (window as any).Tally) {
+      (window as any).Tally.loadEmbeds();
+    } else {
+      document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((el) => {
+        (el as HTMLIFrameElement).src = (el as HTMLIFrameElement).dataset.tallySrc || "";
+      });
+    }
+  }, []);
+
   return (
     <main className="min-h-screen frosted-glass-bg">
       <Header />
