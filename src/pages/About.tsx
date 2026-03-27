@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/80 backdrop-blur-sm border border-accent/20 mb-10">
                 <Sparkles className="w-4 h-4 text-accent" />
-                <span className="text-sm font-medium text-foreground">Über Aevoxis</span>
+                <span className="text-sm font-medium text-foreground">Über Aevoxis Solutions</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8 text-balance tracking-tight">
