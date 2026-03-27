@@ -20,7 +20,7 @@ export function Header() {
         <nav className="flex items-center justify-between py-3 mt-4 sm:mt-6 px-4 sm:px-8 rounded-full bg-secondary/70 backdrop-blur-xl border border-border shadow-sm">
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="Aevoxis Solutions Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
-            <span className="text-lg sm:text-xl font-semibold text-foreground hidden sm:block">Aevoxis</span>
+            <span className="text-lg sm:text-xl font-semibold text-foreground hidden sm:block">Aevoxis Solutions</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

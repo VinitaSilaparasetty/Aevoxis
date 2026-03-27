@@ -123,7 +123,7 @@ export default function ServicesPage() {
               <span className="text-sm font-medium text-foreground">Vollständiges Leistungsportfolio</span>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-              Bei Aevoxis implementieren wir nicht einfach nur KI – wir bauen verifizierbare,
+              Bei Aevoxis Solutions implementieren wir nicht einfach nur KI – wir bauen verifizierbare,
               rechtskonforme und industrielle Intelligenz.
             </p>
           </div>
@@ -178,7 +178,7 @@ export default function ServicesPage() {
       <section className="relative py-32">
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 tracking-tight">
-            Der Aevoxis-Standard
+            Der Aevoxis Solutions-Standard
           </h2>
           <div className="space-y-4 mb-12">
             {trustPremium.map((item) => (

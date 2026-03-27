@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/80 backdrop-blur-sm border border-accent/20 mb-10">
                 <Sparkles className="w-4 h-4 text-accent" />
-                <span className="text-sm font-medium text-foreground">Über Aevoxis</span>
+                <span className="text-sm font-medium text-foreground">Über Aevoxis Solutions</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8 text-balance tracking-tight">
@@ -76,13 +76,13 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aevoxis wurde gegründet, um die Lücke zwischen "experimenteller KI" und
+                Aevoxis Solutions wurde gegründet, um die Lücke zwischen "experimenteller KI" und
                 "produktionsreifer Intelligenz" zu schließen.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-10">
                 Mit Sitz in Deutschland und unter dem professionellen Dach der Smart eG bietet
-                Aevoxis spezialisierte KI-Beratung, maßgeschneiderte Automatisierungs-Workflows
+                Aevoxis Solutions spezialisierte KI-Beratung, maßgeschneiderte Automatisierungs-Workflows
                 und strategische Forschung und Entwicklung (F&E) für zukunftsorientierte Unternehmen.
               </p>
 
@@ -139,7 +139,7 @@ export default function AboutPage() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Als Google Developer Expert für Machine Learning agiert Vinita an vorderster Front
-              der Generativen KI und agentenbasierter Systeme. Ihre Mission mit Aevoxis ist es,
+              der Generativen KI und agentenbasierter Systeme. Ihre Mission mit Aevoxis Solutions ist es,
               die Komplexität der KI zu entschlüsseln und sie zu einem funktionalen, rechtskonformen
               Werkzeug für Unternehmen jeder Größe zu machen.
             </p>
@@ -153,7 +153,7 @@ export default function AboutPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Die Aevoxis-Methodik
+              Die Aevoxis Solutions-Methodik
             </h2>
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
               Wir implementieren KI nicht einfach nur – wir entwerfen Ökosysteme.
@@ -186,7 +186,7 @@ export default function AboutPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Warum Aevoxis?
+              Warum Aevoxis Solutions?
             </h2>
           </div>
 

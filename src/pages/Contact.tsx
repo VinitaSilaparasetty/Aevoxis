@@ -29,7 +29,7 @@ export default function ContactPage() {
             Kontakt aufnehmen
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-16">
-            Lassen Sie uns gemeinsam besprechen, wie Aevoxis Ihre KI-Strategie unterstützen kann.
+            Lassen Sie uns gemeinsam besprechen, wie Aevoxis Solutions Ihre KI-Strategie unterstützen kann.
           </p>
 
           <div className="grid sm:grid-cols-3 gap-8">

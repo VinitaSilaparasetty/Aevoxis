@@ -25,10 +25,10 @@ export function Footer() {
             <div className="lg:col-span-1">
               <Link to="/" className="flex items-center gap-3 mb-8">
                 <img src={logo} alt="Aevoxis Solutions Logo" className="w-10 h-10 object-contain" />
-                <span className="text-xl font-semibold text-foreground">Aevoxis</span>
+                <span className="text-xl font-semibold text-foreground">Aevoxis Solutions</span>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-                Spezialisierte KI-Beratung für den deutschen Mittelstand. Ein Projekt der Smart eG, Berlin.
+                Aevoxis Solutions – Spezialisierte KI-Beratung für den deutschen Mittelstand. Ein Projekt der Smart eG, Berlin.
               </p>
               <div className="flex flex-col gap-4 text-sm text-muted-foreground">
                 <a href="mailto:info@aevoxis.de" className="flex items-center gap-3 hover:text-accent transition-colors">
@@ -99,7 +99,7 @@ export function Footer() {
 
           <div className="mt-20 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Aevoxis – Ein Projekt der Smart eG, Berlin. Alle Rechte vorbehalten.
+              &copy; {new Date().getFullYear()} Aevoxis Solutions – Ein Projekt der Smart eG, Berlin. Alle Rechte vorbehalten.
             </p>
             <div className="flex items-center gap-8 text-sm text-muted-foreground">
               <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>

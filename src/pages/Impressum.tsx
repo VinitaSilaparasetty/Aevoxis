@@ -34,7 +34,7 @@ export default function ImpressumPage() {
                 </div>
                 <div className="space-y-4 text-muted-foreground">
                   <div>
-                    <p className="font-semibold text-foreground text-lg">Aevoxis</p>
+                    <p className="font-semibold text-foreground text-lg">Aevoxis Solutions</p>
                     <p>Ein Projekt der Smart eG</p>
                   </div>
                   <div>
@@ -85,7 +85,7 @@ export default function ImpressumPage() {
                 <div className="space-y-4">
                   <div className="p-5 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
                     <p className="font-semibold text-foreground">Vinita Silaparasetty</p>
-                    <p className="text-muted-foreground">Projektleitung Aevoxis</p>
+                    <p className="text-muted-foreground">Projektleitung Aevoxis Solutions</p>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary/40 backdrop-blur-sm">
