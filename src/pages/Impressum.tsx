@@ -34,7 +34,7 @@ export default function ImpressumPage() {
                 </div>
                 <div className="space-y-4 text-muted-foreground">
                   <div>
-                    <p className="font-semibold text-foreground text-lg">Aevoxis</p>
+                    <p className="font-semibold text-foreground text-lg">Aevoxis Solutions</p>
                     <p>Ein Projekt der Smart eG</p>
                   </div>
                   <div>
