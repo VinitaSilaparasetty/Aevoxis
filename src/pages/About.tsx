@@ -186,7 +186,7 @@ export default function AboutPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Warum Aevoxis?
+              Warum Aevoxis Solutions?
             </h2>
           </div>
 

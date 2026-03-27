@@ -85,7 +85,7 @@ export default function ImpressumPage() {
                 <div className="space-y-4">
                   <div className="p-5 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
                     <p className="font-semibold text-foreground">Vinita Silaparasetty</p>
-                    <p className="text-muted-foreground">Projektleitung Aevoxis</p>
+                    <p className="text-muted-foreground">Projektleitung Aevoxis Solutions</p>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary/40 backdrop-blur-sm">

@@ -28,7 +28,7 @@ export function Footer() {
                 <span className="text-xl font-semibold text-foreground">Aevoxis Solutions</span>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-                Spezialisierte KI-Beratung für den deutschen Mittelstand. Ein Projekt der Smart eG, Berlin.
+                Aevoxis Solutions – Spezialisierte KI-Beratung für den deutschen Mittelstand. Ein Projekt der Smart eG, Berlin.
               </p>
               <div className="flex flex-col gap-4 text-sm text-muted-foreground">
                 <a href="mailto:info@aevoxis.de" className="flex items-center gap-3 hover:text-accent transition-colors">
