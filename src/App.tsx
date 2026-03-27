@@ -9,6 +9,7 @@ import About from "./pages/About.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
