@@ -139,7 +139,7 @@ export default function AboutPage() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Als Google Developer Expert für Machine Learning agiert Vinita an vorderster Front
-              der Generativen KI und agentenbasierter Systeme. Ihre Mission mit Aevoxis ist es,
+              der Generativen KI und agentenbasierter Systeme. Ihre Mission mit Aevoxis Solutions ist es,
               die Komplexität der KI zu entschlüsseln und sie zu einem funktionalen, rechtskonformen
               Werkzeug für Unternehmen jeder Größe zu machen.
             </p>
