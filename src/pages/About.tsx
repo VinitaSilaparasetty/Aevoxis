@@ -153,7 +153,7 @@ export default function AboutPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Die Aevoxis-Methodik
+              Die Aevoxis Solutions-Methodik
             </h2>
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
               Wir implementieren KI nicht einfach nur – wir entwerfen Ökosysteme.
