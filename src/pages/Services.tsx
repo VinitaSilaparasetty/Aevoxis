@@ -58,7 +58,7 @@ const services = [
     features: [
       { title: "Prädiktive Energieplanung", description: "Integration von Agentic AI mit IoT-Fabriksensoren zur Vorhersage lokaler Energielasten." },
       { title: "Digital Twin Retrofitting", description: "Erstellung hochpräziser virtueller Simulationen von Bestandsmaschinen zur Verlängerung der Betriebsdauer." },
-      { title: "Gain-Share-Integration", description: "Erfolgsbasierte Modelle – unser Erfolg ist direkt an die messbaren Energieeinsparungen gekoppelt." },
+      { title: "Gain-Share-Integration", description: "Erfolgsbasierte Modelle – der Erfolg ist direkt an die messbaren Energieeinsparungen gekoppelt." },
     ],
   },
   {
