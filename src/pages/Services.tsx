@@ -230,7 +230,7 @@ export default function ServicesPage() {
       <section className="relative pb-12">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs text-muted-foreground text-center leading-relaxed italic">
-            Aevoxis Solutions bietet technische Architektur- und Engineering-Dienstleistungen an, die auf die Standards des EU AI Act und der DSGVO abgestimmt sind. Unser Fokus liegt auf der technischen Umsetzung von Transparenz und Datensouveränität; die formale rechtliche Zertifizierung obliegt der Rechtsberatung des Kunden.
+            Aevoxis Solutions bietet technische Architektur- und Engineering-Dienstleistungen an, die auf die Standards des EU AI Act und der DSGVO abgestimmt sind. Der Fokus liegt auf der technischen Umsetzung von Transparenz und Datensouveränität; die formale rechtliche Zertifizierung obliegt der Rechtsberatung des Kunden.
           </p>
         </div>
       </section>
