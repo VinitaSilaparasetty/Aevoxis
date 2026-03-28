@@ -156,7 +156,7 @@ export default function AboutPage() {
               Die Aevoxis Solutions-Methodik
             </h2>
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
-              Wir implementieren KI nicht einfach nur – wir entwerfen Ökosysteme.
+              Vinita implementiert KI nicht einfach nur – sie entwirft Ökosysteme.
             </p>
           </div>
 
