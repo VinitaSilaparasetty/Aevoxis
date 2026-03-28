@@ -75,8 +75,8 @@ export default function AboutPage() {
                 <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"> Scalable AI</span>
               </h1>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aevoxis Solutions wurde gegründet, um die Lücke zwischen "experimenteller KI" und
+             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Aevoxis Solutions wurde von Vinita gegründet, um die Lücke zwischen "experimenteller KI" und
                 "produktionsreifer Intelligenz" zu schließen.
               </p>
 
