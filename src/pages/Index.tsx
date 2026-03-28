@@ -9,9 +9,9 @@ import { ServiceCard } from "@/components/ServiceCard";
 const services = [
   {
     icon: <Shield className="w-7 h-7" />,
-    title: "EU AI Act Compliance",
+    title: "EU AI Act Alignment",
     description: "Technische Gap-Analyse, XAI-Implementierung und Human-in-the-Loop Design für die Deadline August 2026.",
-    href: "/services#compliance",
+    href: "/services#alignment",
     variant: "cyan" as const,
   },
   {
