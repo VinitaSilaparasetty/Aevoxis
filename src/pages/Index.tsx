@@ -159,7 +159,6 @@ export default function HomePage() {
               <div className="space-y-4 mb-10">
                 {[
                   "Alignment im Fokus: Konsequente Ausrichtung an DSGVO & EU AI Act",
-                  "Agentic Intelligence: Autonome Agenten mit n8n & LangChain",
                   "Human-in-the-Loop: KI mit kontrolliertem Risiko",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-4">
@@ -195,6 +194,50 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="glass-shape w-72 h-72 -right-36 top-1/4 opacity-20" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
+              KI-Tech-Stack: Agentische & Generative KI
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: "Orchestrierung",
+                description: "Entwicklung komplexer Workflows mit LangGraph und CrewAI.",
+                variant: "cyan",
+              },
+              {
+                title: "Modell-Infrastruktur",
+                description: "Deployment von Open-Source-Modellen (Llama 3, Mistral) via Ollama für maximale Datensouveränität.",
+                variant: "blue",
+              },
+              {
+                title: "Vektordatenbanken",
+                description: "Aufbau von RAG-Systemen (Retrieval Augmented Generation) mit Qdrant (Made in Germany).",
+                variant: "teal",
+              },
+              {
+                title: "Validierung",
+                description: "Systematisches Tracing und Evaluation der Agenten-Logik zur Sicherstellung der DSGVO-Konformität.",
+                variant: "cyan",
+              },
+            ].map((item) => (
+              <div key={item.title} className={`premium-card premium-card-${item.variant} p-10`}>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
