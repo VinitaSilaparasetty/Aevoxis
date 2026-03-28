@@ -120,7 +120,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              UNSERE LEISTUNGEN
+              LEISTUNGEN
             </h2>
              <p className="max-w-2xl mx-auto text-lg text-muted-foreground text-pretty">
               Von technischem Alignment bis zur vollständigen KI-Automatisierung –

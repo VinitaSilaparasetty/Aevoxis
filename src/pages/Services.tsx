@@ -115,7 +115,7 @@ export default function ServicesPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 tracking-tight">
-              UNSERE LEISTUNGEN
+              LEISTUNGEN
             </h1>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
