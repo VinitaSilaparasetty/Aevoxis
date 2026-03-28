@@ -23,9 +23,9 @@ const heroServices = [
 
 const services = [
   {
-    id: "compliance",
+    id: "alignment",
     icon: <Shield className="w-8 h-8" />,
-    title: "Technische Compliance & Auditierung nach dem EU AI Act",
+    title: "Technisches Alignment & Auditierung nach dem EU AI Act",
     subtitle: "Die Deadline im August 2026 ist da.",
     description: 'Wir helfen deutschen Unternehmen dabei, ihre "Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.',
     variant: "cyan",
