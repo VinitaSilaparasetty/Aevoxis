@@ -196,8 +196,8 @@ export default function ServicesPage() {
                   Individuelle Lösung gesucht?
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                  Sie haben eine spezielle Anforderung, die nicht in unsere Standardleistungen passt?
-                  Beschreiben Sie Ihr Projekt und wir entwickeln eine maßgeschneiderte KI-Lösung für Sie.
+                  Sie haben eine spezielle Anforderung, die nicht in das Standardleistungsportfolio passt?
+                  Beschreiben Sie Ihr Projekt und Vinita entwickelt eine maßgeschneiderte KI-Lösung für Sie.
                 </p>
               </div>
 
