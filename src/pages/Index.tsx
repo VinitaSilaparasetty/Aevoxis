@@ -120,11 +120,11 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              UNSERE LEISTUNGEN
+              LEISTUNGEN
             </h2>
-            <p className="max-w-2xl mx-auto text-lg text-muted-foreground text-pretty">
+             <p className="max-w-2xl mx-auto text-lg text-muted-foreground text-pretty">
               Von technischem Alignment bis zur vollständigen KI-Automatisierung –
-              wir bauen Ökosysteme, keine isolierten Lösungen.
+              Vinita baut Ökosysteme, keine isolierten Lösungen.
             </p>
           </div>
 
@@ -249,7 +249,7 @@ export default function HomePage() {
             Bereit für die digitale Transformation?
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Lassen Sie uns gemeinsam besprechen, wie Aevoxis Solutions Ihre KI-Strategie
+            Lassen Sie sich von Vinita beraten, wie Aevoxis Solutions Ihre KI-Strategie
             rechtskonform und zukunftssicher gestalten kann.
           </p>
           <Button asChild size="lg" className="rounded-2xl px-10 py-7 text-lg shadow-lg shadow-primary/20">

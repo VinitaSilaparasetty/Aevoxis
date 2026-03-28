@@ -27,7 +27,7 @@ const services = [
     icon: <Shield className="w-8 h-8" />,
     title: "Technisches Alignment & Auditierung nach dem EU AI Act",
     subtitle: "Die Deadline im August 2026 ist da.",
-    description: 'Wir helfen deutschen Unternehmen dabei, ihre "Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.',
+    description: 'Vinita hilft deutschen Unternehmen dabei, ihre "Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.',
     variant: "cyan",
     features: [
       { title: "Technische Gap-Analyse", description: "Prüfung bestehender Modellarchitekturen zur Identifizierung von Verstößen gegen die Standards der BNetzA." },
@@ -40,7 +40,7 @@ const services = [
     icon: <Cpu className="w-8 h-8" />,
     title: "Souveräne KI & lokales Modell-Feintuning",
     subtitle: "Unabhängigkeit von der US-Cloud.",
-    description: "Wir bauen private KI-Ökosysteme, die Ihre proprietären Daten innerhalb der deutschen Grenzen halten.",
+    description: "Vinita baut private KI-Ökosysteme, die Ihre proprietären Daten innerhalb der deutschen Grenzen halten.",
     variant: "blue",
     features: [
       { title: "Lokales LLM-Deployment", description: "Feintuning von Open-Source-Modellen auf Ihren lokalen Datensätzen unter Nutzung von QLoRA für maximale Effizienz." },
@@ -53,12 +53,12 @@ const services = [
     icon: <Zap className="w-8 h-8" />,
     title: 'Industrielle Effizienz & "Energy-Gain"-Automatisierung',
     subtitle: "Überleben durch Optimierung.",
-    description: "In einer Ära hoher Energiekosten verwandeln wir Ihre Betriebsdaten in ein wettbewerbsfähiges Schutzschild.",
+    description: "In einer Ära hoher Energiekosten verwandelt Vinita Ihre Betriebsdaten in ein wettbewerbsfähiges Schutzschild.",
     variant: "cyan",
     features: [
       { title: "Prädiktive Energieplanung", description: "Integration von Agentic AI mit IoT-Fabriksensoren zur Vorhersage lokaler Energielasten." },
       { title: "Digital Twin Retrofitting", description: "Erstellung hochpräziser virtueller Simulationen von Bestandsmaschinen zur Verlängerung der Betriebsdauer." },
-      { title: "Gain-Share-Integration", description: "Erfolgsbasierte Modelle – unser Erfolg ist direkt an die messbaren Energieeinsparungen gekoppelt." },
+      { title: "Gain-Share-Integration", description: "Erfolgsbasierte Modelle – der Erfolg ist direkt an die messbaren Energieeinsparungen gekoppelt." },
     ],
   },
   {
@@ -66,7 +66,7 @@ const services = [
     icon: <Brain className="w-8 h-8" />,
     title: "Agentic Process Mining & Wissenssicherung",
     subtitle: "Lösungen für den demografischen Wandel.",
-    description: 'Wenn Ihre erfahrenen Experten in den Ruhestand gehen, digitalisieren wir deren "implizites Wissen" in aktive digitale Mitarbeiter.',
+    description: 'Wenn Ihre erfahrenen Experten in den Ruhestand gehen, digitalisiert Vinita deren "implizites Wissen" in aktive digitale Mitarbeiter.',
     variant: "blue",
     features: [
       { title: "Knowledge Capture Agents", description: "Autonome Agenten, die erfahrene Ingenieure begleiten, um komplexe Entscheidungslogiken zu digitalisieren." },
@@ -79,7 +79,7 @@ const services = [
     icon: <FileText className="w-8 h-8" />,
     title: "Technical Media Engineering & Autorenschaft",
     subtitle: "Authority-as-a-Service.",
-    description: "Wir übersetzen komplexe technische Durchbrüche in marktführenden Einfluss.",
+    description: "Vinita übersetzt komplexe technische Durchbrüche in marktführenden Einfluss.",
     variant: "cyan",
     features: [
       { title: "Technische Whitepaper", description: "Erstellung tiefgreifender Dokumentationen, die Ihre Marke als Vordenker im KI-Bereich etablieren." },
@@ -115,7 +115,7 @@ export default function ServicesPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 tracking-tight">
-              UNSERE LEISTUNGEN
+              LEISTUNGEN
             </h1>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -134,7 +134,7 @@ export default function ServicesPage() {
               <span className="text-sm font-medium text-foreground">Vollständiges Leistungsportfolio</span>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-              Bei Aevoxis Solutions implementieren wir nicht einfach nur KI – wir bauen verifizierbare,
+               Bei Aevoxis Solutions implementiert Vinita nicht einfach nur KI – sie baut verifizierbare,
               rechtskonforme und auf Industriestandards ausgerichtete Intelligenz.
             </p>
           </div>
@@ -196,8 +196,8 @@ export default function ServicesPage() {
                   Individuelle Lösung gesucht?
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                  Sie haben eine spezielle Anforderung, die nicht in unsere Standardleistungen passt?
-                  Beschreiben Sie Ihr Projekt und wir entwickeln eine maßgeschneiderte KI-Lösung für Sie.
+                  Sie haben eine spezielle Anforderung, die nicht in das Standardleistungsportfolio passt?
+                  Beschreiben Sie Ihr Projekt und Vinita entwickelt eine maßgeschneiderte KI-Lösung für Sie.
                 </p>
               </div>
 
@@ -230,7 +230,7 @@ export default function ServicesPage() {
       <section className="relative pb-12">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs text-muted-foreground text-center leading-relaxed italic">
-            Aevoxis Solutions bietet technische Architektur- und Engineering-Dienstleistungen an, die auf die Standards des EU AI Act und der DSGVO abgestimmt sind. Unser Fokus liegt auf der technischen Umsetzung von Transparenz und Datensouveränität; die formale rechtliche Zertifizierung obliegt der Rechtsberatung des Kunden.
+            Aevoxis Solutions bietet technische Architektur- und Engineering-Dienstleistungen an, die auf die Standards des EU AI Act und der DSGVO abgestimmt sind. Der Fokus liegt auf der technischen Umsetzung von Transparenz und Datensouveränität; die formale rechtliche Zertifizierung obliegt der Rechtsberatung des Kunden.
           </p>
         </div>
       </section>

@@ -8,19 +8,19 @@ const methodology = [
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Alignment im Fokus",
-    description: "Mit Standort in Deutschland basiert jeder von uns entwickelte Workflow auf der DSGVO und dem EU AI Act. Wir priorisieren Datenresidenz und ethische Transparenz.",
+    description: "Mit Standort in Deutschland basiert jeder von Vinita entwickelte Workflow auf der DSGVO und dem EU AI Act. Vinita priorisiert Datenresidenz und ethische Transparenz.",
     variant: "cyan",
   },
   {
     icon: <Lightbulb className="w-6 h-6" />,
     title: "Agentic Intelligence",
-    description: 'Wir gehen über einfache Chatbots hinaus. Wir entwickeln autonome Agenten, die "denken", "schlussfolgern" und komplexe Geschäftslogiken ausführen können.',
+    description: 'Vinita geht über einfache Chatbots hinaus. Sie entwickelt autonome Agenten, die "denken", "schlussfolgern" und komplexe Geschäftslogiken ausführen können.',
     variant: "blue",
   },
   {
     icon: <Users className="w-6 h-6" />,
     title: "Human-in-the-Loop",
-    description: 'Wir setzen uns für KI mit "begrenztem Risiko" ein. Unsere Systeme sind darauf ausgelegt, intelligente Vorschläge zu liefern, während die Entscheidungsgewalt in menschlichen Händen bleibt.',
+    description: 'Vinita setzt sich für KI mit "begrenztem Risiko" ein. Ihre Systeme sind darauf ausgelegt, intelligente Vorschläge zu liefern, während die Entscheidungsgewalt in menschlichen Händen bleibt.',
     variant: "teal",
   },
 ];
@@ -41,7 +41,7 @@ const whyAevoxis = [
   {
     icon: <Sparkles className="w-6 h-6" />,
     title: "Integrierte Lösungen",
-    description: "Von der initialen Forschung bis zur vollständigen Automatisierung kümmern wir uns um das technische Fundament, damit Sie sich auf Ihr Wachstum konzentrieren können.",
+    description: "Von der initialen Forschung bis zur vollständigen Automatisierung kümmert sich Vinita um das technische Fundament, damit Sie sich auf Ihr Wachstum konzentrieren können.",
     variant: "teal",
   },
 ];
@@ -75,14 +75,14 @@ export default function AboutPage() {
                 <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"> Scalable AI</span>
               </h1>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aevoxis Solutions wurde gegründet, um die Lücke zwischen "experimenteller KI" und
+             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Aevoxis Solutions wurde von Vinita gegründet, um die Lücke zwischen "experimenteller KI" und
                 "produktionsreifer Intelligenz" zu schließen.
               </p>
 
-              <p className="text-muted-foreground leading-relaxed mb-10">
+             <p className="text-muted-foreground leading-relaxed mb-10">
                 Mit Sitz in Deutschland und unter dem professionellen Dach der Smart eG bietet
-                Aevoxis Solutions spezialisierte KI-Workflows, maßgeschneiderte Automatisierungslösungen
+                Vinita spezialisierte KI-Workflows, maßgeschneiderte Automatisierungslösungen
                 und strategische Forschung und Entwicklung (F&E) für zukunftsorientierte Unternehmen.
               </p>
 
@@ -156,7 +156,7 @@ export default function AboutPage() {
               Die Aevoxis Solutions-Methodik
             </h2>
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
-              Wir implementieren KI nicht einfach nur – wir entwerfen Ökosysteme.
+              Vinita implementiert KI nicht einfach nur – sie entwirft Ökosysteme.
             </p>
           </div>
 
