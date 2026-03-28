@@ -66,7 +66,7 @@ const services = [
     icon: <Brain className="w-8 h-8" />,
     title: "Agentic Process Mining & Wissenssicherung",
     subtitle: "Lösungen für den demografischen Wandel.",
-    description: 'Wenn Ihre erfahrenen Experten in den Ruhestand gehen, digitalisieren wir deren "implizites Wissen" in aktive digitale Mitarbeiter.',
+    description: 'Wenn Ihre erfahrenen Experten in den Ruhestand gehen, digitalisiert Vinita deren "implizites Wissen" in aktive digitale Mitarbeiter.',
     variant: "blue",
     features: [
       { title: "Knowledge Capture Agents", description: "Autonome Agenten, die erfahrene Ingenieure begleiten, um komplexe Entscheidungslogiken zu digitalisieren." },
