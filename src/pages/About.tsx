@@ -41,7 +41,7 @@ const whyAevoxis = [
   {
     icon: <Sparkles className="w-6 h-6" />,
     title: "Integrierte Lösungen",
-    description: "Von der initialen Forschung bis zur vollständigen Automatisierung kümmern wir uns um das technische Fundament, damit Sie sich auf Ihr Wachstum konzentrieren können.",
+    description: "Von der initialen Forschung bis zur vollständigen Automatisierung kümmert sich Vinita um das technische Fundament, damit Sie sich auf Ihr Wachstum konzentrieren können.",
     variant: "teal",
   },
 ];
