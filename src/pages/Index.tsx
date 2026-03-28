@@ -122,9 +122,9 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
               UNSERE LEISTUNGEN
             </h2>
-            <p className="max-w-2xl mx-auto text-lg text-muted-foreground text-pretty">
+             <p className="max-w-2xl mx-auto text-lg text-muted-foreground text-pretty">
               Von technischem Alignment bis zur vollständigen KI-Automatisierung –
-              wir bauen Ökosysteme, keine isolierten Lösungen.
+              Vinita baut Ökosysteme, keine isolierten Lösungen.
             </p>
           </div>
 
