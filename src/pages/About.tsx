@@ -14,7 +14,7 @@ const methodology = [
   {
     icon: <Lightbulb className="w-6 h-6" />,
     title: "Agentic Intelligence",
-    description: 'Wir gehen über einfache Chatbots hinaus. Wir entwickeln autonome Agenten, die "denken", "schlussfolgern" und komplexe Geschäftslogiken ausführen können.',
+    description: 'Vinita geht über einfache Chatbots hinaus. Sie entwickelt autonome Agenten, die "denken", "schlussfolgern" und komplexe Geschäftslogiken ausführen können.',
     variant: "blue",
   },
   {
