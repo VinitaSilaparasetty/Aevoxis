@@ -40,7 +40,7 @@ const services = [
     icon: <Cpu className="w-8 h-8" />,
     title: "Souveräne KI & lokales Modell-Feintuning",
     subtitle: "Unabhängigkeit von der US-Cloud.",
-    description: "Wir bauen private KI-Ökosysteme, die Ihre proprietären Daten innerhalb der deutschen Grenzen halten.",
+    description: "Vinita baut private KI-Ökosysteme, die Ihre proprietären Daten innerhalb der deutschen Grenzen halten.",
     variant: "blue",
     features: [
       { title: "Lokales LLM-Deployment", description: "Feintuning von Open-Source-Modellen auf Ihren lokalen Datensätzen unter Nutzung von QLoRA für maximale Effizienz." },
