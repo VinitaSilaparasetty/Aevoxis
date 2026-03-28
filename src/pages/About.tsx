@@ -8,7 +8,7 @@ const methodology = [
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Alignment im Fokus",
-    description: "Mit Standort in Deutschland basiert jeder von uns entwickelte Workflow auf der DSGVO und dem EU AI Act. Wir priorisieren Datenresidenz und ethische Transparenz.",
+    description: "Mit Standort in Deutschland basiert jeder von Vinita entwickelte Workflow auf der DSGVO und dem EU AI Act. Vinita priorisiert Datenresidenz und ethische Transparenz.",
     variant: "cyan",
   },
   {

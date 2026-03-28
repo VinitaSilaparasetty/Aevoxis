@@ -249,7 +249,7 @@ export default function HomePage() {
             Bereit für die digitale Transformation?
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Lassen Sie uns gemeinsam besprechen, wie Aevoxis Solutions Ihre KI-Strategie
+            Lassen Sie sich von Vinita beraten, wie Aevoxis Solutions Ihre KI-Strategie
             rechtskonform und zukunftssicher gestalten kann.
           </p>
           <Button asChild size="lg" className="rounded-2xl px-10 py-7 text-lg shadow-lg shadow-primary/20">
