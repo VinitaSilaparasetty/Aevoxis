@@ -9,8 +9,8 @@ import { TallServiceCard } from "@/components/ServiceCard";
 const heroServices = [
   {
     icon: <Shield className="w-8 h-8" />,
-    title: "COMPLIANCE",
-    description: "EU AI Act konforme Systeme mit technischer Gap-Analyse.",
+    title: "ALIGNMENT",
+    description: "EU AI Act ausgerichtete Systeme mit technischer Gap-Analyse.",
     variant: "cyan" as const,
   },
   {
