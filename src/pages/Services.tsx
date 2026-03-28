@@ -79,7 +79,7 @@ const services = [
     icon: <FileText className="w-8 h-8" />,
     title: "Technical Media Engineering & Autorenschaft",
     subtitle: "Authority-as-a-Service.",
-    description: "Wir übersetzen komplexe technische Durchbrüche in marktführenden Einfluss.",
+    description: "Vinita übersetzt komplexe technische Durchbrüche in marktführenden Einfluss.",
     variant: "cyan",
     features: [
       { title: "Technische Whitepaper", description: "Erstellung tiefgreifender Dokumentationen, die Ihre Marke als Vordenker im KI-Bereich etablieren." },
