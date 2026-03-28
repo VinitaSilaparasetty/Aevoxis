@@ -159,7 +159,6 @@ export default function HomePage() {
               <div className="space-y-4 mb-10">
                 {[
                   "Alignment im Fokus: Konsequente Ausrichtung an DSGVO & EU AI Act",
-                  "Agentic Intelligence: Autonome Agenten mit n8n & LangChain",
                   "Human-in-the-Loop: KI mit kontrolliertem Risiko",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-4">
