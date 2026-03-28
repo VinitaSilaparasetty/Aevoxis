@@ -20,7 +20,7 @@ const methodology = [
   {
     icon: <Users className="w-6 h-6" />,
     title: "Human-in-the-Loop",
-    description: 'Wir setzen uns für KI mit "begrenztem Risiko" ein. Unsere Systeme sind darauf ausgelegt, intelligente Vorschläge zu liefern, während die Entscheidungsgewalt in menschlichen Händen bleibt.',
+    description: 'Vinita setzt sich für KI mit "begrenztem Risiko" ein. Ihre Systeme sind darauf ausgelegt, intelligente Vorschläge zu liefern, während die Entscheidungsgewalt in menschlichen Händen bleibt.',
     variant: "teal",
   },
 ];
