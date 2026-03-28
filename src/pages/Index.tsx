@@ -158,7 +158,7 @@ export default function HomePage() {
               </p>
               <div className="space-y-4 mb-10">
                 {[
-                  "Compliance First: DSGVO & EU AI Act 2026",
+                  "Compliance im Fokus: Konsequente Ausrichtung an DSGVO & EU AI Act",
                   "Agentic Intelligence: Autonome Agenten mit n8n & LangChain",
                   "Human-in-the-Loop: KI mit kontrolliertem Risiko",
                 ].map((item) => (
