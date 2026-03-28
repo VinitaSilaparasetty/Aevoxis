@@ -123,7 +123,7 @@ export default function HomePage() {
               UNSERE LEISTUNGEN
             </h2>
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground text-pretty">
-              Von technischer Compliance bis zur vollständigen KI-Automatisierung –
+              Von technischem Alignment bis zur vollständigen KI-Automatisierung –
               wir bauen Ökosysteme, keine isolierten Lösungen.
             </p>
           </div>
