@@ -9,9 +9,9 @@ import { ServiceCard } from "@/components/ServiceCard";
 const services = [
   {
     icon: <Shield className="w-7 h-7" />,
-    title: "EU AI Act Compliance",
+    title: "EU AI Act Alignment",
     description: "Technische Gap-Analyse, XAI-Implementierung und Human-in-the-Loop Design für die Deadline August 2026.",
-    href: "/services#compliance",
+    href: "/services#alignment",
     variant: "cyan" as const,
   },
   {
@@ -123,7 +123,7 @@ export default function HomePage() {
               UNSERE LEISTUNGEN
             </h2>
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground text-pretty">
-              Von technischer Compliance bis zur vollständigen KI-Automatisierung –
+              Von technischem Alignment bis zur vollständigen KI-Automatisierung –
               wir bauen Ökosysteme, keine isolierten Lösungen.
             </p>
           </div>
@@ -158,7 +158,7 @@ export default function HomePage() {
               </p>
               <div className="space-y-4 mb-10">
                 {[
-                  "Compliance im Fokus: Konsequente Ausrichtung an DSGVO & EU AI Act",
+                  "Alignment im Fokus: Konsequente Ausrichtung an DSGVO & EU AI Act",
                   "Agentic Intelligence: Autonome Agenten mit n8n & LangChain",
                   "Human-in-the-Loop: KI mit kontrolliertem Risiko",
                 ].map((item) => (
@@ -183,7 +183,7 @@ export default function HomePage() {
                 <div className="relative z-10 space-y-6">
                   {[
                     { label: "Expertise", value: "Machine Learning & Agentic AI" },
-                    { label: "Fokus", value: "EU AI Act Compliance" },
+                    { label: "Fokus", value: "EU AI Act Alignment" },
                     { label: "Standort", value: "Deutschland" },
                     { label: "Methodik", value: "Human-in-the-Loop" },
                   ].map((item) => (

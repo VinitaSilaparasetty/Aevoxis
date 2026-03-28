@@ -9,8 +9,8 @@ import { TallServiceCard } from "@/components/ServiceCard";
 const heroServices = [
   {
     icon: <Shield className="w-8 h-8" />,
-    title: "COMPLIANCE",
-    description: "EU AI Act konforme Systeme mit technischer Gap-Analyse.",
+    title: "ALIGNMENT",
+    description: "EU AI Act ausgerichtete Systeme mit technischer Gap-Analyse.",
     variant: "cyan" as const,
   },
   {
@@ -23,9 +23,9 @@ const heroServices = [
 
 const services = [
   {
-    id: "compliance",
+    id: "alignment",
     icon: <Shield className="w-8 h-8" />,
-    title: "Technische Compliance & Auditierung nach dem EU AI Act",
+    title: "Technisches Alignment & Auditierung nach dem EU AI Act",
     subtitle: "Die Deadline im August 2026 ist da.",
     description: 'Wir helfen deutschen Unternehmen dabei, ihre "Hochrisiko-KI-Systeme" von einem rechtlichen Risiko in zertifizierte Vermögenswerte zu verwandeln.',
     variant: "cyan",
@@ -71,7 +71,7 @@ const services = [
     features: [
       { title: "Knowledge Capture Agents", description: "Autonome Agenten, die erfahrene Ingenieure begleiten, um komplexe Entscheidungslogiken zu digitalisieren." },
       { title: "ERP-Automatisierung (SAP/Oracle)", description: "KI-Verknüpfung mit Ihren internen Protokollen zur Identifizierung von Lieferkettenengpässen." },
-      { title: "LkSG 2.0 Risk Scoring", description: "KI-gestützte Überwachung globaler Lieferketten zur Compliance mit dem Lieferkettensorgfaltspflichtengesetz." },
+      { title: "LkSG 2.0 Risk Scoring", description: "KI-gestützte Überwachung globaler Lieferketten zur Einhaltung des Lieferkettensorgfaltspflichtengesetzes." },
     ],
   },
   {
@@ -135,7 +135,7 @@ export default function ServicesPage() {
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
               Bei Aevoxis Solutions implementieren wir nicht einfach nur KI – wir bauen verifizierbare,
-              rechtskonforme und industrielle Intelligenz.
+              rechtskonforme und auf Industriestandards ausgerichtete Intelligenz.
             </p>
           </div>
 

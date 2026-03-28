@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 
 const footerLinks = {
   services: [
-    { name: "EU AI Act Compliance", href: "/services#compliance" },
+    { name: "EU AI Act Alignment", href: "/services#alignment" },
     { name: "Souveräne KI", href: "/services#sovereign" },
     { name: "Industrielle Effizienz", href: "/services#efficiency" },
     { name: "Agentic Process Mining", href: "/services#agentic" },
