@@ -80,9 +80,9 @@ export default function AboutPage() {
                 "produktionsreifer Intelligenz" zu schließen.
               </p>
 
-              <p className="text-muted-foreground leading-relaxed mb-10">
+             <p className="text-muted-foreground leading-relaxed mb-10">
                 Mit Sitz in Deutschland und unter dem professionellen Dach der Smart eG bietet
-                Aevoxis Solutions spezialisierte KI-Workflows, maßgeschneiderte Automatisierungslösungen
+                Vinita spezialisierte KI-Workflows, maßgeschneiderte Automatisierungslösungen
                 und strategische Forschung und Entwicklung (F&E) für zukunftsorientierte Unternehmen.
               </p>
 
