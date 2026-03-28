@@ -71,7 +71,7 @@ const services = [
     features: [
       { title: "Knowledge Capture Agents", description: "Autonome Agenten, die erfahrene Ingenieure begleiten, um komplexe Entscheidungslogiken zu digitalisieren." },
       { title: "ERP-Automatisierung (SAP/Oracle)", description: "KI-Verknüpfung mit Ihren internen Protokollen zur Identifizierung von Lieferkettenengpässen." },
-      { title: "LkSG 2.0 Risk Scoring", description: "KI-gestützte Überwachung globaler Lieferketten zur Compliance mit dem Lieferkettensorgfaltspflichtengesetz." },
+      { title: "LkSG 2.0 Risk Scoring", description: "KI-gestützte Überwachung globaler Lieferketten zur Einhaltung des Lieferkettensorgfaltspflichtengesetzes." },
     ],
   },
   {
