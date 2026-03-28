@@ -134,7 +134,7 @@ export default function ServicesPage() {
               <span className="text-sm font-medium text-foreground">Vollständiges Leistungsportfolio</span>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-              Bei Aevoxis Solutions implementieren wir nicht einfach nur KI – wir bauen verifizierbare,
+               Bei Aevoxis Solutions implementiert Vinita nicht einfach nur KI – sie baut verifizierbare,
               rechtskonforme und auf Industriestandards ausgerichtete Intelligenz.
             </p>
           </div>
