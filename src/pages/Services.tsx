@@ -135,7 +135,7 @@ export default function ServicesPage() {
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
               Bei Aevoxis Solutions implementieren wir nicht einfach nur KI – wir bauen verifizierbare,
-              rechtskonforme und industrielle Intelligenz.
+              rechtskonforme und auf Industriestandards ausgerichtete Intelligenz.
             </p>
           </div>
 

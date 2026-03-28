@@ -7,8 +7,8 @@ import { Footer } from "@/components/Footer";
 const methodology = [
   {
     icon: <Shield className="w-6 h-6" />,
-    title: "Compliance First",
-    description: "Mit Standort in Deutschland basiert jeder von uns entwickelte Workflow auf der DSGVO und dem EU AI Act 2026. Wir priorisieren Datenresidenz und ethische Transparenz.",
+    title: "Alignment im Fokus",
+    description: "Mit Standort in Deutschland basiert jeder von uns entwickelte Workflow auf der DSGVO und dem EU AI Act. Wir priorisieren Datenresidenz und ethische Transparenz.",
     variant: "cyan",
   },
   {

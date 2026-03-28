@@ -183,7 +183,7 @@ export default function HomePage() {
                 <div className="relative z-10 space-y-6">
                   {[
                     { label: "Expertise", value: "Machine Learning & Agentic AI" },
-                    { label: "Fokus", value: "EU AI Act Compliance" },
+                    { label: "Fokus", value: "EU AI Act Alignment" },
                     { label: "Standort", value: "Deutschland" },
                     { label: "Methodik", value: "Human-in-the-Loop" },
                   ].map((item) => (
