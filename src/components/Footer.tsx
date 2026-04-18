@@ -49,6 +49,18 @@ export function Footer() {
                   </div>
                   <span>Mehringplatz 10, 10969 Berlin</span>
                 </div>
+                <a
+                  href="https://www.linkedin.com/company/aevoxis-solutions/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Aevoxis Solutions auf LinkedIn"
+                  className="flex items-center gap-3 hover:text-accent transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Linkedin className="w-4 h-4 text-accent" />
+                  </div>
+                  LinkedIn folgen
+                </a>
               </div>
             </div>
 
