@@ -70,11 +70,13 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-tight text-balance mb-8 tracking-tight">
-            Where Deep Research Meets
+            Wo tiefgehende Forschung
             <br />
+            auf{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Scalable AI
-            </span>
+              skalierbare KI
+            </span>{" "}
+            trifft
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed mb-14 text-pretty">

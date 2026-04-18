@@ -15,7 +15,7 @@ const heroServices = [
   },
   {
     icon: <Cpu className="w-8 h-8" />,
-    title: "SOVEREIGN AI",
+    title: "SOUVERÄNE KI",
     description: "Lokale KI-Ökosysteme innerhalb deutscher Grenzen.",
     variant: "blue" as const,
   },
