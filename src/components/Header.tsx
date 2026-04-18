@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
@@ -31,7 +31,16 @@ export function Header() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://www.linkedin.com/company/aevoxis-solutions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Aevoxis Solutions auf LinkedIn"
+              className="w-10 h-10 rounded-full bg-secondary/60 hover:bg-accent/10 border border-border hover:border-accent/40 flex items-center justify-center text-foreground hover:text-accent transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
             <Button asChild className="rounded-full px-6 shadow-lg shadow-primary/20">
               <Link to="/contact">Kontakt</Link>
             </Button>
@@ -54,10 +63,21 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border">
+              <div className="pt-4 border-t border-border space-y-3">
                 <Button asChild className="w-full rounded-full shadow-lg shadow-primary/20">
                   <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Kontakt aufnehmen</Link>
                 </Button>
+                <a
+                  href="https://www.linkedin.com/company/aevoxis-solutions/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Aevoxis Solutions auf LinkedIn"
+                  className="flex items-center justify-center gap-2 w-full py-2 rounded-full border border-border text-foreground hover:text-accent hover:border-accent/40 transition-colors text-sm font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn folgen
+                </a>
               </div>
             </div>
           </div>
