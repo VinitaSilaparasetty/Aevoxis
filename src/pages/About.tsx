@@ -71,8 +71,7 @@ export default function AboutPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8 text-balance tracking-tight">
-                Wo tiefgehende Forschung auf
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"> skalierbare KI</span> trifft
+                Generatives KI-Compliance-Engineering für den <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">EU AI Act</span>
               </h1>
 
              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
