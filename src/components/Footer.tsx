@@ -4,10 +4,8 @@ import logo from "@/assets/logo.png";
 
 const footerLinks = {
   services: [
-    { name: "EU AI Act Alignment", href: "/services#alignment" },
-    { name: "Souveräne KI", href: "/services#sovereign" },
-    { name: "Industrielle Effizienz", href: "/services#efficiency" },
-    { name: "Agentic Process Mining", href: "/services#agentic" },
+    { name: "EU AI Act Engineering", href: "/services/eu-ai-act-engineering" },
+    { name: "Technical Writing & Curriculum Development", href: "/services/technical-writing-curriculum" },
   ],
   company: [
     { name: "Über uns", href: "/about" },

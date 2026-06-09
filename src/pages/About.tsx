@@ -131,7 +131,6 @@ export default function AboutPage() {
               MSc Data Science | Google Developer Expert (ML) | AWS Community Builder
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Vinita ist eine anerkannte Führungspersönlichkeit in der globalen KI-Community.
               Mit einem Master of Science in Data Science der Newcastle University und einem
               Hintergrund in FashionTech bringt sie eine einzigartige Perspektive in technische
               Herausforderungen ein.

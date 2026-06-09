@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Linkedin } from "lucide-react";
+import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
+const servicesMenu = [
+  { name: "EU AI Act Engineering", href: "/services/eu-ai-act-engineering" },
+  { name: "Technical Writing & Curriculum Development", href: "/services/technical-writing-curriculum" },
+];
+
 const navigation = [
   { name: "Startseite", href: "/" },
-  { name: "Leistungen", href: "/services" },
   { name: "Über uns", href: "/about" },
   { name: "Impressum", href: "/impressum" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -24,11 +29,37 @@ export function Header() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            {navigation.map((item) => (
-              <Link key={item.name} to={item.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                {item.name}
-              </Link>
-            ))}
+            <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Startseite
+            </Link>
+            <div className="relative group">
+              <button
+                type="button"
+                className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                Leistungen
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+                <div className="w-80 p-2 rounded-2xl bg-secondary/95 backdrop-blur-xl border border-border shadow-xl">
+                  {servicesMenu.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="block px-4 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-accent/10 hover:text-accent transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Über uns
+            </Link>
+            <Link to="/impressum" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Impressum
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
@@ -58,11 +89,39 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-3 p-6 rounded-3xl bg-secondary/90 backdrop-blur-xl border border-border shadow-lg">
             <div className="flex flex-col gap-4">
-              {navigation.map((item) => (
-                <Link key={item.name} to={item.href} className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
-                  {item.name}
-                </Link>
-              ))}
+              <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
+                Startseite
+              </Link>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setMobileServicesOpen((v) => !v)}
+                  className="flex items-center justify-between w-full text-foreground hover:text-primary transition-colors font-medium py-2"
+                >
+                  Leistungen
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {mobileServicesOpen && (
+                  <div className="mt-2 ml-2 flex flex-col gap-2 border-l border-border pl-4">
+                    {servicesMenu.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-sm text-muted-foreground hover:text-accent transition-colors py-1"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
+                Über uns
+              </Link>
+              <Link to="/impressum" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
+                Impressum
+              </Link>
               <div className="pt-4 border-t border-border space-y-3">
                 <Button asChild className="w-full rounded-full shadow-lg shadow-primary/20">
                   <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Kontakt aufnehmen</Link>
