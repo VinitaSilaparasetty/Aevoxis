@@ -127,7 +127,7 @@ export default function ImpressumPage() {
                 <p className="text-muted-foreground mb-4">nach § 18 Abs. 2 MStV:</p>
                 <div className="p-5 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
                   <p className="font-semibold text-foreground">Vinita Silaparasetty</p>
-                  <p className="text-muted-foreground">Postdamm 46, 32351 Stemwede, Deutschland</p>
+                  <p className="text-muted-foreground">Mehringplatz 10, 10969 Berlin, Deutschland</p>
                 </div>
               </div>
             </div>

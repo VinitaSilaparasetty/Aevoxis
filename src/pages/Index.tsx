@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Cpu, Zap, Brain, FileText, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, BookOpen, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -9,37 +9,16 @@ import { ServiceCard } from "@/components/ServiceCard";
 const services = [
   {
     icon: <Shield className="w-7 h-7" />,
-    title: "EU AI Act Alignment",
-    description: "Technische Gap-Analyse, XAI-Implementierung und Human-in-the-Loop Design für die Deadline August 2026.",
-    href: "/services#alignment",
+    title: "EU AI Act Engineering",
+    description: "Generatives KI-Compliance-Engineering: Gap-Analyse, integriertes Systemdesign, Human-in-the-Loop und Compliance-Dokumentation.",
+    href: "/services/eu-ai-act-engineering",
     variant: "cyan" as const,
   },
   {
-    icon: <Cpu className="w-7 h-7" />,
-    title: "Souveräne KI",
-    description: "Lokales LLM-Deployment und Datenarchitektur, die Ihre Daten innerhalb der deutschen Grenzen hält.",
-    href: "/services#sovereign",
-    variant: "teal" as const,
-  },
-  {
-    icon: <Zap className="w-7 h-7" />,
-    title: "Industrielle Effizienz",
-    description: "Prädiktive Energieplanung und Digital Twin Retrofitting für messbare Einsparungen.",
-    href: "/services#efficiency",
-    variant: "blue" as const,
-  },
-  {
-    icon: <Brain className="w-7 h-7" />,
-    title: "Agentic Process Mining",
-    description: "Digitalisierung impliziten Wissens und autonome Agenten für Ihre Geschäftsprozesse.",
-    href: "/services#agentic",
-    variant: "cyan" as const,
-  },
-  {
-    icon: <FileText className="w-7 h-7" />,
-    title: "Technical Media",
-    description: "Technische Whitepaper, wissenschaftliche Medienstrategien und AI Defense Training.",
-    href: "/services#media",
+    icon: <BookOpen className="w-7 h-7" />,
+    title: "Technical Writing & Curriculum Development",
+    description: "Strukturierte Curricula, technische Whitepaper, Trainingsprogramme und Inhaltsreviews für EdTech, Verlage und Unternehmen.",
+    href: "/services/technical-writing-curriculum",
     variant: "blue" as const,
   },
 ];
@@ -79,8 +58,9 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed mb-14 text-pretty">
-            Aevoxis Solutions entwickelt verifizierbare, rechtskonforme und industrielle KI-Workflows
-            für deutsche KMU. Von EU AI Act Alignment bis zu souveränen KI-Ökosystemen.
+            Aevoxis Solutions entwickelt verifizierbares, rechtskonformes generatives
+            KI-Compliance-Engineering für deutsche KMU. Von EU AI Act Alignment bis zu
+            souveränen KI-Ökosystemen.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
@@ -91,7 +71,7 @@ export default function HomePage() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-2xl px-10 py-7 text-lg border-primary/20 hover:border-accent hover:bg-secondary/50 backdrop-blur-sm">
-              <Link to="/services">Services entdecken</Link>
+              <Link to="/services/eu-ai-act-engineering">Services entdecken</Link>
             </Button>
           </div>
 
@@ -129,7 +109,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
@@ -153,7 +133,6 @@ export default function HomePage() {
                 MSc Data Science | Google Developer Expert (ML) | AWS Community Builder
               </p>
               <p className="text-muted-foreground mb-10 leading-relaxed">
-                Vinita ist eine anerkannte Führungspersönlichkeit in der globalen KI-Community.
                 Mit einem Master of Science in Data Science der Newcastle University bringt sie
                 eine einzigartige, multidisziplinäre Perspektive in technische Herausforderungen ein.
               </p>
