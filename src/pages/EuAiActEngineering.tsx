@@ -59,7 +59,11 @@ export default function EuAiActEngineeringPage() {
     <main className="min-h-screen frosted-glass-bg">
       <Header />
 
-      <section className="relative pt-36 pb-20 overflow-hidden">
+      <div className="bg-[#0f1c2e] border-b border-accent/10 text-center py-2.5 text-sm text-foreground/90">
+        <span className="font-medium">August 2, 2026: EU AI Act high-risk system obligations are now in force.</span>
+      </div>
+
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="glass-shape w-64 h-64 -top-32 -right-32 rotate-12 opacity-30" />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/80 backdrop-blur-sm border border-accent/20 mb-10">
