@@ -5,7 +5,7 @@ import logo from "@/assets/logo.png";
 const footerLinks = {
   services: [
     { name: "EU AI Act Engineering", href: "/services/eu-ai-act-engineering" },
-    { name: "Technical Writing & Curriculum Development", href: "/services/technical-writing-curriculum" },
+    { name: "Curriculum-Entwicklung", href: "/services/technical-writing-curriculum" },
   ],
   company: [
     { name: "Über uns", href: "/about" },
