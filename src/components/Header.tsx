@@ -6,7 +6,7 @@ import logo from "@/assets/logo.png";
 
 const servicesMenu = [
   { name: "EU AI Act Engineering", href: "/services/eu-ai-act-engineering" },
-  { name: "Technical Writing & Curriculum Development", href: "/services/technical-writing-curriculum" },
+  { name: "Curriculum-Entwicklung", href: "/services/technical-writing-curriculum" },
 ];
 
 const navigation = [
@@ -33,13 +33,13 @@ export function Header() {
               Startseite
             </Link>
             <div className="relative group">
-              <button
-                type="button"
+              <Link
+                to="/services"
                 className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
                 Leistungen
                 <ChevronDown className="w-4 h-4" />
-              </button>
+              </Link>
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
                 <div className="w-80 p-2 rounded-2xl bg-secondary/95 backdrop-blur-xl border border-border shadow-xl">
                   {servicesMenu.map((item) => (
@@ -93,14 +93,23 @@ export function Header() {
                 Startseite
               </Link>
               <div>
-                <button
-                  type="button"
-                  onClick={() => setMobileServicesOpen((v) => !v)}
-                  className="flex items-center justify-between w-full text-foreground hover:text-primary transition-colors font-medium py-2"
-                >
-                  Leistungen
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
-                </button>
+                <div className="flex items-center justify-between w-full">
+                  <Link
+                    to="/services"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-foreground hover:text-primary transition-colors font-medium py-2"
+                  >
+                    Leistungen
+                  </Link>
+                  <button
+                    type="button"
+                    aria-label="Untermenü Leistungen"
+                    onClick={() => setMobileServicesOpen((v) => !v)}
+                    className="p-2 text-foreground"
+                  >
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                </div>
                 {mobileServicesOpen && (
                   <div className="mt-2 ml-2 flex flex-col gap-2 border-l border-border pl-4">
                     {servicesMenu.map((item) => (
