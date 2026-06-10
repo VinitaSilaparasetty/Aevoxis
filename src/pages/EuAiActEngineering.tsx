@@ -53,6 +53,16 @@ const trustBadges = [
 export default function EuAiActEngineeringPage() {
   useEffect(() => {
     document.title = "EU AI Act Engineering – Aevoxis Solutions";
+    const loadTally = () => {
+      if (typeof (window as any).Tally !== "undefined") {
+        (window as any).Tally.loadEmbeds();
+      } else {
+        document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((el: any) => {
+          el.src = el.dataset.tallySrc;
+        });
+      }
+    };
+    loadTally();
   }, []);
 
   return (
@@ -145,6 +155,31 @@ export default function EuAiActEngineeringPage() {
                 <p className="text-xs text-muted-foreground mt-0.5">{badge.sublabel}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative pb-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight text-center">
+            Sie sind unsicher, wo Ihr System steht?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-10 text-center max-w-2xl mx-auto leading-relaxed">
+            Beantworten Sie diesen 5-Fragen-Technik-Check und ich werde Ihre Antworten persönlich innerhalb von 24 Stunden prüfen.
+          </p>
+          <div className="premium-card premium-card-blue p-8">
+            <div className="relative z-10">
+              <iframe
+                data-tally-src="https://tally.so/embed/KYGb2k?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="800"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                title="EU AI Act Readiness Check"
+              />
+            </div>
           </div>
         </div>
       </section>
