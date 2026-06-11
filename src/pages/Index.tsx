@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 import { ServiceCard } from "@/components/ServiceCard";
+import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const services = [
   {
@@ -75,7 +76,7 @@ export default function HomePage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto items-stretch">
             {trustBadges.map((badge) => (
               <div
                 key={badge.label}
@@ -85,6 +86,14 @@ export default function HomePage() {
                 <p className="text-xs text-muted-foreground mt-0.5">{badge.sublabel}</p>
               </div>
             ))}
+            <div className="p-3 rounded-2xl bg-secondary/70 backdrop-blur-sm border border-border hover:border-accent/30 transition-all hover:shadow-lg hover:shadow-accent/10 flex items-center justify-center">
+              <img
+                src={apressBook.url}
+                alt="Deep Learning Projects Using TensorFlow 2 – Buchcover, publiziert bei Apress"
+                loading="lazy"
+                className="h-28 w-auto rounded-md shadow-md"
+              />
+            </div>
           </div>
         </div>
 

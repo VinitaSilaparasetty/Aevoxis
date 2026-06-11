@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const credentials = [
   { label: "Google Developer Expert", institution: "Machine Learning" },
@@ -67,6 +68,18 @@ export default function AboutPage() {
                         )}
                       </div>
                     ))}
+                  </div>
+
+                  <div className="mt-8 pt-8 border-t border-border flex flex-col items-center text-center">
+                    <img
+                      src={apressBook.url}
+                      alt="Deep Learning Projects Using TensorFlow 2 – Buchcover, publiziert bei Apress"
+                      loading="lazy"
+                      className="w-44 h-auto rounded-md shadow-lg mb-4"
+                    />
+                    <p className="text-xs text-muted-foreground leading-relaxed max-w-xs">
+                      Deep Learning Projects Using TensorFlow 2, publiziert bei Apress, 2020.
+                    </p>
                   </div>
                 </div>
               </div>
