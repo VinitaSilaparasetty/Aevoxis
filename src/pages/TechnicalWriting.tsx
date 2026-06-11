@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, FileText, GraduationCap, ClipboardCheck, CheckCir
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const services = [
   {
@@ -78,6 +79,36 @@ export default function TechnicalWritingPage() {
             professionelle Lerninhalte für EdTech-Plattformen, technische Verlage und betriebliche
             Weiterbildungsprogramme.
           </p>
+        </div>
+      </section>
+
+      {/* Apress Book Feature */}
+      <section className="relative pb-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="premium-card premium-card-blue p-8 sm:p-12">
+            <div className="relative z-10 grid md:grid-cols-[auto,1fr] gap-10 items-center">
+              <div className="flex justify-center">
+                <img
+                  src={apressBook.url}
+                  alt="Deep Learning Projects Using TensorFlow 2 – Buchcover, publiziert bei Apress"
+                  loading="lazy"
+                  className="w-56 sm:w-64 h-auto rounded-md shadow-2xl"
+                />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-accent mb-3 uppercase tracking-wider">
+                  Publiziert bei Apress
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-5 tracking-tight">
+                  Deep Learning Projects Using TensorFlow 2
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Im Auftrag von Apress als Autorin eines projektbasierten Fachbuchs zu Deep Learning
+                  engagiert – dieselbe Sorgfalt bringe ich in jedes Curriculum-Engagement ein.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
