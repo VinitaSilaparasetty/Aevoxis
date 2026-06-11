@@ -146,7 +146,7 @@ export default function EuAiActEngineeringPage() {
 
       <section className="relative pb-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 items-stretch">
             {trustBadges.map((badge) => (
               <div
                 key={badge.label}
@@ -156,6 +156,14 @@ export default function EuAiActEngineeringPage() {
                 <p className="text-xs text-muted-foreground mt-0.5">{badge.sublabel}</p>
               </div>
             ))}
+            <div className="p-3 rounded-2xl bg-secondary/70 backdrop-blur-sm border border-border hover:border-accent/30 transition-all flex items-center justify-center">
+              <img
+                src={apressBook.url}
+                alt="Deep Learning Projects Using TensorFlow 2 – Buchcover, publiziert bei Apress"
+                loading="lazy"
+                className="h-24 w-auto rounded-md shadow-md"
+              />
+            </div>
           </div>
         </div>
       </section>
