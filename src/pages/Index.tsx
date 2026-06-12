@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 import { ServiceCard } from "@/components/ServiceCard";
+import { TestimonialCard } from "@/components/TestimonialCard";
 import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const services = [
@@ -29,6 +30,25 @@ const trustBadges = [
   { label: "AWS Community Builder", sublabel: "Machine Learning" },
   { label: "DSGVO", sublabel: "Engineered for Alignment" },
   { label: "EU AI Act", sublabel: "Architected for Alignment" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Vinita is constantly achieving NPS scores between 8 and 10 with an overall average of 8.71, which puts her in the world-class category.",
+    name: "Jeanette Wood",
+    title: "Quality and Curriculum Manager, JustIT",
+  },
+  {
+    quote: "Thank you Vinita for putting together an excellent course with challenging exercises.",
+    name: "Dr. Ravi Tahilramani",
+    title: "VP Vertical Management Energy Middle East, Siemens",
+  },
+  {
+    quote: "Vinita's expertise in Data Science reflects in her comprehensive training approach.",
+    name: "Dewank Mahajan",
+    title: "Senior Data Analytics Consultant, FINRA",
+  },
 ];
 
 export default function HomePage() {
@@ -94,6 +114,12 @@ export default function HomePage() {
                 className="h-28 w-auto rounded-md shadow-md"
               />
             </div>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+            {testimonials.map((t) => (
+              <TestimonialCard key={t.name} {...t} />
+            ))}
           </div>
         </div>
 
