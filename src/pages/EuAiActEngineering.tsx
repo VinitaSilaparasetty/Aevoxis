@@ -4,8 +4,6 @@ import { ArrowRight, Shield, FileSearch, Layers, Users, FileText, CheckCircle, S
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import apressBook from "@/assets/apress-book.webp.asset.json";
-
 const services = [
   {
     icon: <FileSearch className="w-8 h-8" />,
@@ -47,8 +45,11 @@ const services = [
 
 const trustBadges = [
   { label: "Google Developer Expert", sublabel: "Machine Learning" },
+  { label: "Published Author", sublabel: "Apress" },
+  { label: "M.Sc. Data Science", sublabel: "Newcastle University (Russell Group)" },
+  { label: "IEEE und Elsevier Peer Reviewer", sublabel: "" },
   { label: "AWS Community Builder", sublabel: "Machine Learning" },
-  { label: "DSGVO & EU AI Act", sublabel: "Architected for Alignment" },
+  { label: "Indian Design Patent", sublabel: "IN 307907" },
 ];
 
 export default function EuAiActEngineeringPage() {
@@ -146,25 +147,20 @@ export default function EuAiActEngineeringPage() {
 
       <section className="relative pb-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 items-stretch">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-stretch">
             {trustBadges.map((badge) => (
               <div
                 key={badge.label}
                 className="p-5 rounded-2xl bg-secondary/70 backdrop-blur-sm border border-border hover:border-accent/30 transition-all"
               >
                 <p className="text-sm font-semibold text-foreground">{badge.label}</p>
-                <p className="text-xs text-muted-foreground mt-0.5">{badge.sublabel}</p>
+                {badge.sublabel && <p className="text-xs text-muted-foreground mt-0.5">{badge.sublabel}</p>}
               </div>
             ))}
-            <div className="p-3 rounded-2xl bg-secondary/70 backdrop-blur-sm border border-border hover:border-accent/30 transition-all flex items-center justify-center">
-              <img
-                src={apressBook.url}
-                alt="Deep Learning Projects Using TensorFlow 2 – Buchcover, publiziert bei Apress"
-                loading="lazy"
-                className="h-24 w-auto rounded-md shadow-md"
-              />
-            </div>
           </div>
+          <p className="mt-6 text-center text-sm text-muted-foreground italic">
+            Professionelle Referenzen auf Anfrage erhältlich.
+          </p>
         </div>
       </section>
 
