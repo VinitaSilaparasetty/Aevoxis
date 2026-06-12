@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { TestimonialCard } from "@/components/TestimonialCard";
 import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const credentials = [
@@ -128,6 +129,24 @@ export default function AboutPage() {
               info@aevoxis.de
             </a>
           </p>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="relative pb-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <TestimonialCard
+              quote="Vinita is constantly achieving NPS scores between 8 and 10 with an overall average of 8.71, which puts her in the world-class category."
+              name="Jeanette Wood"
+              title="Quality and Curriculum Manager, JustIT"
+            />
+            <TestimonialCard
+              quote="Vinita is highly skilled and very knowledgeable in her field. She is attentive to every detail of her work."
+              name="Haziq Haron"
+              title="Account Manager, 80 Level"
+            />
+          </div>
         </div>
       </section>
 

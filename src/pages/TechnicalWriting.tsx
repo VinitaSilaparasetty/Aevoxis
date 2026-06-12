@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, FileText, GraduationCap, ClipboardCheck, CheckCir
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { TestimonialCard } from "@/components/TestimonialCard";
 import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const services = [
@@ -50,6 +51,18 @@ const trustBadges = [
   { label: "14 akkreditierte Kurse", sublabel: "Coursera Project Network" },
   { label: "Google Developer Expert", sublabel: "Machine Learning" },
   { label: "M.Sc. Data Science", sublabel: "Newcastle University (Russell Group)" },
+];
+
+const testimonials = [
+  { quote: "Vinita is constantly achieving NPS scores between 8 and 10 with an overall average of 8.71, which puts her in the world-class category.", name: "Jeanette Wood", title: "Quality and Curriculum Manager, JustIT" },
+  { quote: "Thank you Vinita for putting together an excellent course with challenging exercises.", name: "Dr. Ravi Tahilramani", title: "VP Vertical Management Energy Middle East, Siemens" },
+  { quote: "Really helpful in understanding how AI analyses content, suggests visuals and recommends layouts. Elevating presentations to the next level.", name: "Meher Asees Pampana", title: "Senior Specialist, Novartis" },
+  { quote: "Vinita's expertise in Data Science reflects in her comprehensive training approach.", name: "Dewank Mahajan", title: "Senior Data Analytics Consultant, FINRA" },
+  { quote: "I was able to build a Covid-19 Dashboard and deploy it on an AWS EC2 instance as well as Heroku, thanks to Vinita's course on Coursera.", name: "Ashaab Rizvi", title: "Data Engineering Analyst, Accenture" },
+  { quote: "Vinita's graphic on unstructured vs structured datatypes is amazing. I am constantly trying to figure out how to convey data concepts to my end users and this might be the best analogy I have found.", name: "Christopher Hockey", title: "Manager, Alvarez and Marsal" },
+  { quote: "Vinita's expertise in her domain is reflected in the way her projects are conducted.", name: "Arya Shah", title: "Business Technology Solutions Associate, ZS" },
+  { quote: "Vinita's expertise in Data Science reflects in her comprehensive training approach.", name: "Shatrughna Ojha", title: "HR Analytics Manager, Angel One" },
+  { quote: "The technical part of Data Analysis taught by Vinita was well prepared, clear and gives you a very good basis to start your discovery journey in the Data field.", name: "Maria Carmen Ruiz-Valdepeñas García" },
 ];
 
 export default function TechnicalWritingPage() {
@@ -207,6 +220,20 @@ export default function TechnicalWritingPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="relative pb-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 tracking-tight text-center">
+            Was Fachleute sagen
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {testimonials.map((t) => (
+              <TestimonialCard key={t.name} {...t} />
+            ))}
           </div>
         </div>
       </section>
