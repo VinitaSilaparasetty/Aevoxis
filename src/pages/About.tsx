@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { TestimonialCard } from "@/components/TestimonialCard";
+import { LogoStrip } from "@/components/LogoStrip";
 import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const credentials = [
