@@ -3,9 +3,9 @@ import { ArrowRight, Shield, BookOpen, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-
 import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
+import { LogoStrip } from "@/components/LogoStrip";
 import apressBook from "@/assets/apress-book.webp.asset.json";
 
 const services = [
@@ -129,6 +129,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <LogoStrip />
 
       {/* Services Section */}
       <section className="relative py-32 overflow-hidden">
