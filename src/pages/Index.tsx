@@ -130,6 +130,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <LogoStrip />
+
       {/* Services Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="glass-shape w-72 h-72 -left-36 top-1/2 -translate-y-1/2 opacity-20" />
