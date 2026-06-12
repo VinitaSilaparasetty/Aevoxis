@@ -90,6 +90,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <LogoStrip />
+
       {/* Approach & Working Style */}
       <section className="relative py-24 overflow-hidden">
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
