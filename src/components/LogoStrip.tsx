@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 
 import gdeLogo from "@/assets/logo-gde.png.asset.json";
-import courseraLogo from "@/assets/logo-coursera.png.asset.json";
+import courseraLogo from "@/assets/logo-coursera.svg.asset.json";
 import wtmLogo from "@/assets/logo-wtm.png.asset.json";
-import ieeeLogo from "@/assets/logo-ieee.png.asset.json";
-import elsevierLogo from "@/assets/logo-elsevier.png.asset.json";
-import apressLogo from "@/assets/logo-apress.png.asset.json";
+import ieeeLogo from "@/assets/logo-ieee.svg.asset.json";
+import elsevierLogo from "@/assets/logo-elsevier.svg.asset.json";
+import apressLogo from "@/assets/logo-apress-official.png.asset.json";
 
 interface LogoItem {
   src: string;
