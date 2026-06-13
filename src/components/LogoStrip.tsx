@@ -56,14 +56,14 @@ export function LogoStrip({ className, heading = "Credentials and Professional A
         <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8">
           {heading}
         </h2>
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-10 md:gap-x-12 gap-y-10 items-center justify-items-center">
           {logos.map((logo) => {
             const img = (
               <img
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"
-                className="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-16 md:h-[68px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             );
             return logo.href ? (
@@ -72,12 +72,12 @@ export function LogoStrip({ className, heading = "Credentials and Professional A
                 href={logo.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center"
+                className="flex items-center justify-center p-5"
               >
                 {img}
               </a>
             ) : (
-              <div key={logo.alt} className="flex items-center justify-center">
+              <div key={logo.alt} className="flex items-center justify-center p-5">
                 {img}
               </div>
             );
