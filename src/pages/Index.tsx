@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { LogoStrip } from "@/components/LogoStrip";
-import apressBook from "@/assets/apress-book.webp.asset.json";
+const apressBook = { url: "https://media.springernature.com/w300/springer-static/cover/book/978-1-4842-5802-6.jpg?as=webp" };
 
 const services = [
   {
