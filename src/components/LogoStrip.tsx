@@ -63,7 +63,7 @@ export function LogoStrip({ className, heading = "Credentials and Professional A
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"
-                className="h-16 md:h-[68px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-16 md:h-[68px] w-auto object-contain transition-all duration-300"
               />
             );
             return logo.href ? (
