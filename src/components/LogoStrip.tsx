@@ -51,7 +51,7 @@ interface LogoStripProps {
 
 export function LogoStrip({ className, heading = "Credentials and Professional Affiliations" }: LogoStripProps) {
   return (
-    <div className={cn("border-t border-border", className)}>
+    <div className={cn("relative z-10 border-t border-border", className)}>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8">
           {heading}
