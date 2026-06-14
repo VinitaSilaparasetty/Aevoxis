@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 
-import gdeLogo from "@/assets/logo-gde.png.asset.json";
-import courseraLogo from "@/assets/logo-coursera.svg.asset.json";
-import wtmLogo from "@/assets/logo-wtm.png.asset.json";
-import ieeeLogo from "@/assets/logo-ieee.svg.asset.json";
-import elsevierLogo from "@/assets/logo-elsevier.svg.asset.json";
-import apressLogo from "@/assets/logo-apress-official.png.asset.json";
+import gdeLogo from "@/assets/logo-gde.png";
+import courseraLogo from "@/assets/logo-coursera.svg";
+import wtmLogo from "@/assets/logo-wtm.png";
+import ieeeLogo from "@/assets/logo-ieee.svg";
+import elsevierLogo from "@/assets/logo-elsevier.svg";
+import apressLogo from "@/assets/logo-apress.png";
 
 interface LogoItem {
   src: string;
@@ -15,30 +15,30 @@ interface LogoItem {
 
 const logos: LogoItem[] = [
   {
-    src: gdeLogo.url,
+    src: gdeLogo,
     alt: "Google Developer Expert badge",
     href: "https://g.dev/vinitasilaparasetty",
   },
   {
-    src: courseraLogo.url,
+    src: courseraLogo,
     alt: "Coursera",
     href: "https://www.coursera.org/",
   },
   {
-    src: wtmLogo.url,
+    src: wtmLogo,
     alt: "Google Women Techmakers",
     href: "https://www.womentechmakers.com/",
   },
   {
-    src: ieeeLogo.url,
+    src: ieeeLogo,
     alt: "IEEE",
   },
   {
-    src: elsevierLogo.url,
+    src: elsevierLogo,
     alt: "Elsevier",
   },
   {
-    src: apressLogo.url,
+    src: apressLogo,
     alt: "Apress",
     href: "https://www.apress.com/gp/book/9781484260926",
   },
