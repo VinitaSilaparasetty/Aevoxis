@@ -12,6 +12,7 @@ const servicesMenu = [
 const navigation = [
   { name: "Startseite", href: "/" },
   { name: "Über uns", href: "/about" },
+  { name: "Insights", href: "/blog" },
   { name: "Impressum", href: "/impressum" },
 ];
 
@@ -56,6 +57,9 @@ export function Header() {
             </div>
             <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Über uns
+            </Link>
+            <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Insights
             </Link>
             <Link to="/impressum" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Impressum
@@ -127,6 +131,9 @@ export function Header() {
               </div>
               <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                 Über uns
+              </Link>
+              <Link to="/blog" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
+                Insights
               </Link>
               <Link to="/impressum" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                 Impressum
