@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams, Navigate, useLocation } from "react-router-dom";
 import { ArrowLeft, Clock, ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
@@ -208,7 +208,14 @@ function renderBlock(block: ContentBlock, index: number) {
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
+  const { hash } = useLocation();
   const post = blogPosts.find((p) => p.slug === slug);
+
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [hash, post]);
 
   useEffect(() => {
     if (!post) return;
