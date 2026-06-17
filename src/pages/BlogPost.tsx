@@ -156,6 +156,7 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <h2
           key={index}
+          id={block.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}
           className="text-xl sm:text-2xl font-bold text-foreground mt-10 mb-4 tracking-tight"
         >
           {block.text}
@@ -165,6 +166,7 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <h3
           key={index}
+          id={block.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}
           className="text-lg font-semibold text-foreground mt-7 mb-3"
         >
           {block.text}
