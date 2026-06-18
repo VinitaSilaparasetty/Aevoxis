@@ -39,7 +39,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Ich bin Vinita Silaparasetty, KI-Compliance-Engineerin und technische Autorin mit Sitz in Deutschland. Ich entwerfe und entwickle generative KI-Systeme, bei denen EU AI Act- und DSGVO-Konformität vom ersten Tag an eingebaut ist, und ich erstelle professionelle KI-Curricula für EdTech-Plattformen und technische Verlage. Ich arbeite eigenständig unter dem Dach der Smart eG.
+                Ich bin Vinita Silaparasetty, AI Governance Engineer und technische Autorin mit Sitz in Deutschland. Ich entwerfe und entwickle generative KI-Systeme, bei denen EU AI Act- und DSGVO-Konformität vom ersten Tag an eingebaut ist, und ich erstelle professionelle KI-Curricula für EdTech-Plattformen und technische Verlage. Ich arbeite eigenständig unter dem Dach der Smart eG.
               </p>
 
               <Button asChild className="rounded-2xl px-8 py-6 shadow-lg shadow-primary/20">
@@ -58,7 +58,7 @@ export default function AboutPage() {
                       <span className="text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">VS</span>
                     </div>
                     <h2 className="text-2xl font-bold text-foreground mb-2">Vinita Silaparasetty</h2>
-                    <p className="text-primary font-medium">Gründerin & Applied AI Scientist</p>
+                    <p className="text-primary font-medium">Gründerin & AI Governance Engineer</p>
                   </div>
 
                   <div className="space-y-4">
