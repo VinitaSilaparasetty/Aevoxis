@@ -1,4 +1,5 @@
-import { Building2, Users, Mail, Phone, Globe, Sparkles } from "lucide-react";
+import { Building2, Users, Mail, Phone, Globe, Sparkles, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -154,6 +155,50 @@ export default function ImpressumPage() {
                     <p className="font-semibold text-foreground">Zuständiger Prüfverband</p>
                     <p>Prüfungsverband der kleinen und mittelständischen Genossenschaften e.V.</p>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="premium-card premium-card-cyan p-8">
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center text-accent">
+                    <Shield className="w-6 h-6" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground">Datenschutz</h2>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Informationen zur Verarbeitung personenbezogener Daten, zu Ihren Rechten als betroffene Person
+                  sowie zu den von uns eingesetzten Diensten (Google Analytics, Tally.so, GitHub Pages) finden
+                  Sie in unserer{" "}
+                  <Link to="/datenschutz" className="text-accent hover:text-primary transition-colors underline">
+                    Datenschutzerklärung
+                  </Link>
+                  .
+                </p>
+              </div>
+            </div>
+
+            <div className="premium-card premium-card-blue p-8">
+              <div className="relative z-10">
+                <h2 className="text-2xl font-bold text-foreground mb-6">Online-Streitbeilegung</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
+                    <a
+                      href="https://ec.europa.eu/consumers/odr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent hover:text-primary transition-colors underline"
+                    >
+                      https://ec.europa.eu/consumers/odr
+                    </a>
+                  </p>
+                  <p>
+                    Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
+                    Verbraucherschlichtungsstelle teilzunehmen, da wir ausschließlich im B2B-Bereich
+                    (Geschäftskunden) tätig sind.
+                  </p>
                 </div>
               </div>
             </div>

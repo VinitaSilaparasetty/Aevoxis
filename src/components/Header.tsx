@@ -14,6 +14,7 @@ const navigation = [
   { name: "Über uns", href: "/about" },
   { name: "Insights", href: "/blog" },
   { name: "Impressum", href: "/impressum" },
+  { name: "Datenschutz", href: "/datenschutz" },
 ];
 
 export function Header() {
@@ -63,6 +64,9 @@ export function Header() {
             </Link>
             <Link to="/impressum" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Impressum
+            </Link>
+            <Link to="/datenschutz" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Datenschutz
             </Link>
           </div>
 
@@ -137,6 +141,9 @@ export function Header() {
               </Link>
               <Link to="/impressum" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                 Impressum
+              </Link>
+              <Link to="/datenschutz" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
+                Datenschutz
               </Link>
               <div className="pt-4 border-t border-border space-y-3">
                 <Button asChild className="w-full rounded-full shadow-lg shadow-primary/20">

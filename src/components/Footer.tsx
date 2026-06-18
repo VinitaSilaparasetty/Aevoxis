@@ -12,6 +12,7 @@ const footerLinks = {
     { name: "Insights", href: "/blog" },
     { name: "Kontakt", href: "/contact" },
     { name: "Impressum", href: "/impressum" },
+    { name: "Datenschutz", href: "/datenschutz" },
   ],
 };
 
@@ -114,6 +115,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-8 text-sm text-muted-foreground">
               <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
+              <Link to="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link>
             </div>
           </div>
         </div>

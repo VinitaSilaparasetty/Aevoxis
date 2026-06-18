@@ -9,6 +9,7 @@ import EuAiActEngineering from "./pages/EuAiActEngineering.tsx";
 import TechnicalWriting from "./pages/TechnicalWriting.tsx";
 import About from "./pages/About.tsx";
 import Impressum from "./pages/Impressum.tsx";
+import Datenschutz from "./pages/Datenschutz.tsx";
 import Contact from "./pages/Contact.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/services/technical-writing-curriculum" element={<TechnicalWriting />} />
           <Route path="/about" element={<About />} />
           <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
