@@ -2,17 +2,6 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      // Restore path encoded by 404.html before React Router boots.
-      (function (l) {
-        if (l.search[1] === '/') {
-          var decoded = l.search.slice(1).split('&').map(function (s) {
-            return s.replace(/~and~/g, '&');
-          }).join('?');
-          window.history.replaceState(null, null, decoded + l.hash);
-        }
-      }(window.location));
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aevoxis Solutions – Generatives KI-Compliance-Engineering für den EU AI Act</title>
     <meta name="description" content="Aevoxis Solutions entwickelt verifizierbares, rechtskonformes generatives KI-Compliance-Engineering für deutsche KMU." />
