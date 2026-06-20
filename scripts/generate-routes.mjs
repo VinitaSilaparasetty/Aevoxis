@@ -33,4 +33,8 @@ for (const route of routes) {
   console.log(`  ✓ ${route}/index.html`);
 }
 
+// Fallback for any path not pre-generated: GitHub Pages serves 404.html for unknown paths
+copyFileSync(resolve(dist, 'index.html'), resolve(dist, '404.html'));
+console.log('  ✓ 404.html (SPA fallback)');
+
 console.log(`\nGenerated ${routes.length} static route files.`);
