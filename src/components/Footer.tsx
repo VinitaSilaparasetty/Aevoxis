@@ -23,14 +23,14 @@ export function Footer() {
     <footer className="relative mt-32 border-t border-border">
       <div className="relative z-10 bg-secondary/60 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               <Link to="/" className="flex items-center gap-3 mb-8">
                 <img src={logo} alt="" width={40} height={40} className="w-10 h-10 object-contain" />
                 <span className="text-xl font-semibold text-foreground">Aevoxis Solutions</span>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-                Tooling for EU AI Act Articles 12, 13 and 14. Member of SMartDE e. G., Berlin.
+                Tooling for the EU AI Act: Article 50 today, Articles 12–14 next. Member of SMartDE e. G., Berlin.
               </p>
               <div className="flex flex-col gap-4 text-sm text-muted-foreground">
                 <a href="mailto:info@aevoxis.de" className="flex items-center gap-3 hover:text-accent transition-colors">
@@ -95,24 +95,6 @@ export function Footer() {
                 </li>
               </ul>
             </nav>
-
-            <div>
-              <h2 className="font-semibold text-foreground mb-6 tracking-wide text-base">RECOGNITION</h2>
-              <div className="space-y-4">
-                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-accent/20">
-                  <p className="text-xs font-semibold text-accent mb-1">Google Developer Expert</p>
-                  <p className="text-xs text-muted-foreground">Machine Learning</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-primary/20">
-                  <p className="text-xs font-semibold text-primary mb-1">AWS Community Builder</p>
-                  <p className="text-xs text-muted-foreground">Machine Learning</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-primary/20">
-                  <p className="text-xs font-semibold text-primary mb-1">AWS AIdeas 2025</p>
-                  <p className="text-xs text-muted-foreground">Top 300 of 10,000+ entries</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="mt-20 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">

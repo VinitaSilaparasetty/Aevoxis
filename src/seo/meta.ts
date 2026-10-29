@@ -62,9 +62,9 @@ type StaticRoute = Omit<PageMeta, "path">;
 
 const staticRoutes: Record<string, StaticRoute> = {
   "/": {
-    title: "Aevoxis – Tooling for EU AI Act Articles 12, 13 and 14",
+    title: "Aevoxis – EU AI Act tooling: Article 50 now, Articles 12–14 next",
     description:
-      "Aevoxis builds record-keeping, transparency and human-oversight tooling that runs inside your AI system, so it meets EU AI Act Articles 12–14 by design.",
+      "Aevoxis builds EU AI Act compliance into your AI system: Article 50 transparency and content marking, which apply today, plus the Articles 12–14 logging and human-oversight duties that follow in December 2027.",
     lang: "en",
     jsonLd: [
       { "@context": "https://schema.org", ...ORGANIZATION },
