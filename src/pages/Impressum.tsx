@@ -187,19 +187,8 @@ export default function ImpressumPage() {
 
             <div className="premium-card premium-card-blue p-8">
               <div className="relative z-10">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Online-Streitbeilegung</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Verbraucherstreitbeilegung</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-                    <a
-                      href="https://ec.europa.eu/consumers/odr"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent hover:text-primary transition-colors underline"
-                    >
-                      https://ec.europa.eu/consumers/odr
-                    </a>
-                  </p>
                   <p>
                     Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
                     Verbraucherschlichtungsstelle teilzunehmen, da wir ausschließlich im B2B-Bereich

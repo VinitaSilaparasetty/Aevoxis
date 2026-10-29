@@ -1,73 +1,42 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
+import { Menu, X, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
-const servicesMenu = [
-  { name: "EU AI Act Engineering", href: "/services/eu-ai-act-engineering" },
-  { name: "Curriculum-Entwicklung", href: "/services/technical-writing-curriculum" },
-];
-
 const navigation = [
-  { name: "Startseite", href: "/" },
-  { name: "Über uns", href: "/about" },
+  { name: "Home", href: "/" },
+  { name: "Engineering", href: "/services/eu-ai-act-engineering" },
+  { name: "About", href: "/about" },
   { name: "Insights", href: "/blog" },
-  { name: "Impressum", href: "/impressum" },
-  { name: "Datenschutz", href: "/datenschutz" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between py-3 mt-4 sm:mt-6 px-4 sm:px-8 rounded-full bg-secondary/70 backdrop-blur-xl border border-border shadow-sm">
+        <nav
+          aria-label="Main"
+          className="flex items-center justify-between py-3 mt-4 sm:mt-6 px-4 sm:px-8 rounded-full bg-secondary/70 backdrop-blur-xl border border-border shadow-sm"
+        >
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Aevoxis Solutions Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
-            <span className="text-lg sm:text-xl font-semibold text-foreground hidden sm:block">Aevoxis Solutions</span>
+            <img src={logo} alt="" width={48} height={48} className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
+            <span className="text-lg sm:text-xl font-semibold text-foreground">Aevoxis</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Startseite
-            </Link>
-            <div className="relative group">
+            {navigation.map((item) => (
               <Link
-                to="/services"
-                className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                key={item.href}
+                to={item.href}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
-                Leistungen
-                <ChevronDown className="w-4 h-4" />
+                {item.name}
               </Link>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
-                <div className="w-80 p-2 rounded-2xl bg-secondary/95 backdrop-blur-xl border border-border shadow-xl">
-                  {servicesMenu.map((item) => (
-                    <Link
-                      key={item.href}
-                      to={item.href}
-                      className="block px-4 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-accent/10 hover:text-accent transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Über uns
-            </Link>
-            <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Insights
-            </Link>
-            <Link to="/impressum" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Impressum
-            </Link>
-            <Link to="/datenschutz" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Datenschutz
-            </Link>
+            ))}
           </div>
 
           <div className="hidden md:flex items-center gap-3">
@@ -75,18 +44,20 @@ export function Header() {
               href="https://www.linkedin.com/company/aevoxis-solutions/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Aevoxis Solutions auf LinkedIn"
+              aria-label="Aevoxis Solutions on LinkedIn"
               className="w-10 h-10 rounded-full bg-secondary/60 hover:bg-accent/10 border border-border hover:border-accent/40 flex items-center justify-center text-foreground hover:text-accent transition-colors"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <Button asChild className="rounded-full px-6 shadow-lg shadow-primary/20">
-              <Link to="/contact">Kontakt</Link>
+              <Link to="/early-access">Early access</Link>
             </Button>
           </div>
 
           <button
             type="button"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
             className="md:hidden p-2 text-foreground rounded-full hover:bg-secondary/50 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -97,68 +68,29 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-3 p-6 rounded-3xl bg-secondary/90 backdrop-blur-xl border border-border shadow-lg">
             <div className="flex flex-col gap-4">
-              <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
-                Startseite
-              </Link>
-              <div>
-                <div className="flex items-center justify-between w-full">
-                  <Link
-                    to="/services"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-foreground hover:text-primary transition-colors font-medium py-2"
-                  >
-                    Leistungen
-                  </Link>
-                  <button
-                    type="button"
-                    aria-label="Untermenü Leistungen"
-                    onClick={() => setMobileServicesOpen((v) => !v)}
-                    className="p-2 text-foreground"
-                  >
-                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
-                  </button>
-                </div>
-                {mobileServicesOpen && (
-                  <div className="mt-2 ml-2 flex flex-col gap-2 border-l border-border pl-4">
-                    {servicesMenu.map((item) => (
-                      <Link
-                        key={item.href}
-                        to={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-sm text-muted-foreground hover:text-accent transition-colors py-1"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
-                Über uns
-              </Link>
-              <Link to="/blog" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
-                Insights
-              </Link>
-              <Link to="/impressum" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
-                Impressum
-              </Link>
-              <Link to="/datenschutz" className="text-foreground hover:text-primary transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
-                Datenschutz
-              </Link>
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-foreground hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
               <div className="pt-4 border-t border-border space-y-3">
                 <Button asChild className="w-full rounded-full shadow-lg shadow-primary/20">
-                  <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Kontakt aufnehmen</Link>
+                  <Link to="/early-access" onClick={() => setMobileMenuOpen(false)}>Join early access</Link>
                 </Button>
                 <a
                   href="https://www.linkedin.com/company/aevoxis-solutions/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Aevoxis Solutions auf LinkedIn"
                   className="flex items-center justify-center gap-2 w-full py-2 rounded-full border border-border text-foreground hover:text-accent hover:border-accent/40 transition-colors text-sm font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Linkedin className="w-4 h-4" />
-                  LinkedIn folgen
+                  Follow on LinkedIn
                 </a>
               </div>
             </div>

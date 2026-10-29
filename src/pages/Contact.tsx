@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -26,10 +24,10 @@ export default function ContactPage() {
         <div className="glass-shape w-64 h-64 -top-32 -right-32 rotate-12 opacity-30" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8 tracking-tight">
-            Kontakt aufnehmen
+            Get in touch
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-16">
-            Lassen Sie uns gemeinsam besprechen, wie Aevoxis Solutions Ihre KI-Strategie unterstützen kann.
+            Tell me what your AI system does and when it needs to be ready. I reply to every message myself.
           </p>
 
           <div className="grid sm:grid-cols-3 gap-8">
@@ -38,7 +36,7 @@ export default function ContactPage() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 mx-auto text-accent">
                   <Mail className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">E-Mail</h3>
+                <h2 className="font-semibold text-foreground mb-2">Email</h2>
                 <a href="mailto:info@aevoxis.de" className="text-muted-foreground hover:text-primary transition-colors">info@aevoxis.de</a>
               </div>
             </div>
@@ -47,7 +45,7 @@ export default function ContactPage() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6 mx-auto text-primary">
                   <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Telefon</h3>
+                <h2 className="font-semibold text-foreground mb-2">Phone</h2>
                 <a href="tel:+4915679836401" className="text-muted-foreground hover:text-primary transition-colors">+49 15679 836401</a>
               </div>
             </div>
@@ -56,14 +54,14 @@ export default function ContactPage() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 mx-auto text-accent">
                   <MapPin className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Standort</h3>
+                <h2 className="font-semibold text-foreground mb-2">Address</h2>
                 <p className="text-muted-foreground">Franz-Mehring-Platz 1, 10243 Berlin</p>
               </div>
             </div>
           </div>
 
           <div className="mt-16">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Schreiben Sie uns</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Send a message</h2>
             <div className="premium-card premium-card-blue p-8">
               <div className="relative z-10">
                 <iframe
@@ -74,7 +72,7 @@ export default function ContactPage() {
                   frameBorder="0"
                   marginHeight={0}
                   marginWidth={0}
-                  title="Kontakt"
+                  title="Contact form"
                 />
               </div>
             </div>

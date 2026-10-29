@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 
 import gdeLogo from "@/assets/logo-gde.png";
-import courseraLogo from "@/assets/logo-coursera.svg";
 import wtmLogo from "@/assets/logo-wtm.png";
 import ieeeLogo from "@/assets/logo-ieee.svg";
 import elsevierLogo from "@/assets/logo-elsevier.svg";
@@ -20,11 +19,6 @@ const logos: LogoItem[] = [
     href: "https://g.dev/vinitasilaparasetty",
   },
   {
-    src: courseraLogo,
-    alt: "Coursera",
-    href: "https://www.coursera.org/",
-  },
-  {
     src: wtmLogo,
     alt: "Google Women Techmakers",
     href: "https://www.womentechmakers.com/",
@@ -40,7 +34,7 @@ const logos: LogoItem[] = [
   {
     src: apressLogo,
     alt: "Apress",
-    href: "https://www.apress.com/gp/book/9781484260926",
+    href: "https://link.springer.com/book/10.1007/978-1-4842-5802-6",
   },
 ];
 
@@ -56,7 +50,7 @@ export function LogoStrip({ className, heading = "Credentials and Professional A
         <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8">
           {heading}
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-10 md:gap-x-12 gap-y-10 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-10 md:gap-x-12 gap-y-10 items-center justify-items-center">
           {logos.map((logo) => {
             const img = (
               <img

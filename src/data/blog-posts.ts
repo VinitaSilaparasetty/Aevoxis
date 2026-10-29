@@ -19,6 +19,8 @@ export interface BlogPost {
   author: string;
   authorRole: string;
   publishedDate: string;
+  datePublishedISO?: string;
+  dateModifiedISO?: string;
   readingTime: string;
   excerpt: string;
   tags: string[];
@@ -35,6 +37,7 @@ export const blogPosts: BlogPost[] = [
     title: `EU AI Act Articles 12, 13 and 14: A Technical Implementation Guide`,
     metaDescription: `A working implementation of EU AI Act human oversight and logging requirements using real-time drift detection, a Justification Gate, and a cryptographically verifiable audit trail. Live demo included.`,
     canonicalPath: `/blog/eu-ai-act-articles-12-13-14-technical-implementation`,
+    datePublishedISO: `2026-06-16`,
     author: `Vinita Silaparasetty`,
     authorRole: `AI Governance Engineer, Aevoxis Solutions`,
     publishedDate: `June 2026`,
@@ -415,6 +418,7 @@ DEMO_MODE=true ./dev.sh`,
     metaTitle: `EU AI Act Article 14 Compliance for LangChain RAG Chatbots: A Working Integration Guide`,
     metaDescription: `Step-by-step guide to wiring EU AI Act Article 14 human oversight into a production LangChain RAG chatbot using the Spec-Drift Chronometer open-source governance framework. Includes working code and a live demo.`,
     canonicalPath: `/insights/eu-ai-act-langchain-rag-integration`,
+    datePublishedISO: `2026-06-17`,
     canonicalUrl: `https://aevoxis.de/insights/eu-ai-act-langchain-rag-integration`,
     author: `Vinita Silaparasetty`,
     authorRole: `AI Governance Engineer, Aevoxis Solutions`,

@@ -42,7 +42,7 @@ export default function DatenschutzPage() {
                     Verantwortliche Stelle im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
                   </p>
                   <div className="p-5 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
-                    <p className="font-semibold text-foreground">Smart eG</p>
+                    <p className="font-semibold text-foreground">SMartDE e. G.</p>
                     <p>(handelnd als Aevoxis Solutions)</p>
                     <p>Franz-Mehring-Platz 1</p>
                     <p>10243 Berlin, Deutschland</p>

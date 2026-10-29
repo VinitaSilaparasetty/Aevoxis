@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { PERSONAL_SITE_URL } from "@/seo/meta";
 
 const footerLinks = {
-  services: [
-    { name: "EU AI Act Engineering", href: "/services/eu-ai-act-engineering" },
-    { name: "Curriculum-Entwicklung", href: "/services/technical-writing-curriculum" },
+  product: [
+    { name: "Early access", href: "/early-access" },
+    { name: "Articles 12–14 engineering", href: "/services/eu-ai-act-engineering" },
+    { name: "Services", href: "/services" },
   ],
   company: [
-    { name: "Über uns", href: "/about" },
+    { name: "About", href: "/about" },
     { name: "Insights", href: "/blog" },
-    { name: "Kontakt", href: "/contact" },
+    { name: "Contact", href: "/contact" },
     { name: "Impressum", href: "/impressum" },
     { name: "Datenschutz", href: "/datenschutz" },
   ],
@@ -24,11 +26,11 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div className="lg:col-span-1">
               <Link to="/" className="flex items-center gap-3 mb-8">
-                <img src={logo} alt="Aevoxis Solutions Logo" className="w-10 h-10 object-contain" />
+                <img src={logo} alt="" width={40} height={40} className="w-10 h-10 object-contain" />
                 <span className="text-xl font-semibold text-foreground">Aevoxis Solutions</span>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-                Aevoxis Solutions – Spezialisierte KI-Workflows für deutsche KMU. Ein Projekt der Smart eG, Berlin.
+                Tooling for EU AI Act Articles 12, 13 and 14. Member of SMartDE e. G., Berlin.
               </p>
               <div className="flex flex-col gap-4 text-sm text-muted-foreground">
                 <a href="mailto:info@aevoxis.de" className="flex items-center gap-3 hover:text-accent transition-colors">
@@ -53,21 +55,20 @@ export function Footer() {
                   href="https://www.linkedin.com/company/aevoxis-solutions/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Aevoxis Solutions auf LinkedIn"
                   className="flex items-center gap-3 hover:text-accent transition-colors"
                 >
                   <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
                     <Linkedin className="w-4 h-4 text-accent" />
                   </div>
-                  LinkedIn folgen
+                  Follow on LinkedIn
                 </a>
               </div>
             </div>
 
-            <div>
-              <h3 className="font-semibold text-foreground mb-6 tracking-wide">SERVICES</h3>
+            <nav aria-label="Product">
+              <h2 className="font-semibold text-foreground mb-6 tracking-wide text-base">PRODUCT</h2>
               <ul className="space-y-4">
-                {footerLinks.services.map((link) => (
+                {footerLinks.product.map((link) => (
                   <li key={link.name}>
                     <Link to={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {link.name}
@@ -75,10 +76,10 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
 
-            <div>
-              <h3 className="font-semibold text-foreground mb-6 tracking-wide">UNTERNEHMEN</h3>
+            <nav aria-label="Company">
+              <h2 className="font-semibold text-foreground mb-6 tracking-wide text-base">COMPANY</h2>
               <ul className="space-y-4">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
@@ -87,23 +88,28 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <a href={PERSONAL_SITE_URL} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Vinita Silaparasetty (personal site)
+                  </a>
+                </li>
               </ul>
-            </div>
+            </nav>
 
             <div>
-              <h3 className="font-semibold text-foreground mb-6 tracking-wide">EXPERTISE</h3>
+              <h2 className="font-semibold text-foreground mb-6 tracking-wide text-base">RECOGNITION</h2>
               <div className="space-y-4">
-                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-accent/20 hover:border-accent/50 transition-colors">
+                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-accent/20">
                   <p className="text-xs font-semibold text-accent mb-1">Google Developer Expert</p>
                   <p className="text-xs text-muted-foreground">Machine Learning</p>
                 </div>
-                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-colors">
+                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-primary/20">
                   <p className="text-xs font-semibold text-primary mb-1">AWS Community Builder</p>
                   <p className="text-xs text-muted-foreground">Machine Learning</p>
                 </div>
-                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-colors">
-                  <p className="text-xs font-semibold text-primary mb-1">DSGVO & EU AI Act</p>
-                  <p className="text-xs text-muted-foreground">Architected for Alignment</p>
+                <div className="p-4 rounded-2xl bg-secondary/80 backdrop-blur-sm border border-primary/20">
+                  <p className="text-xs font-semibold text-primary mb-1">AWS AIdeas 2025</p>
+                  <p className="text-xs text-muted-foreground">Top 300 of 10,000+ entries</p>
                 </div>
               </div>
             </div>
@@ -111,7 +117,7 @@ export function Footer() {
 
           <div className="mt-20 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Aevoxis Solutions – Ein Projekt der Smart eG, Berlin. Alle Rechte vorbehalten.
+              &copy; {new Date().getFullYear()} Aevoxis Solutions, member of SMartDE e. G., Berlin.
             </p>
             <div className="flex items-center gap-8 text-sm text-muted-foreground">
               <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
