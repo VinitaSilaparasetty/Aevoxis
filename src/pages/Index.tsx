@@ -244,8 +244,10 @@ export default function HomePage() {
                   "it is fine" is rejected, and the rejection is logged too.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  It runs on AWS Lambda in Frankfurt (eu-central-1), with Amazon Bedrock for the reasoning step. It
-                  was a Top 300 finalist out of more than 10,000 entries in the AWS 10,000 AIdeas Competition 2025.
+                  It was built for the AWS 10,000 AIdeas Competition 2025 on AWS Lambda in Frankfurt
+                  (eu-central-1), with Amazon Bedrock for the reasoning step, and placed in the Top 300 out of more
+                  than 10,000 entries. The public demo now runs on Render; the AWS path stays in the code for
+                  production deployments.
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-8">
                   To be clear about what you'll see: the public demo uses scripted drift scenarios. The gate, the
