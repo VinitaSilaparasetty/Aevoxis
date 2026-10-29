@@ -295,15 +295,25 @@ export default function HomePage() {
             </div>
 
             <figure className="mt-12 w-full max-w-[670px] mx-auto">
-              <img
-                src={justificationGate}
-                alt="Spec-Drift Chronometer Justification Gate: drift above threshold, an approved decision and the reasoning trace"
-                width={1376}
-                height={1276}
-                loading="lazy"
-                className="w-full h-auto rounded-2xl border border-border"
-              />
-              <figcaption className="mt-3 text-xs text-muted-foreground text-center">Live demo, scripted scenarios</figcaption>
+              <a
+                href={DEMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Spec-Drift Chronometer Justification Gate — open the live demo"
+                className="block rounded-2xl transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <img
+                  src={justificationGate}
+                  alt="Spec-Drift Chronometer Justification Gate: drift above threshold, an approved decision and the reasoning trace"
+                  width={1376}
+                  height={1276}
+                  loading="lazy"
+                  className="w-full h-auto rounded-2xl border border-border"
+                />
+              </a>
+              <figcaption className="mt-3 text-xs text-muted-foreground text-center">
+                Live demo, scripted scenarios — open it to read the full trace
+              </figcaption>
             </figure>
             </div>
           </div>
