@@ -48,7 +48,7 @@ export default function ContactPage() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Telefon</h3>
-                <a href="tel:+4915153752713" className="text-muted-foreground hover:text-primary transition-colors">+49 151 5375 2713</a>
+                <a href="tel:+4915679836401" className="text-muted-foreground hover:text-primary transition-colors">+49 15679 836401</a>
               </div>
             </div>
             <div className="premium-card premium-card-cyan p-8">
@@ -57,7 +57,7 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Standort</h3>
-                <p className="text-muted-foreground">Mehringplatz 10, 10969 Berlin</p>
+                <p className="text-muted-foreground">Franz-Mehring-Platz 1, 10243 Berlin</p>
               </div>
             </div>
           </div>

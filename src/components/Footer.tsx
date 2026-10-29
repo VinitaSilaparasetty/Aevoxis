@@ -37,17 +37,17 @@ export function Footer() {
                   </div>
                   info@aevoxis.de
                 </a>
-                <a href="tel:+4915153752713" className="flex items-center gap-3 hover:text-primary transition-colors">
+                <a href="tel:+4915679836401" className="flex items-center gap-3 hover:text-primary transition-colors">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                     <Phone className="w-4 h-4 text-primary" />
                   </div>
-                  +49 151 5375 2713
+                  +49 15679 836401
                 </a>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4 text-primary" />
                   </div>
-                  <span>Mehringplatz 10, 10969 Berlin</span>
+                  <span>Franz-Mehring-Platz 1, 10243 Berlin</span>
                 </div>
                 <a
                   href="https://www.linkedin.com/company/aevoxis-solutions/"

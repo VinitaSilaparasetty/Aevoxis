@@ -36,15 +36,18 @@ export default function ImpressumPage() {
                 <div className="space-y-4 text-muted-foreground">
                   <div>
                     <p className="font-semibold text-foreground text-lg">Aevoxis Solutions</p>
-                    <p>Ein Projekt der Smart eG</p>
+                    <p>Mitglied von:</p>
                   </div>
                   <div>
-                    <p>Mehringplatz 10</p>
-                    <p>10969 Berlin, Deutschland</p>
+                    <p>SMartDE e. G.</p>
+                    <p>Franz-Mehring-Platz 1</p>
+                    <p>10243 Berlin</p>
+                    <p>Deutschland</p>
                   </div>
                   <div className="pt-4 border-t border-border">
-                    <p><strong className="text-foreground">Genossenschaftsregister:</strong> GnR 791 B</p>
-                    <p><strong className="text-foreground">Registergericht:</strong> Genossenschaftsregister Amtsgericht Berlin (Charlottenburg)</p>
+                    <p><strong className="text-foreground">Genossenschaftsregister:</strong> GnR 791B</p>
+                    <p><strong className="text-foreground">Registergericht:</strong> Amtsgericht Berlin (Charlottenburg)</p>
+                    <p><strong className="text-foreground">Zuständiger Prüfverband:</strong> Prüfungsverband der kleinen und mittelständischen Genossenschaften e.V.</p>
                   </div>
                 </div>
               </div>
@@ -60,16 +63,11 @@ export default function ImpressumPage() {
                 </div>
                 <div className="space-y-6 text-muted-foreground">
                   <div>
-                    <p className="font-semibold text-foreground">Vertretungsberechtigter Vorstand</p>
-                    <p>Magdalena Ziomek, Alicja Möltner</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Geschäftsführung</p>
                     <p>Magdalena Ziomek, Alicja Möltner</p>
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Aufsichtsrat</p>
-                    <p>Norbert Kunz, Sébastien Paule, Marie Reiter, Céline Viardot, Prof. Dr. Dominika Wruk</p>
+                    <p>Norbert Kunz, Sébastien Paule, Marie Reiter, Céline Viardot, Prof. Dr. Dominika Wruk (Vorsitzende)</p>
                   </div>
                 </div>
               </div>
@@ -107,7 +105,7 @@ export default function ImpressumPage() {
                       <Phone className="w-5 h-5 text-primary" />
                       <div>
                         <p className="text-xs text-muted-foreground">Telefon</p>
-                        <a href="tel:+4915153752713" className="text-foreground hover:text-primary transition-colors">+49 151 5375 2713</a>
+                        <a href="tel:+4915679836401" className="text-foreground hover:text-primary transition-colors">+49 15679 836401</a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary/40 backdrop-blur-sm">
@@ -128,7 +126,7 @@ export default function ImpressumPage() {
                 <p className="text-muted-foreground mb-4">nach § 18 Abs. 2 MStV:</p>
                 <div className="p-5 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
                   <p className="font-semibold text-foreground">Vinita Silaparasetty</p>
-                  <p className="text-muted-foreground">Mehringplatz 10, 10969 Berlin, Deutschland</p>
+                  <p className="text-muted-foreground">Franz-Mehring-Platz 1, 10243 Berlin, Deutschland</p>
                 </div>
               </div>
             </div>
@@ -145,15 +143,23 @@ export default function ImpressumPage() {
 
             <div className="premium-card premium-card-blue p-8">
               <div className="relative z-10">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Angaben zur Berufshaftpflichtversicherung</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <div>
-                    <p className="font-semibold text-foreground">Berufsbezeichnung</p>
-                    <p>Angewandter KI-Wissenschaftler</p>
+                    <p className="font-semibold text-foreground">Name und Sitz des Versicherers</p>
+                    <p>VBG</p>
+                    <p>Massaquoipassage 1</p>
+                    <p>22305 Hamburg</p>
+                    <p>Tel. 040 – 5146-0</p>
+                    <p>Fax 040 – 5146-2146</p>
+                    <p>
+                      E-Mail:{" "}
+                      <a href="mailto:kundendialog@vbg.de" className="text-foreground hover:text-primary transition-colors">kundendialog@vbg.de</a>
+                    </p>
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">Zuständiger Prüfverband</p>
-                    <p>Prüfungsverband der kleinen und mittelständischen Genossenschaften e.V.</p>
+                    <p className="font-semibold text-foreground">Geltungsraum der Versicherung</p>
+                    <p>Deutschland, EU</p>
                   </div>
                 </div>
               </div>

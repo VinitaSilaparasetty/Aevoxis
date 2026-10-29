@@ -44,8 +44,8 @@ export default function DatenschutzPage() {
                   <div className="p-5 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
                     <p className="font-semibold text-foreground">Smart eG</p>
                     <p>(handelnd als Aevoxis Solutions)</p>
-                    <p>Mehringplatz 10</p>
-                    <p>10969 Berlin, Deutschland</p>
+                    <p>Franz-Mehring-Platz 1</p>
+                    <p>10243 Berlin, Deutschland</p>
                     <p className="mt-3">
                       <strong className="text-foreground">E-Mail:</strong>{" "}
                       <a href="mailto:legal@aevoxis.de" className="text-accent hover:text-primary transition-colors">
@@ -54,8 +54,8 @@ export default function DatenschutzPage() {
                     </p>
                     <p>
                       <strong className="text-foreground">Telefon:</strong>{" "}
-                      <a href="tel:+4915153752713" className="hover:text-primary transition-colors">
-                        +49 151 5375 2713
+                      <a href="tel:+4915679836401" className="hover:text-primary transition-colors">
+                        +49 15679 836401
                       </a>
                     </p>
                   </div>
