@@ -86,9 +86,6 @@ export default function EuAiActEngineeringPage() {
             Legal advice tells you what the EU AI Act requires. It doesn't build the logging, transparency and
             oversight into your code. That's the part I do, while the Aevoxis product is in development.
           </p>
-          <p className="max-w-3xl mx-auto mt-6 text-sm text-muted-foreground">
-            High-risk obligations apply from 2 December 2027 (Annex III) and 2 August 2028 (Annex I).
-          </p>
         </div>
       </section>
 

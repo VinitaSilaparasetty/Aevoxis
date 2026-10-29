@@ -229,9 +229,8 @@ export default function HomePage() {
             <div className="relative z-10">
               <p className="text-sm font-semibold text-accent mb-3 uppercase tracking-wider">Why now</p>
               <p className="text-foreground text-lg leading-relaxed mb-4">
-                Annex III obligations apply from 2 December 2027. That sounds far away, but logging can't be
-                added afterwards: the data needed to reconstruct a decision has to be captured from the first day
-                the system runs.
+                Logging can't be added afterwards. The data needed to reconstruct a decision has to be captured
+                from the first day the system runs, so the earlier it's built in, the cheaper it is.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Need it sooner? I take on a small number of{" "}

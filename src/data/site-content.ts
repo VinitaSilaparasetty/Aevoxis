@@ -24,11 +24,6 @@ export const homeFaq = [
       "Article 12 requires high-risk AI systems to log events automatically so their behaviour can be audited later. Article 13 requires enough transparency for deployers to understand and correctly use the system's outputs. Article 14 requires that people can effectively oversee the system while it runs, including deciding not to use it, intervening and overriding its outputs.",
   },
   {
-    question: "When do these obligations apply?",
-    answer:
-      "For high-risk systems listed in Annex III, such as AI used in hiring, credit scoring or education, the obligations apply from 2 December 2027. For AI in products covered by Annex I, such as machinery or medical devices, they apply from 2 August 2028. These dates follow the 2026 Digital Omnibus amendment.",
-  },
-  {
     question: "Why build this into the system instead of writing a policy?",
     answer:
       "Logs that were never captured can't be produced later, and an override button nobody is forced to use is not oversight. Article 14 expects oversight measures to be built into the system by the provider where technically feasible. Aevoxis puts logging, explanations and a human decision point in the execution path itself.",
