@@ -75,19 +75,19 @@ const staticRoutes: Record<string, StaticRoute> = {
   "/services": {
     title: "Services – Aevoxis Solutions",
     description:
-      "Engineering engagements for EU AI Act Articles 12–14: gap analysis, audit logging, transparency and human-oversight design for AI systems.",
+      "Engineering engagements for the EU AI Act: Article 50 transparency and content marking, which apply today, and the Articles 12–14 logging, transparency and human-oversight duties that follow.",
     lang: "en",
   },
   "/services/eu-ai-act-engineering": {
-    title: "EU AI Act Articles 12–14 Engineering – Aevoxis",
+    title: "EU AI Act Article 50 and Articles 12–14 Engineering – Aevoxis",
     description:
-      "Gap analysis and implementation of automatic logging (Art. 12), transparency (Art. 13) and human oversight (Art. 14) in production AI systems.",
+      "Gap analysis and implementation of Article 50 AI disclosure and content marking, which already apply, plus automatic logging (Art. 12), transparency (Art. 13) and human oversight (Art. 14) in production AI systems.",
     lang: "en",
     jsonLd: [
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        name: "EU AI Act Articles 12–14 engineering",
+        name: "EU AI Act Article 50 and Articles 12–14 engineering",
         serviceType: "AI compliance engineering",
         provider: { "@id": ORGANIZATION["@id"] },
         areaServed: "European Union",
@@ -111,14 +111,14 @@ const staticRoutes: Record<string, StaticRoute> = {
     jsonLd: [{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: FOUNDER }],
   },
   "/early-access": {
-    title: "Early Access – Aevoxis Articles 12–14 Tooling",
+    title: "Early Access – Aevoxis EU AI Act Tooling",
     description:
-      "Join the early-access list for Aevoxis: audit logging, transparency and human-oversight tooling for EU AI Act Articles 12–14.",
+      "Join the early-access list for Aevoxis: Article 50 AI disclosure and content marking, which apply today, plus audit logging, transparency and human-oversight tooling for EU AI Act Articles 12–14.",
     lang: "en",
   },
   "/contact": {
     title: "Contact – Aevoxis Solutions",
-    description: "Contact Aevoxis Solutions about EU AI Act Articles 12–14 engineering for your AI system.",
+    description: "Contact Aevoxis Solutions about EU AI Act engineering for your AI system: Article 50 transparency today, Articles 12–14 next.",
     lang: "en",
   },
   "/blog": {

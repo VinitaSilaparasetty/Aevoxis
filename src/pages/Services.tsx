@@ -17,10 +17,11 @@ const Services = () => (
         </div>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
           Two ways to meet{" "}
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Articles 12–14</span>
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">the EU AI Act</span>
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-          The Aevoxis product is in development. Until it's ready, I build the same mechanisms directly into your
+          Article 50 transparency applies today and the Articles 12–14 high-risk duties follow in December 2027.
+          The Aevoxis product is in development; until it's ready, I build the same mechanisms directly into your
           system.
         </p>
       </div>
@@ -31,14 +32,14 @@ const Services = () => (
         <ServiceCard
           icon={<Rocket className="w-7 h-7" />}
           title="Aevoxis tooling (early access)"
-          description="Logging, transparency and human-oversight components you add to your AI system. Join the early-access list to try the beta and shape what it does."
+          description="AI disclosure, content marking, logging, transparency and human-oversight components you add to your AI system. Join the early-access list to try the beta and shape what it does."
           href="/early-access"
           variant="cyan"
         />
         <ServiceCard
           icon={<Shield className="w-7 h-7" />}
-          title="Articles 12–14 engineering"
-          description="A gap analysis of your system, then hands-on implementation of audit logging, transparency and oversight in your own code."
+          title="Article 50 and Articles 12–14 engineering"
+          description="A gap analysis of your system, then hands-on implementation: Article 50 disclosure and content marking now, audit logging, transparency and oversight in your own code for what follows."
           href="/services/eu-ai-act-engineering"
           variant="blue"
         />

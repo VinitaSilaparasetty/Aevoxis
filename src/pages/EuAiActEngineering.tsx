@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, FileSearch, ScrollText, Eye, UserCheck, CheckCircle, Shield } from "lucide-react";
+import { ArrowRight, FileSearch, MessageSquare, ScrollText, Eye, UserCheck, CheckCircle, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -9,10 +9,18 @@ import { engagementFaq } from "@/data/site-content";
 
 const services = [
   {
-    icon: <FileSearch className="w-8 h-8" />,
-    title: "Gap analysis for Articles 12–14",
+    icon: <MessageSquare className="w-8 h-8" />,
+    title: "Article 50 transparency and content marking",
     description:
-      "I go through your AI system's architecture and check it against the three engineering obligations. Where does logging stop? What can a deployer actually see? Can a person stop the system, or only watch it?",
+      "Article 50 has applied since 2 August 2026. I add the disclosure where your product talks to people, apply machine-readable marking to generated text, images, audio and video at the point of generation, and put deepfake disclosure into the publishing flow.",
+    deliverable: "You get the disclosures in the product, the marking applied at generation time, and a record that each one was shown.",
+    variant: "cyan" as const,
+  },
+  {
+    icon: <FileSearch className="w-8 h-8" />,
+    title: "Gap analysis for Article 50 and Articles 12–14",
+    description:
+      "I go through your AI system's architecture and check it against the obligations that bind it. Is it clear to people that they are talking to AI, and is generated content marked? Where does logging stop? What can a deployer actually see? Can a person stop the system, or only watch it?",
     deliverable: "You get a written gap analysis mapped to specific articles, ranked by risk and effort.",
     variant: "cyan" as const,
   },
@@ -77,14 +85,16 @@ export default function EuAiActEngineeringPage() {
             <span className="text-sm font-medium text-foreground">Engineering engagements</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8 tracking-tight text-balance">
-            Articles 12–14, built into{" "}
+            Article 50 and Articles 12–14, built into{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               your system
             </span>
           </h1>
           <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed text-pretty">
-            Legal advice tells you what the EU AI Act requires. It doesn't build the logging, transparency and
-            oversight into your code. That's the part I do, while the Aevoxis product is in development.
+            Legal advice tells you what the EU AI Act requires. It doesn't build the disclosure, marking, logging
+            and oversight into your code. That's the part I do, while the Aevoxis product is in development. We
+            start with Article 50, which already applies, and extend the same components to Articles 12–14 before
+            they apply in December 2027.
           </p>
         </div>
       </section>

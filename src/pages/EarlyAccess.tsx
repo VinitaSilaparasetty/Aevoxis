@@ -35,8 +35,10 @@ export default function EarlyAccessPage() {
             Early access to Aevoxis
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            Aevoxis is building drop-in components for EU AI Act Articles 12, 13 and 14. If your team builds or
-            deploys a high-risk AI system, join the list. Here's what you get:
+            Aevoxis is building drop-in components for the EU AI Act, starting with Article 50: telling people
+            they're talking to AI and marking AI-generated content, which has applied since August 2026. The same
+            components extend to the Articles 12, 13 and 14 duties for high-risk systems. If your product talks to
+            people, generates content, or makes high-risk decisions, join the list. Here's what you get:
           </p>
           <ul className="space-y-3 mb-12">
             {benefits.map((b) => (

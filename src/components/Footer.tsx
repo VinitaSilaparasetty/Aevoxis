@@ -6,7 +6,7 @@ import { PERSONAL_SITE_URL } from "@/seo/meta";
 const footerLinks = {
   product: [
     { name: "Early access", href: "/early-access" },
-    { name: "Articles 12–14 engineering", href: "/services/eu-ai-act-engineering" },
+    { name: "Article 50 and Articles 12–14 engineering", href: "/services/eu-ai-act-engineering" },
     { name: "Services", href: "/services" },
   ],
   company: [

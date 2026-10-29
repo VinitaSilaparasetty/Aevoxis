@@ -258,8 +258,8 @@ export default function HomePage() {
                   <img
                     src={justificationGate}
                     alt="Spec-Drift Chronometer Justification Gate: drift above threshold, an approved decision and the reasoning trace"
-                    width={1400}
-                    height={900}
+                    width={1376}
+                    height={1276}
                     loading="lazy"
                     className="w-full h-auto rounded-2xl border border-border"
                   />
@@ -416,7 +416,7 @@ export default function HomePage() {
                 <Link to="/services/eu-ai-act-engineering" className="text-primary underline underline-offset-4 hover:text-accent">
                   engineering engagements
                 </Link>{" "}
-                for Articles 12–14 while the product is in development.
+                for Article 50 and Articles 12–14 while the product is in development.
               </p>
             </div>
           </div>

@@ -107,14 +107,23 @@ const blockToMd = (b) => {
 
 const summary = `# Aevoxis Solutions
 
-> Aevoxis builds tooling that makes AI systems meet EU AI Act Articles 12 (automatic logging), 13 (transparency) and 14 (human oversight) inside the system's own code path. Founded by Vinita Silaparasetty, AI Governance Engineer and Google Developer Expert in Machine Learning, based in Germany.
+> Aevoxis builds EU AI Act compliance into the AI system's own code path, in two stages. Article 50 applies today: telling people when they are interacting with an AI system, marking AI-generated text, images, audio and video in machine-readable form, and disclosing deepfakes. The same components then cover the high-risk duties of Articles 12 (automatic logging), 13 (transparency for deployers) and 14 (human oversight), which apply from 2 December 2027. Founded by Vinita Silaparasetty, AI Governance Engineer and Google Developer Expert in Machine Learning, based in Germany.
+
+## EU AI Act timeline
+
+- 2 August 2026: Article 50 transparency rules apply and enforcement starts
+- 2 December 2026: deadline for AI systems already generating synthetic content before 2 August 2026 (Article 50(2))
+- 2 December 2027: high-risk rules (Annex III) apply, including Articles 12, 13 and 14
+- 2 August 2028: high-risk AI in regulated products (Annex I) follows
+
+Source: European Commission AI Act Service Desk, after the Digital Omnibus on AI (Regulation (EU) 2026/1744).
 
 The working prototype is the Spec-Drift Chronometer: real-time drift detection against a human-approved specification, a Justification Gate that stops the system until a human records a reasoned decision, and a SHA-256-verifiable audit trail. It was a Top 300 finalist (of 10,000+ entries) in the AWS 10,000 AIdeas Competition 2025.
 
 ## Pages
 
 - [Home](${SITE_URL}/): what Aevoxis builds and why
-- [Articles 12–14 engineering](${SITE_URL}/services/eu-ai-act-engineering): engagements while the product is in development
+- [Article 50 and Articles 12–14 engineering](${SITE_URL}/services/eu-ai-act-engineering): engagements while the product is in development
 - [About the founder](${SITE_URL}/about)
 - [Early access](${SITE_URL}/early-access)
 - [Contact](${SITE_URL}/contact)
