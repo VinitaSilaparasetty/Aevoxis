@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useParams, Navigate, useLocation } from "react-router-dom";
-import { ArrowLeft, Clock, ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, Clock, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FaqList } from "@/components/FaqList";
 import { blogPosts, type ContentBlock } from "@/data/blog-posts";
 
 function CodeBlock({ language, code }: { language: string; code: string }) {
@@ -30,37 +31,10 @@ function PreformattedBlock({ content }: { content: string }) {
 }
 
 function FaqSection({ items }: { items: Array<{ question: string; answer: string }> }) {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
     <div className="my-8">
       <h2 className="text-2xl font-bold text-foreground mb-6 tracking-tight">Frequently Asked Questions</h2>
-      <div className="space-y-3">
-        {items.map((item, i) => (
-          <div
-            key={i}
-            className="rounded-2xl border border-border bg-secondary/40 overflow-hidden"
-          >
-            <button
-              type="button"
-              onClick={() => setOpen(open === i ? null : i)}
-              className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left text-sm font-semibold text-foreground hover:text-primary transition-colors"
-            >
-              <span>{item.question}</span>
-              {open === i ? (
-                <ChevronUp className="w-4 h-4 shrink-0 text-accent" />
-              ) : (
-                <ChevronDown className="w-4 h-4 shrink-0 text-muted-foreground" />
-              )}
-            </button>
-            {open === i && (
-              <div className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed border-t border-border pt-4">
-                {item.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      <FaqList items={items} />
     </div>
   );
 }
@@ -216,127 +190,6 @@ export default function BlogPostPage() {
     const el = document.getElementById(hash.slice(1));
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [hash, post]);
-
-  useEffect(() => {
-    if (!post) return;
-
-    const metaTitle = post.metaTitle ?? `${post.title} – Aevoxis Solutions`;
-    const canonicalHref = post.canonicalUrl ?? `https://aevoxis.de${post.canonicalPath}`;
-
-    const prevTitle = document.title;
-    document.title = metaTitle;
-
-    // Update existing index.html meta tags, saving originals for cleanup
-    const descEl = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    const prevDesc = descEl?.getAttribute('content') ?? '';
-    descEl?.setAttribute('content', post.metaDescription);
-
-    const ogTitleEl = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
-    const prevOgTitle = ogTitleEl?.getAttribute('content') ?? '';
-    ogTitleEl?.setAttribute('content', metaTitle);
-
-    const ogDescEl = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
-    const prevOgDesc = ogDescEl?.getAttribute('content') ?? '';
-    ogDescEl?.setAttribute('content', post.metaDescription);
-
-    const ogTypeEl = document.querySelector<HTMLMetaElement>('meta[property="og:type"]');
-    const prevOgType = ogTypeEl?.getAttribute('content') ?? '';
-    ogTypeEl?.setAttribute('content', 'article');
-
-    // Inject new elements that don't exist in index.html
-    const injected: HTMLElement[] = [];
-
-    const addMeta = (attrName: string, attrValue: string, content: string) => {
-      const el = document.createElement('meta');
-      el.setAttribute(attrName, attrValue);
-      el.setAttribute('content', content);
-      document.head.appendChild(el);
-      injected.push(el);
-    };
-
-    const canonicalEl = document.createElement('link');
-    canonicalEl.rel = 'canonical';
-    canonicalEl.href = canonicalHref;
-    document.head.appendChild(canonicalEl);
-    injected.push(canonicalEl);
-
-    addMeta('property', 'og:url', canonicalHref);
-    addMeta('name', 'twitter:card', 'summary');
-    addMeta('name', 'twitter:title', metaTitle);
-    addMeta('name', 'twitter:description', post.metaDescription);
-
-    if (post.keywords?.length) {
-      addMeta('name', 'keywords', post.keywords.join(', '));
-    }
-
-    // JSON-LD: Article schema
-    const articleSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'TechArticle',
-      headline: metaTitle,
-      description: post.metaDescription,
-      url: canonicalHref,
-      datePublished: post.publishedDate,
-      author: {
-        '@type': 'Person',
-        name: post.author,
-        jobTitle: post.authorRole,
-        worksFor: { '@type': 'Organization', name: 'Aevoxis Solutions', url: 'https://aevoxis.de' },
-      },
-      publisher: { '@type': 'Organization', name: 'Aevoxis Solutions', url: 'https://aevoxis.de' },
-      ...(post.keywords ? { keywords: post.keywords.join(', ') } : {}),
-    };
-    const articleScript = document.createElement('script');
-    articleScript.type = 'application/ld+json';
-    articleScript.textContent = JSON.stringify(articleSchema);
-    document.head.appendChild(articleScript);
-    injected.push(articleScript);
-
-    // JSON-LD: FAQPage schema
-    const faqBlock = post.content.find(
-      (b): b is Extract<typeof b, { type: 'faq' }> => b.type === 'faq',
-    );
-    if (faqBlock) {
-      const faqSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqBlock.items.map((item) => ({
-          '@type': 'Question',
-          name: item.question,
-          acceptedAnswer: { '@type': 'Answer', text: item.answer },
-        })),
-      };
-      const faqScript = document.createElement('script');
-      faqScript.type = 'application/ld+json';
-      faqScript.textContent = JSON.stringify(faqSchema);
-      document.head.appendChild(faqScript);
-      injected.push(faqScript);
-    }
-
-    // JSON-LD: HowTo schema
-    if (post.howTo) {
-      const howToSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'HowTo',
-        name: post.howTo.name,
-        step: post.howTo.steps.map((s) => ({ '@type': 'HowToStep', name: s.name, text: s.text })),
-      };
-      const howToScript = document.createElement('script');
-      howToScript.type = 'application/ld+json';
-      howToScript.textContent = JSON.stringify(howToSchema);
-      document.head.appendChild(howToScript);
-      injected.push(howToScript);
-    }
-
-    return () => {
-      document.title = prevTitle;
-      descEl?.setAttribute('content', prevDesc);
-      ogTitleEl?.setAttribute('content', prevOgTitle);
-      ogDescEl?.setAttribute('content', prevOgDesc);
-      ogTypeEl?.setAttribute('content', prevOgType);
-      injected.forEach((el) => el.remove());
-    };
-  }, [post]);
 
   if (!post) {
     return <Navigate to="/blog" replace />;

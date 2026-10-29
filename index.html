@@ -1,17 +1,13 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aevoxis Solutions – Generatives KI-Compliance-Engineering für den EU AI Act</title>
-    <meta name="description" content="Aevoxis Solutions entwickelt verifizierbares, rechtskonformes generatives KI-Compliance-Engineering für deutsche KMU." />
-    <meta http-equiv="Cache-Control" content="public, max-age=86400" />
-    <meta http-equiv="Expires" content="86400" />
-    <meta name="author" content="Aevoxis Solutions" />
-    <meta property="og:title" content="Aevoxis Solutions" />
-    <meta property="og:description" content="Spezialisierte KI-Beratung für den deutschen Mittelstand." />
-    <meta property="og:type" content="website" />
+    <title>Aevoxis Solutions</title>
+    <!--app-head-->
+    <meta name="author" content="Vinita Silaparasetty" />
     <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="alternate" type="application/rss+xml" title="Aevoxis Insights" href="/rss.xml">
     <link rel="stylesheet" id="silktide-consent-manager-css" href="/silktide-consent-manager.css">
   </head>
   <body>
@@ -29,8 +25,8 @@
         cookieTypes: [
           {
             id: "essenziell_technisch_notwendig",
-            name: "Essenziell / Technisch Notwendig",
-            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;color:#39434c;font-weight:700;\">Diese Cookies sind für den sicheren und funktionsfähigen Betrieb dieser Website technisch erforderlich (gemäß § 25 Abs. 2 TDDDG). Sie ermöglichen Basisfunktionen wie den sicheren Login, die Verwaltung Ihrer Privatsphäre-Einstellungen und die zuverlässige Übermittlung Ihrer Formularanfragen an unsere Server in der EU. Diese Technologien sind einwilligungsfrei und können nicht deaktiviert werden.</span></p>",
+            name: "Essential",
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;color:#39434c;font-weight:700;\">These cookies are technically required for this website to work securely (§ 25(2) TDDDG). They store your privacy choices and make sure form submissions reach us. They don't need consent and can't be switched off.</span></p>",
             required: true,
             onAccept: function() {
               console.log('Essenziell / Technisch Notwendig accepted');
@@ -38,8 +34,8 @@
           },
           {
             id: "analyse_performance",
-            name: "Analyse & Performance",
-            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen zu zählen, damit wir die Leistung von Aevoxis Solutions messen und verbessern können (gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 TDDDG). Ihre Einwilligung ist freiwillig. Sie können diese jederzeit durch Klick auf das Cookie-Symbol unten links widerrufen.</span></p>",
+            name: "Analytics",
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">These cookies let us count visits and traffic sources so we can see how the site is used (Art. 6(1)(a) GDPR and § 25 TDDDG). Consent is optional, and you can withdraw it at any time using the cookie icon in the bottom left.</span></p>",
             required: false,
             onAccept: function() {
               if (typeof gtag !== 'undefined') {
@@ -58,19 +54,19 @@
         ],
         text: {
           banner: {
-            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">Datenschutz &amp; KI-Transparenz — Wir verwenden technisch notwendige Cookies sowie — mit Ihrer Einwilligung — Analysetools, um Ihr Nutzererlebnis zu verbessern. Gemäß EU AI Act weisen wir darauf hin, dass diese Seite KI-unterstützte Inhalte nutzt. Ihre Daten werden nicht zum Training von KI-Modellen verwendet. Weitere Informationen: <a href=\"/datenschutz\" style=\"color:#39434c;text-decoration:underline;\">Datenschutzerklärung</a></span></p>",
-            acceptAllButtonText: "Akzeptiere alles",
-            acceptAllButtonAccessibleLabel: "Akzeptieren Sie alle Cookies",
-            rejectNonEssentialButtonText: "Nicht essentiell ablehnen",
-            rejectNonEssentialButtonAccessibleLabel: "Nicht essentiell ablehnen",
-            preferencesButtonText: "Präferenzen",
-            preferencesButtonAccessibleLabel: "Einstellungen umschalten"
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">Privacy &amp; AI transparency: we use essential cookies and, with your consent, analytics. Some content on this site was written with AI assistance. Your data is not used to train AI models. Details: <a href=\"/datenschutz\" style=\"color:#39434c;text-decoration:underline;\">Datenschutzerklärung (privacy policy)</a></span></p>",
+            acceptAllButtonText: "Accept all",
+            acceptAllButtonAccessibleLabel: "Accept all cookies",
+            rejectNonEssentialButtonText: "Reject non-essential",
+            rejectNonEssentialButtonAccessibleLabel: "Reject non-essential cookies",
+            preferencesButtonText: "Preferences",
+            preferencesButtonAccessibleLabel: "Open cookie preferences"
           },
           preferences: {
-            title: "Privatsphäre- & KI-Einstellungen",
-            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">Bei Aevoxis Solutions legen wir Wert auf technische Transparenz. Sie haben das Recht zu kontrollieren, wie Ihre Daten verwendet werden. Unten können Sie spezifische Kategorien von Cookies und der Datenverarbeitung aktivieren oder deaktivieren.</span></p>",
-            creditLinkText: "Mit Integrität gebaut",
-            creditLinkAccessibleLabel: "Mit Integrität gebaut"
+            title: "Privacy preferences",
+            description: "<p><span style=\"font-size:13pt;font-family:Arial,sans-serif;font-weight:700;\">You decide how your data is used. Switch individual cookie categories on or off below.</span></p>",
+            creditLinkText: "Privacy preferences",
+            creditLinkAccessibleLabel: "Privacy preferences"
           }
         },
         position: {

@@ -3,16 +3,17 @@ import { ArrowRight, Sparkles, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { TestimonialCard } from "@/components/TestimonialCard";
 import { LogoStrip } from "@/components/LogoStrip";
-const apressBook = { url: "https://media.springernature.com/w300/springer-static/cover/book/978-1-4842-5802-6.jpg?as=webp" };
+import { PERSONAL_SITE_URL } from "@/seo/meta";
+import { DEMO_ARTICLE_PATH } from "@/data/site-content";
 
 const credentials = [
   { label: "Google Developer Expert", institution: "Machine Learning" },
-  { label: "Published Author", institution: "Apress" },
-  { label: "M.Sc. Data Science", institution: "Newcastle University (Russell Group)" },
-  { label: "IEEE und Elsevier Peer Reviewer", institution: "" },
   { label: "AWS Community Builder", institution: "Machine Learning" },
+  { label: "AWS 10,000 AIdeas Competition 2025", institution: "Top 300 finalist of 10,000+ entries" },
+  { label: "Published author", institution: "Apress, 2020" },
+  { label: "M.Sc. Data Science", institution: "Newcastle University (Russell Group)" },
+  { label: "IEEE and Elsevier", institution: "Invited peer reviewer" },
   { label: "Indian Design Patent", institution: "IN 307907" },
 ];
 
@@ -21,7 +22,6 @@ export default function AboutPage() {
     <main className="min-h-screen frosted-glass-bg">
       <Header />
 
-      {/* Hero */}
       <section className="relative pt-36 pb-20 overflow-hidden">
         <div className="glass-shape w-64 h-64 -top-32 -right-32 rotate-12 opacity-30" />
         <div className="glass-shape w-48 h-48 top-1/2 -left-24 opacity-20" />
@@ -31,58 +31,71 @@ export default function AboutPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/80 backdrop-blur-sm border border-accent/20 mb-10">
                 <Sparkles className="w-4 h-4 text-accent" />
-                <span className="text-sm font-medium text-foreground">Über mich</span>
+                <span className="text-sm font-medium text-foreground">About the founder</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8 text-balance tracking-tight">
-                Ich bin der Überzeugung, dass die meisten KI-Fehler Architekturfehler sind. Keine Modellfehler, keine Rechtsfehler. Architekturfehler. Von Anfang an falsch gebaut.
+                Most AI failures are architecture failures. Not model failures, not legal failures.
               </h1>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Ich bin Vinita Silaparasetty, AI Governance Engineer und technische Autorin mit Sitz in Deutschland. Ich entwerfe und entwickle generative KI-Systeme, bei denen EU AI Act- und DSGVO-Konformität vom ersten Tag an eingebaut ist, und ich erstelle professionelle KI-Curricula für EdTech-Plattformen und technische Verlage. Ich arbeite eigenständig unter dem Dach der Smart eG.
-              </p>
+              <div className="space-y-5 text-lg text-muted-foreground leading-relaxed mb-10">
+                <p>
+                  I'm Vinita Silaparasetty, an AI Governance Engineer based in Germany and the founder of Aevoxis.
+                </p>
+                <p>
+                  I've built AI systems for a long time, from a patented VR headset to production machine learning.
+                  The same pattern keeps showing up. A team builds the system first and thinks about oversight later.
+                  By then, the logs they need were never captured and nobody can actually stop the system.
+                </p>
+                <p>
+                  Aevoxis exists to fix that in the design. The{" "}
+                  <Link to={DEMO_ARTICLE_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
+                    Spec-Drift Chronometer
+                  </Link>{" "}
+                  is the first working version: logging, transparency and a human decision point built into the
+                  execution path.
+                </p>
+                <p>
+                  Engineering engagements are invoiced through SMartDE eG, a cooperative for self-employed
+                  professionals in Germany.
+                </p>
+              </div>
 
-              <Button asChild className="rounded-2xl px-8 py-6 shadow-lg shadow-primary/20">
-                <Link to="/contact">
-                  Kontakt aufnehmen
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button asChild className="rounded-2xl px-8 py-6 shadow-lg shadow-primary/20">
+                  <Link to="/contact">
+                    Get in touch
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-2xl px-8 py-6">
+                  <a href="https://www.linkedin.com/in/vinita-silaparasetty" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>
+                </Button>
+              </div>
             </div>
 
             <div className="relative lg:mt-12">
               <div className="premium-card premium-card-blue p-10">
                 <div className="relative z-10">
                   <div className="text-center mb-10">
+                    {/* Replace with a photo: <img src="/vinita.jpg" alt="Vinita Silaparasetty" className="w-28 h-28 rounded-full mx-auto mb-6 object-cover" /> */}
                     <div className="w-28 h-28 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 mx-auto mb-6 flex items-center justify-center border border-border">
                       <span className="text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">VS</span>
                     </div>
                     <h2 className="text-2xl font-bold text-foreground mb-2">Vinita Silaparasetty</h2>
-                    <p className="text-primary font-medium">Gründerin & AI Governance Engineer</p>
+                    <p className="text-primary font-medium">Founder, AI Governance Engineer</p>
                   </div>
 
-                  <div className="space-y-4">
+                  <ul className="space-y-4">
                     {credentials.map((cred) => (
-                      <div key={cred.label} className="p-4 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
+                      <li key={cred.label} className="p-4 rounded-2xl bg-secondary/60 backdrop-blur-sm border border-border">
                         <p className="text-sm font-semibold text-foreground">{cred.label}</p>
-                        {cred.institution && (
-                          <p className="text-xs text-muted-foreground">{cred.institution}</p>
-                        )}
-                      </div>
+                        <p className="text-xs text-muted-foreground">{cred.institution}</p>
+                      </li>
                     ))}
-                  </div>
-
-                  <div className="mt-8 pt-8 border-t border-border flex flex-col items-center text-center">
-                    <img
-                      src={apressBook.url}
-                      alt="Deep Learning Projects Using TensorFlow 2 – Buchcover, publiziert bei Apress"
-                      loading="lazy"
-                      className="w-44 h-auto rounded-md shadow-lg mb-4"
-                    />
-                    <p className="text-xs text-muted-foreground leading-relaxed max-w-xs">
-                      Deep Learning Projects Using TensorFlow 2, publiziert bei Apress, 2020.
-                    </p>
-                  </div>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -92,64 +105,45 @@ export default function AboutPage() {
 
       <LogoStrip />
 
-      {/* Approach & Working Style */}
       <section className="relative py-24 overflow-hidden">
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <p className="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Mein Ansatz</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight">
-                Architektur zuerst
-              </h2>
+              <p className="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">How I work</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight">Architecture first</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Von einem patentierten VR-Headset bis hin zu EU AI Act-konformen Produktionssystemen – ich habe schon immer Lösungen entwickelt, bevor der Markt wusste, dass er sie braucht. Genau dieses Denkmuster bringe ich in jedes Projekt ein: das Erkennen des architektonischen Problems, bevor es zu einem rechtlichen oder operativen wird.
+                I look for the architectural problem before it turns into a legal or operational one. In practice
+                that means asking early where decisions are logged, what a user sees and who can stop the system.
               </p>
             </div>
-
             <div>
-              <p className="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Arbeitsweise</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight">
-                Direkt und unkompliziert
-              </h2>
+              <p className="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Working with me</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight">Direct</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Sie arbeiten direkt mit mir. Keine Account Manager, keine Junior-Weitergaben, kein Agentur-Overhead. Jedes Stück Arbeit, das ich abliefere, erstelle ich selbst – das bedeutet schnellere Entscheidungen, sauberere Kommunikation und volle Verantwortlichkeit.
+                You work with me. No account managers, no hand-offs to juniors. That means faster decisions and one
+                person accountable for the result.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="relative py-20 overflow-hidden border-t border-border">
         <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <Mail className="w-8 h-8 text-accent mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Wenn Sie wissen möchten, ob ich die richtige Person für Ihr Projekt bin, ist der schnellste Weg, mir direkt eine E-Mail zu schreiben:{" "}
-            <a
-              href="mailto:info@aevoxis.de"
-              className="text-accent hover:text-primary font-medium underline underline-offset-4 transition-colors"
-            >
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            The quickest way to find out if I can help is to email me:{" "}
+            <a href="mailto:info@aevoxis.de" className="text-accent hover:text-primary font-medium underline underline-offset-4 transition-colors">
               info@aevoxis.de
             </a>
           </p>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="relative pb-24">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <TestimonialCard
-              quote="Vinita is constantly achieving NPS scores between 8 and 10 with an overall average of 8.71, which puts her in the world-class category."
-              name="Jeanette Wood"
-              title="Quality and Curriculum Manager, JustIT"
-            />
-            <TestimonialCard
-              quote="Vinita is highly skilled and very knowledgeable in her field. She is attentive to every detail of her work."
-              name="Haziq Haron"
-              title="Account Manager, 80 Level"
-            />
-          </div>
+          <p className="text-muted-foreground">
+            My book, courses and teaching work are on{" "}
+            <a href={PERSONAL_SITE_URL} className="text-primary underline underline-offset-4 hover:text-accent">
+              my personal site
+            </a>
+            .
+          </p>
         </div>
       </section>
 

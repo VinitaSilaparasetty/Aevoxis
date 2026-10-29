@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Sparkles } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -6,10 +5,6 @@ import { Footer } from "@/components/Footer";
 import { blogPosts } from "@/data/blog-posts";
 
 export default function BlogPage() {
-  useEffect(() => {
-    document.title = "Insights – Aevoxis Solutions";
-  }, []);
-
   return (
     <main className="min-h-screen frosted-glass-bg">
       <Header />
@@ -25,10 +20,11 @@ export default function BlogPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6 tracking-tight">
-            Technical Insights on AI Governance
+            Insights on EU AI Act engineering
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Deep technical writing on EU AI Act compliance, generative AI architecture, and AI governance engineering.
+            How to build Articles 12, 13 and 14 into real AI systems: logging, transparency and human oversight, with
+            working code.
           </p>
         </div>
       </section>

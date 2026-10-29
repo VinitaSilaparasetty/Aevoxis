@@ -22,10 +22,8 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-      - name: Build
+      - name: Build and pre-render every route
         run: npm run build
-      - name: Generate static route files for HTTP 200
-        run: node scripts/generate-routes.mjs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

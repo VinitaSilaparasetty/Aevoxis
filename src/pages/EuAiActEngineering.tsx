@@ -1,60 +1,58 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, FileSearch, Layers, Users, FileText, CheckCircle, Sparkles } from "lucide-react";
+import { ArrowRight, FileSearch, ScrollText, Eye, UserCheck, CheckCircle, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FaqList } from "@/components/FaqList";
+import { engagementFaq } from "@/data/site-content";
+
 const services = [
   {
     icon: <FileSearch className="w-8 h-8" />,
-    title: "EU AI Act Compliance-Assessment",
+    title: "Gap analysis for Articles 12–14",
     description:
-      "Eine strukturierte technische Prüfung Ihres generativen KI-Systems, abgebildet auf die Pflichten des EU AI Act. Vinita identifiziert genau, an welchen Stellen Ihr System unzureichend ist und was sich architektonisch ändern muss, bevor daraus eine rechtliche Belastung wird.",
-    deliverable:
-      "Sie erhalten: eine schriftliche Gap-Analyse, abgebildet auf konkrete Artikel des EU AI Act, priorisiert nach Risiko und Dringlichkeit.",
+      "I go through your AI system's architecture and check it against the three engineering obligations. Where does logging stop? What can a deployer actually see? Can a person stop the system, or only watch it?",
+    deliverable: "You get a written gap analysis mapped to specific articles, ranked by risk and effort.",
     variant: "cyan" as const,
   },
   {
-    icon: <Layers className="w-8 h-8" />,
-    title: "Compliance-integriertes Systemdesign",
+    icon: <ScrollText className="w-8 h-8" />,
+    title: "Automatic logging (Article 12)",
     description:
-      "Vinita gestaltet oder rüstet Ihre generative KI-Architektur so um, dass sie die Anforderungen des EU AI Act von Grund auf erfüllt. Dazu gehören Transparenzebenen, Audit-Trails und Mechanismen menschlicher Aufsicht, die direkt im System verankert sind – nicht nachträglich ergänzt.",
-    deliverable:
-      "Sie erhalten: ein produktionsreifes System, in dem Compliance konstruktiv eingebaut und nicht aufgesetzt ist.",
+      "I design and build event logging into the execution path: the input that triggered a decision, the decision, the model version and enough context to reconstruct it later. Records are hashed, so tampering is detectable.",
+    deliverable: "You get an audit trail an assessor can follow, produced by the system itself.",
     variant: "blue" as const,
   },
   {
-    icon: <Users className="w-8 h-8" />,
-    title: "Human-in-the-Loop-Architektur",
+    icon: <Eye className="w-8 h-8" />,
+    title: "Transparency for deployers (Article 13)",
     description:
-      "Für KI-Systeme mit hohem Risiko oder Transparenzpflicht entwickelt und implementiert Vinita die Schnittstellen menschlicher Aufsicht, die Artikel 14 des EU AI Act erfüllen. Ihr Team behält die echte Kontrolle über automatisierte Entscheidungen – ohne Verlust an operativer Effizienz.",
-    deliverable:
-      "Sie erhalten: eine funktionierende Aufsichtsinfrastruktur, die regulatorische Anforderungen erfüllt und einer Prüfung standhält.",
+      "I surface how an output was produced in the interface your users already work in, so a non-technical person can judge whether to rely on it.",
+    deliverable: "You get explanations where decisions happen, plus the instructions for use the article requires.",
     variant: "cyan" as const,
   },
   {
-    icon: <FileText className="w-8 h-8" />,
-    title: "Technische Whitepaper & Compliance-Dokumentation",
+    icon: <UserCheck className="w-8 h-8" />,
+    title: "Human oversight (Article 14)",
     description:
-      "Vinita übersetzt Architektur und Compliance-Maßnahmen Ihres KI-Systems in klare, nachprüfbare technische Dokumentation. Diese dient sowohl der internen Governance als auch externen regulatorischen Anforderungen.",
-    deliverable:
-      "Sie erhalten: professionelle Dokumentation, die Compliance gegenüber Aufsichtsbehörden, Kunden und Beschaffungsabteilungen nachweist.",
+      "I build oversight into the critical path: thresholds that stop the system, a decision point a person can't skip, and override that actually overrides.",
+    deliverable: "You get working oversight that holds up when someone asks you to demonstrate it.",
     variant: "blue" as const,
   },
 ];
 
-const trustBadges = [
+const credentials = [
   { label: "Google Developer Expert", sublabel: "Machine Learning" },
-  { label: "Published Author", sublabel: "Apress" },
-  { label: "M.Sc. Data Science", sublabel: "Newcastle University (Russell Group)" },
-  { label: "IEEE und Elsevier Peer Reviewer", sublabel: "" },
   { label: "AWS Community Builder", sublabel: "Machine Learning" },
-  { label: "Indian Design Patent", sublabel: "IN 307907" },
+  { label: "AWS AIdeas 2025", sublabel: "Top 300 of 10,000+ entries" },
+  { label: "M.Sc. Data Science", sublabel: "Newcastle University" },
+  { label: "IEEE and Elsevier", sublabel: "Invited peer reviewer" },
+  { label: "Published author", sublabel: "Apress" },
 ];
 
 export default function EuAiActEngineeringPage() {
   useEffect(() => {
-    document.title = "EU AI Act Engineering – Aevoxis Solutions";
     const loadTally = () => {
       if (typeof (window as any).Tally !== "undefined") {
         (window as any).Tally.loadEmbeds();
@@ -71,34 +69,29 @@ export default function EuAiActEngineeringPage() {
     <main className="min-h-screen frosted-glass-bg">
       <Header />
 
-      <div className="bg-[#0f1c2e] border-b border-accent/10 text-center py-2.5 text-sm text-foreground/90">
-        <span className="font-medium">August 2, 2026: EU AI Act high-risk system obligations are now in force.</span>
-      </div>
-
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-36 pb-16 overflow-hidden">
         <div className="glass-shape w-64 h-64 -top-32 -right-32 rotate-12 opacity-30" />
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/80 backdrop-blur-sm border border-accent/20 mb-10">
             <Shield className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-foreground">EU AI Act Engineering</span>
+            <span className="text-sm font-medium text-foreground">Engineering engagements</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8 tracking-tight text-balance">
-            Generatives KI-Compliance-Engineering für den{" "}
+            Articles 12–14, built into{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              EU AI Act
+              your system
             </span>
           </h1>
           <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed text-pretty">
-            Die meisten Unternehmen, die generative KI einsetzen, haben Compliance-Pflichten,
-            die sie allein mit Rechtsberatung nicht erfüllen können. Vinita liefert das
-            technische Engineering, um genau diese Lücke zu schließen.
+            Legal advice tells you what the EU AI Act requires. It doesn't build the logging, transparency and
+            oversight into your code. That's the part I do, while the Aevoxis product is in development.
           </p>
         </div>
       </section>
 
-      <section className="relative py-20">
+      <section className="relative py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
+          <div className="space-y-16">
             {services.map((service, index) => {
               const borderColor = service.variant === "cyan" ? "border-accent/30" : "border-primary/30";
               const iconColor = service.variant === "cyan" ? "text-accent" : "text-primary";
@@ -127,50 +120,48 @@ export default function EuAiActEngineeringPage() {
         </div>
       </section>
 
-      <section className="relative py-24">
+      <section className="relative py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="premium-card premium-card-blue p-10 sm:p-14">
             <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight">
-                Mit wem Vinita arbeitet
-              </h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight">Who I work with</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Vinita arbeitet mit KMU und Scale-ups in Deutschland und Europa, die generative
-                KI-Systeme im Einsatz haben und ihre Pflichten aus dem EU AI Act erfüllen müssen,
-                bevor Aufsichtsbehörden nachfragen. Großunternehmen mit Bedarf an
-                teamgrößen-Engagements gehören ausdrücklich nicht zur Zielgruppe.
+                Small and mid-sized companies and scale-ups in Germany and the EU that build or deploy high-risk AI,
+                in any industry. Engagements are remote. I'm one engineer, so I take on a small number at a time.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative pb-24">
+      <section className="relative pb-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-stretch">
-            {trustBadges.map((badge) => (
-              <div
-                key={badge.label}
-                className="p-5 rounded-2xl bg-secondary/70 backdrop-blur-sm border border-border hover:border-accent/30 transition-all"
-              >
-                <p className="text-sm font-semibold text-foreground">{badge.label}</p>
-                {badge.sublabel && <p className="text-xs text-muted-foreground mt-0.5">{badge.sublabel}</p>}
-              </div>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-stretch">
+            {credentials.map((c) => (
+              <li key={c.label} className="p-5 rounded-2xl bg-secondary/70 backdrop-blur-sm border border-border">
+                <p className="text-sm font-semibold text-foreground">{c.label}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{c.sublabel}</p>
+              </li>
             ))}
-          </div>
-          <p className="mt-6 text-center text-sm text-muted-foreground italic">
-            Professionelle Referenzen auf Anfrage erhältlich.
-          </p>
+          </ul>
+          <p className="mt-6 text-center text-sm text-muted-foreground">References available on request.</p>
         </div>
       </section>
 
-      <section className="relative pb-24">
+      <section className="relative pb-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 tracking-tight">Questions</h2>
+          <FaqList items={engagementFaq} />
+        </div>
+      </section>
+
+      <section className="relative pb-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight text-center">
-            Sie sind unsicher, wo Ihr System steht?
+            Not sure where your system stands?
           </h2>
           <p className="text-lg text-muted-foreground mb-10 text-center max-w-2xl mx-auto leading-relaxed">
-            Beantworten Sie diesen 5-Fragen-Technik-Check und ich werde Ihre Antworten persönlich innerhalb von 24 Stunden prüfen.
+            Answer this five-question technical check. I'll review your answers personally within 24 hours.
           </p>
           <div className="premium-card premium-card-blue p-8">
             <div className="relative z-10">
@@ -182,7 +173,7 @@ export default function EuAiActEngineeringPage() {
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                title="EU AI Act Readiness Check"
+                title="EU AI Act readiness check"
               />
             </div>
           </div>
@@ -191,17 +182,13 @@ export default function EuAiActEngineeringPage() {
 
       <section className="relative pb-32">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <Sparkles className="w-8 h-8 text-accent mx-auto mb-4" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 tracking-tight">
-            Unsicher, welche Leistung Sie brauchen?
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 tracking-tight">Tell me about your system</h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Beschreiben Sie Ihr System und Ihre Deadline. Vinita sagt Ihnen ehrlich,
-            welche Priorität zuerst angegangen werden sollte.
+            Describe what it does and when you need to be ready. I'll tell you honestly what to tackle first.
           </p>
           <Button asChild size="lg" className="rounded-2xl px-10 py-7 text-lg shadow-lg shadow-primary/20">
             <Link to="/contact">
-              Kontakt aufnehmen
+              Get in touch
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </Button>
