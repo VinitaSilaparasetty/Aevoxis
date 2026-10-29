@@ -12,7 +12,12 @@ const services = [
     icon: <MessageSquare className="w-8 h-8" />,
     title: "Article 50 transparency and content marking",
     description:
-      "Article 50 has applied since 2 August 2026. I add the disclosure where your product talks to people, apply machine-readable marking to generated text, images, audio and video at the point of generation, and put deepfake disclosure into the publishing flow.",
+      "Article 50 has applied since 2 August 2026, so this is the work most teams need first. Each duty becomes a change in the product, not a paragraph in a policy document.",
+    points: [
+      "Art. 50(1): AI-interaction disclosure built into the product, with a log that it was shown",
+      "Art. 50(2): machine-readable marking of AI-generated content at generation time",
+      "Art. 50(4): deepfake disclosure in the publishing flow",
+    ],
     deliverable: "You get the disclosures in the product, the marking applied at generation time, and a record that each one was shown.",
     variant: "cyan" as const,
   },
@@ -114,6 +119,16 @@ export default function EuAiActEngineeringPage() {
                     </div>
                     <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 tracking-tight">{service.title}</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+                    {"points" in service && (
+                      <ul className="space-y-3 mb-6">
+                        {service.points.map((point) => (
+                          <li key={point} className="flex gap-3 text-muted-foreground leading-relaxed">
+                            <span className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 ${service.variant === "cyan" ? "bg-accent" : "bg-primary"}`} />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                   <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                     <div className={`p-8 rounded-2xl bg-secondary/60 backdrop-blur-sm border ${borderColor}`}>

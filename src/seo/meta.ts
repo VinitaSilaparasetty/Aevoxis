@@ -73,7 +73,7 @@ const staticRoutes: Record<string, StaticRoute> = {
     ],
   },
   "/services": {
-    title: "Services – Aevoxis Solutions",
+    title: "Services – EU AI Act Article 50 and Articles 12–14 – Aevoxis",
     description:
       "Engineering engagements for the EU AI Act: Article 50 transparency and content marking, which apply today, and the Articles 12–14 logging, transparency and human-oversight duties that follow.",
     lang: "en",
@@ -111,13 +111,13 @@ const staticRoutes: Record<string, StaticRoute> = {
     jsonLd: [{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: FOUNDER }],
   },
   "/early-access": {
-    title: "Early Access – Aevoxis EU AI Act Tooling",
+    title: "Early Access – Aevoxis: Article 50 now, Articles 12–14 next",
     description:
-      "Join the early-access list for Aevoxis: Article 50 AI disclosure and content marking, which apply today, plus audit logging, transparency and human-oversight tooling for EU AI Act Articles 12–14.",
+      "Join early access to Aevoxis: in-code tooling for EU AI Act Article 50 transparency and content marking, extending to the Articles 12–14 logging and human-oversight duties that apply from December 2027.",
     lang: "en",
   },
   "/contact": {
-    title: "Contact – Aevoxis Solutions",
+    title: "Contact – Article 50 and Articles 12–14 Engineering – Aevoxis",
     description: "Contact Aevoxis Solutions about EU AI Act engineering for your AI system: Article 50 transparency today, Articles 12–14 next.",
     lang: "en",
   },

@@ -232,7 +232,8 @@ export default function HomePage() {
       <section className="relative py-24 overflow-hidden">
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="premium-card premium-card-blue p-8 sm:p-12">
-            <div className="relative z-10 grid lg:grid-cols-[1.2fr,1fr] gap-10 items-start">
+            <div className="relative z-10">
+            <div className="grid lg:grid-cols-[1.2fr,1fr] gap-10 items-start">
               <div>
                 <p className="text-sm font-semibold text-accent mb-3 uppercase tracking-wider">Working prototype</p>
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-5 tracking-tight">
@@ -253,18 +254,6 @@ export default function HomePage() {
                   To be clear about what you'll see: the public demo uses scripted drift scenarios. The gate, the
                   audit trail and the specification vault are fully working.
                 </p>
-
-                <figure className="mb-8">
-                  <img
-                    src={justificationGate}
-                    alt="Spec-Drift Chronometer Justification Gate: drift above threshold, an approved decision and the reasoning trace"
-                    width={1376}
-                    height={1276}
-                    loading="lazy"
-                    className="w-full h-auto rounded-2xl border border-border"
-                  />
-                  <figcaption className="mt-3 text-xs text-muted-foreground">Live demo, scripted scenarios</figcaption>
-                </figure>
 
                 <div className="flex flex-wrap gap-3">
                   <Button asChild className="rounded-full px-6">
@@ -303,6 +292,19 @@ export default function HomePage() {
                   </li>
                 ))}
               </ol>
+            </div>
+
+            <figure className="mt-12 w-full max-w-[670px] mx-auto">
+              <img
+                src={justificationGate}
+                alt="Spec-Drift Chronometer Justification Gate: drift above threshold, an approved decision and the reasoning trace"
+                width={1376}
+                height={1276}
+                loading="lazy"
+                className="w-full h-auto rounded-2xl border border-border"
+              />
+              <figcaption className="mt-3 text-xs text-muted-foreground text-center">Live demo, scripted scenarios</figcaption>
+            </figure>
             </div>
           </div>
         </div>

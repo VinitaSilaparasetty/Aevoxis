@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { WAITLIST_TALLY_FORM_ID } from "@/data/site-content";
 
 const benefits = [
-  "First access to the beta of the Aevoxis logging, transparency and oversight components",
+  "First access to the beta: Article 50 disclosure and content marking, then the Articles 12–14 logging, transparency and oversight components",
   "A short call with me to map the tooling to your system",
   "A say in what gets built first",
 ];
@@ -65,7 +65,9 @@ export default function EarlyAccessPage() {
               ) : (
                 <div className="text-center">
                   <p className="text-foreground mb-6">
-                    Send me a short email with your company and what your AI system does. I'll add you to the list.
+                    Send me a short email with your company, what your AI system does, and which is nearer for
+                    you: Article 50 (a chatbot, voice agent or generated content) or Articles 12–14 (a high-risk
+                    system). I'll add you to the list.
                   </p>
                   <Button asChild size="lg" className="rounded-2xl px-8">
                     <a href="mailto:info@aevoxis.de?subject=Early%20access%20to%20Aevoxis">

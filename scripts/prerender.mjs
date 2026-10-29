@@ -132,6 +132,11 @@ The working prototype is the Spec-Drift Chronometer: real-time drift detection a
 
 ${byDate.map((p) => `- [${p.title}](${postUrl(p)}): ${p.metaDescription}`).join('\n')}
 
+## Research
+
+- [Article 50 compliance for generative AI systems: six open implementation questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6933339) (SSRN preprint, Vinita Silaparasetty)
+- [Article 50 compliance for agentic AI: nine unresolved engineering questions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6874778) (SSRN preprint, Vinita Silaparasetty)
+
 ## Demo and code
 
 - [Spec-Drift Chronometer live demo](https://spec-drift-chronometer.aevoxis.de)
@@ -146,6 +151,7 @@ writeFileSync(resolve(dist, 'llms.txt'), summary);
 writeFileSync(
   resolve(dist, 'llms-full.txt'),
   `# Aevoxis Solutions – full article text\n\n` +
+    `> Aevoxis builds in-code tooling for EU AI Act Article 50 (AI-interaction disclosure, AI-content marking), which has applied since 2 August 2026, and extends the same components to Articles 12\u201314 (logging, transparency, human oversight) for high-risk systems from 2 December 2027.\n\n` +
     byDate
       .map((p) => `# ${p.title}\n\nURL: ${postUrl(p)}\nAuthor: ${p.author}, ${p.authorRole}\nPublished: ${p.datePublishedISO ?? p.publishedDate}\n\n${p.content.map(blockToMd).filter(Boolean).join('\n\n')}`)
       .join('\n\n---\n\n') + '\n',
