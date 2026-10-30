@@ -407,7 +407,7 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `author-bio`,
-        text: `Vinita Silaparasetty is an AI Governance Engineer and founder of Aevoxis Solutions, operating under SMartDe eG, Germany. Published author (Apress), Google Developer Expert (ML), M.Sc. Data Science Newcastle University (Russell Group). The Spec-Drift Chronometer was developed as an entry for the AWS 10,000 AIdeas Competition 2025, Top 300 Finalist from over 10,000 global submissions.`,
+        text: `Vinita Silaparasetty is an AI Governance Engineer working under the Aevoxis Solutions name as a member of SMartDE eG, Germany. Published author (Apress), Google Developer Expert (ML), M.Sc. Data Science Newcastle University (Russell Group). The Spec-Drift Chronometer was developed as an entry for the AWS 10,000 AIdeas Competition 2025, Top 300 Finalist from over 10,000 global submissions.`,
         disclosure: `Parts of this article were written with AI writing assistance (Claude, Anthropic). All technical concepts, system architecture, implementation decisions, and intellectual content are original work by the author. The Spec-Drift Chronometer was designed, built, and documented by Vinita Silaparasetty.`,
       },
     ],

@@ -15,11 +15,6 @@ const credentials: CredentialItem[] = [
     href: "https://g.dev/vinitasilaparasetty",
   },
   {
-    title: "Google Women Techmakers",
-    detail: "Community member", // TODO(Vinita): replace with your exact role, e.g. "Ambassador"
-    href: "https://www.womentechmakers.com/",
-  },
-  {
     title: "Peer reviewer",
     detail: "IEEE and Elsevier reviewer pools",
   },
@@ -42,7 +37,7 @@ export function LogoStrip({ className, heading = "Credentials" }: LogoStripProps
         <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8">
           {heading}
         </h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {credentials.map((c) => {
             const body = (
               <>

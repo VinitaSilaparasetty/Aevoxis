@@ -18,7 +18,7 @@ export const PERSONAL_SITE_URL = "https://vinitasilaparasetty.github.io";
 export const SITE_NAME = "Aevoxis Solutions";
 export const DEFAULT_IMAGE = `${SITE_URL}/favicon.png`;
 
-export const FOUNDER = {
+export const AUTHOR = {
   "@type": "Person",
   "@id": `${SITE_URL}/about#vinita`,
   name: "Vinita Silaparasetty",
@@ -41,7 +41,6 @@ export const ORGANIZATION = {
   url: SITE_URL,
   logo: DEFAULT_IMAGE,
   email: "info@aevoxis.de",
-  founder: { "@id": FOUNDER["@id"] },
   sameAs: ["https://www.linkedin.com/company/aevoxis-solutions/", "https://github.com/VinitaSilaparasetty"],
 };
 
@@ -104,11 +103,30 @@ const staticRoutes: Record<string, StaticRoute> = {
     canonical: `${PERSONAL_SITE_URL}/services.html`,
   },
   "/about": {
-    title: "About the Founder – Aevoxis Solutions",
+    title: "About Vinita Silaparasetty – Aevoxis Solutions",
     description:
       "Vinita Silaparasetty is an AI Governance Engineer, Google Developer Expert in Machine Learning and Apress author, building Aevoxis in Germany.",
     lang: "en",
-    jsonLd: [{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: FOUNDER }],
+    jsonLd: [{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: AUTHOR }],
+  },
+  "/work/in-house-ai-support-chatbot": {
+    title: "Case Study: Scoping an In-House AI Support Chatbot",
+    description:
+      "Independent consulting work from early 2025: why a vendor chatbot fell short, a Rasa and Claude design, and a four-week pilot with one success metric.",
+    lang: "en",
+    ogType: "article",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: "Scoping an In-House AI Support Chatbot",
+        description:
+          "Case study: replacing a vendor chatbot, starting with a four-week pilot. Independent consulting work completed in early 2025.",
+        url: `${SITE_URL}/work/in-house-ai-support-chatbot`,
+        inLanguage: "en",
+        author: AUTHOR,
+      },
+    ],
   },
   "/early-access": {
     title: "Early Access – Aevoxis: Article 50 now, Articles 12–14 next",
@@ -167,7 +185,7 @@ function postMeta(post: BlogPost, path: string): PageMeta {
       mainEntityOfPage: canonical,
       inLanguage: "en",
       ...(post.datePublishedISO ? { datePublished: post.datePublishedISO, dateModified: post.dateModifiedISO ?? post.datePublishedISO } : {}),
-      author: { ...FOUNDER, jobTitle: post.authorRole },
+      author: { ...AUTHOR, jobTitle: post.authorRole },
       publisher: ORGANIZATION,
       ...(post.keywords ? { keywords: post.keywords.join(", ") } : {}),
     },

@@ -107,7 +107,7 @@ const blockToMd = (b) => {
 
 const summary = `# Aevoxis Solutions
 
-> Aevoxis builds EU AI Act compliance into the AI system's own code path, in two stages. Article 50 applies today: telling people when they are interacting with an AI system, marking AI-generated text, images, audio and video in machine-readable form, and disclosing deepfakes. The same components then cover the high-risk duties of Articles 12 (automatic logging), 13 (transparency for deployers) and 14 (human oversight), which apply from 2 December 2027. Founded by Vinita Silaparasetty, AI Governance Engineer and Google Developer Expert in Machine Learning, based in Germany.
+> Aevoxis builds EU AI Act compliance into the AI system's own code path, in two stages. Article 50 applies today: telling people when they are interacting with an AI system, marking AI-generated text, images, audio and video in machine-readable form, and disclosing deepfakes. The same components then cover the high-risk duties of Articles 12 (automatic logging), 13 (transparency for deployers) and 14 (human oversight), which apply from 2 December 2027. Aevoxis is a brand, not a registered company: it is the name under which Vinita Silaparasetty, AI Governance Engineer and Google Developer Expert in Machine Learning, works as a member of the SMartDE eG cooperative in Germany.
 
 ## EU AI Act timeline
 
@@ -124,7 +124,8 @@ The working prototype is the Spec-Drift Chronometer: real-time drift detection a
 
 - [Home](${SITE_URL}/): what Aevoxis builds and why
 - [Article 50 and Articles 12–14 engineering](${SITE_URL}/services/eu-ai-act-engineering): engagements while the product is in development
-- [About the founder](${SITE_URL}/about)
+- [About Vinita Silaparasetty](${SITE_URL}/about)
+- [Case study: scoping an in-house AI support chatbot](${SITE_URL}/work/in-house-ai-support-chatbot): independent consulting work from early 2025, before the Aevoxis name
 - [Early access](${SITE_URL}/early-access)
 - [Contact](${SITE_URL}/contact)
 

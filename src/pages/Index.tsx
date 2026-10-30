@@ -433,7 +433,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Founder + CTA */}
+      {/* About me + CTA */}
       <section className="relative pb-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 tracking-tight">
@@ -441,7 +441,7 @@ export default function HomePage() {
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             I'm Vinita Silaparasetty, an AI Governance Engineer and Google Developer Expert in Machine Learning.
-            I started Aevoxis because most AI failures I see are architecture failures. They can be fixed in the
+            I build Aevoxis because most AI failures I see are architecture failures. They can be fixed in the
             design, long before they become legal problems.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -452,7 +452,7 @@ export default function HomePage() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-2xl px-10 py-7 text-lg border-primary/20">
-              <Link to="/about">About the founder</Link>
+              <Link to="/about">About me</Link>
             </Button>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LogoStrip } from "@/components/LogoStrip";
 import { PERSONAL_SITE_URL } from "@/seo/meta";
-import { DEMO_ARTICLE_PATH } from "@/data/site-content";
+import { DEMO_ARTICLE_PATH, CASE_STUDY_PATH } from "@/data/site-content";
 
 const credentials = [
   { label: "Google Developer Expert", institution: "Machine Learning" },
@@ -31,7 +31,7 @@ export default function AboutPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/80 backdrop-blur-sm border border-accent/20 mb-10">
                 <Sparkles className="w-4 h-4 text-accent" />
-                <span className="text-sm font-medium text-foreground">About the founder</span>
+                <span className="text-sm font-medium text-foreground">About me</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8 text-balance tracking-tight">
@@ -40,7 +40,8 @@ export default function AboutPage() {
 
               <div className="space-y-5 text-lg text-muted-foreground leading-relaxed mb-10">
                 <p>
-                  I'm Vinita Silaparasetty, an AI Governance Engineer based in Germany and the founder of Aevoxis.
+                  I'm Vinita Silaparasetty, an AI Governance Engineer based in Germany. Aevoxis is the name I work
+                  under.
                 </p>
                 <p>
                   I've built AI systems for a long time, from a patented VR headset to production machine learning.
@@ -56,8 +57,16 @@ export default function AboutPage() {
                   execution path.
                 </p>
                 <p>
-                  Engineering engagements are invoiced through SMartDE eG, a cooperative for self-employed
-                  professionals in Germany.
+                  Aevoxis is a brand, not a registered company. I work as a member of SMartDE eG, a cooperative for
+                  self-employed professionals in Germany, and engineering engagements are invoiced through it.
+                </p>
+                <p>
+                  Before I worked under the Aevoxis name, I took on independent consulting projects. One of them is
+                  written up as a case study:{" "}
+                  <Link to={CASE_STUDY_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
+                    scoping an in-house AI support chatbot
+                  </Link>
+                  .
                 </p>
               </div>
 
@@ -85,7 +94,7 @@ export default function AboutPage() {
                       <span className="text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">VS</span>
                     </div>
                     <h2 className="text-2xl font-bold text-foreground mb-2">Vinita Silaparasetty</h2>
-                    <p className="text-primary font-medium">Founder, AI Governance Engineer</p>
+                    <p className="text-primary font-medium">AI Governance Engineer</p>
                   </div>
 
                   <ul className="space-y-4">
