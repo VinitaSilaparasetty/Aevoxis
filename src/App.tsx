@@ -12,6 +12,7 @@ import About from "./pages/About.tsx";
 import EarlyAccess from "./pages/EarlyAccess.tsx";
 import CaseStudyChatbot from "./pages/CaseStudyChatbot.tsx";
 import IllustrativeScenarios from "./pages/IllustrativeScenarios.tsx";
+import MyStory from "./pages/MyStory.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import Datenschutz from "./pages/Datenschutz.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -34,6 +35,7 @@ export const AppRoutes = () => (
         element={<Moved to={`${PERSONAL_SITE_URL}/services.html`} label="Vinita Silaparasetty's site" />}
       />
       <Route path="/about" element={<About />} />
+      <Route path="/about/my-story" element={<MyStory />} />
       <Route path="/early-access" element={<EarlyAccess />} />
       <Route path="/work/in-house-ai-support-chatbot" element={<CaseStudyChatbot />} />
       <Route path="/work/illustrative-scenarios" element={<IllustrativeScenarios />} />

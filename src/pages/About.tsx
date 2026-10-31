@@ -44,7 +44,12 @@ export default function AboutPage() {
                   under.
                 </p>
                 <p>
-                  I've built AI systems for a long time, from a patented VR headset to production machine learning.
+                  I've built AI systems for a long time, from a VR headset protected by an Indian design patent to
+                  production machine learning (
+                  <Link to="/about/my-story" className="text-primary underline underline-offset-4 hover:text-accent">
+                    my story
+                  </Link>
+                  ).
                   The same pattern keeps showing up. A team builds the system first and thinks about oversight later.
                   By then, the logs they need were never captured and nobody can actually stop the system.
                 </p>

@@ -109,6 +109,23 @@ const staticRoutes: Record<string, StaticRoute> = {
     lang: "en",
     jsonLd: [{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: AUTHOR }],
   },
+  "/about/my-story": {
+    title: "My Story: From a VR Headset to AI Governance – Vinita Silaparasetty",
+    description:
+      "Vinita Silaparasetty paused her fashion degree to design a dual-purpose VR headset (Indian Design Patent IN 307907). The same design-first approach drives her EU AI Act work today.",
+    lang: "en",
+    ogType: "article",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: "From a VR Headset to AI Governance",
+        url: `${SITE_URL}/about/my-story`,
+        inLanguage: "en",
+        author: AUTHOR,
+      },
+    ],
+  },
   "/work/in-house-ai-support-chatbot": {
     title: "Case Study: Scoping an In-House AI Support Chatbot",
     description:
