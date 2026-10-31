@@ -126,6 +126,7 @@ The working prototype is the Spec-Drift Chronometer: real-time drift detection a
 - [Article 50 and Articles 12–14 engineering](${SITE_URL}/services/eu-ai-act-engineering): engagements while the product is in development
 - [About Vinita Silaparasetty](${SITE_URL}/about)
 - [Case study: scoping an in-house AI support chatbot](${SITE_URL}/work/in-house-ai-support-chatbot): independent consulting work from early 2025, before the Aevoxis name
+- [Then and now: an EU-compliant AI hiring workflow](${SITE_URL}/work/ai-hiring-workflow-redesign): a real 2017 hiring round redesigned for the EU AI Act and GDPR; illustrative, not client work
 - [Early access](${SITE_URL}/early-access)
 - [Contact](${SITE_URL}/contact)
 

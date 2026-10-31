@@ -13,6 +13,7 @@ import EarlyAccess from "./pages/EarlyAccess.tsx";
 import CaseStudyChatbot from "./pages/CaseStudyChatbot.tsx";
 import IllustrativeScenarios from "./pages/IllustrativeScenarios.tsx";
 import MyStory from "./pages/MyStory.tsx";
+import HiringRedesign from "./pages/HiringRedesign.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import Datenschutz from "./pages/Datenschutz.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -39,6 +40,7 @@ export const AppRoutes = () => (
       <Route path="/early-access" element={<EarlyAccess />} />
       <Route path="/work/in-house-ai-support-chatbot" element={<CaseStudyChatbot />} />
       <Route path="/work/illustrative-scenarios" element={<IllustrativeScenarios />} />
+      <Route path="/work/ai-hiring-workflow-redesign" element={<HiringRedesign />} />
       <Route path="/impressum" element={<Impressum />} />
       <Route path="/datenschutz" element={<Datenschutz />} />
       <Route path="/contact" element={<Contact />} />

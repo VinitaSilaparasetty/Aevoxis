@@ -164,6 +164,25 @@ const staticRoutes: Record<string, StaticRoute> = {
       },
     ],
   },
+  "/work/ai-hiring-workflow-redesign": {
+    title: "Then and Now: An EU-Compliant AI Hiring Workflow – Aevoxis",
+    description:
+      "A real 2017 hiring round run by hand, redesigned as an AI workflow under the EU AI Act, GDPR and AGG: AI reads and drafts, people decide. Illustrative, not client work.",
+    lang: "en",
+    ogType: "article",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: "Then and Now: Redesigning a Real Hiring Round as an EU-Compliant AI Workflow",
+        description:
+          "Illustrative redesign of a real 2017 hiring round for a small tutoring business: keeping AI out of the hiring decision to stay outside the AI Act's high-risk category.",
+        url: `${SITE_URL}/work/ai-hiring-workflow-redesign`,
+        inLanguage: "en",
+        author: AUTHOR,
+      },
+    ],
+  },
   "/early-access": {
     title: "Early Access – Aevoxis: Article 50 now, Articles 12–14 next",
     description:

@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LogoStrip } from "@/components/LogoStrip";
 import { PERSONAL_SITE_URL } from "@/seo/meta";
-import { DEMO_ARTICLE_PATH, CASE_STUDY_PATH, SCENARIOS_PATH } from "@/data/site-content";
+import { DEMO_ARTICLE_PATH, CASE_STUDY_PATH, SCENARIOS_PATH, HIRING_REDESIGN_PATH } from "@/data/site-content";
 
 const credentials = [
   { label: "Google Developer Expert", institution: "Machine Learning" },
@@ -75,7 +75,11 @@ export default function AboutPage() {
                   <Link to={SCENARIOS_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
                     illustrative scenarios
                   </Link>
-                  . They use invented companies and are not client work.
+                  . They use invented companies and are not client work. I've also{" "}
+                  <Link to={HIRING_REDESIGN_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
+                    redesigned a real hiring round I ran by hand in 2017
+                  </Link>{" "}
+                  as an AI workflow that would meet the EU AI Act and GDPR today.
                 </p>
               </div>
 
