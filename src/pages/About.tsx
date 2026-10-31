@@ -3,17 +3,19 @@ import { ArrowRight, Sparkles, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { LogoStrip } from "@/components/LogoStrip";
 import { PERSONAL_SITE_URL } from "@/seo/meta";
-import { DEMO_ARTICLE_PATH } from "@/data/site-content";
+import { DEMO_ARTICLE_PATH, founderVideo } from "@/data/site-content";
+import { VideoEmbed } from "@/components/VideoEmbed";
 
 const credentials = [
   { label: "Google Developer Expert", institution: "Machine Learning" },
+  { label: "Google Women Techmakers", institution: "Ambassador" },
   { label: "AWS Community Builder", institution: "Machine Learning" },
   { label: "AWS 10,000 AIdeas Competition 2025", institution: "Top 300 finalist of 10,000+ entries" },
   { label: "Published author", institution: "Apress, 2020" },
   { label: "M.Sc. Data Science", institution: "Newcastle University (Russell Group)" },
   { label: "IEEE and Elsevier", institution: "Invited peer reviewer" },
+  { label: "IEEE Software", institution: "Empirical paper under review" },
   { label: "Indian Design Patent", institution: "IN 307907" },
 ];
 
@@ -103,7 +105,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <LogoStrip />
+      {founderVideo.youtubeId && (
+        <section className="relative py-16 overflow-hidden border-t border-border">
+          <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <VideoEmbed
+              youtubeId={founderVideo.youtubeId}
+              title={founderVideo.title}
+              caption={founderVideo.caption}
+            />
+          </div>
+        </section>
+      )}
 
       <section className="relative py-24 overflow-hidden">
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

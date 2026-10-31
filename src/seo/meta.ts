@@ -110,10 +110,16 @@ const staticRoutes: Record<string, StaticRoute> = {
     lang: "en",
     jsonLd: [{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: FOUNDER }],
   },
-  "/early-access": {
-    title: "Early Access – Aevoxis: Article 50 now, Articles 12–14 next",
+  "/shipped": {
+    title: "Shipped – what Aevoxis has released, and when",
     description:
-      "Join early access to Aevoxis: in-code tooling for EU AI Act Article 50 transparency and content marking, extending to the Articles 12–14 logging and human-oversight duties that apply from December 2027.",
+      "A dated record of what Aevoxis has actually built: PyPI releases, the Spec-Drift Chronometer, open-source governance prototypes and published writing on EU AI Act Articles 50 and 12–14.",
+    lang: "en",
+  },
+  "/early-access": {
+    title: "Design partners – EU AI Act Article 50 in your product in 4 weeks",
+    description:
+      "Five free design-partner places for teams shipping chatbots, voice agents or AI-generated content: EU AI Act Article 50 disclosure and content marking built into your codebase in four weeks. Plus early access to the Aevoxis components.",
     lang: "en",
   },
   "/contact": {

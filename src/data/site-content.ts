@@ -30,6 +30,143 @@ export const openSourcePackages = [
   { name: "agentic-web3-rag", install: "pip install agentic-web3-rag", pypi: "https://pypi.org/project/agentic-web3-rag/" },
 ];
 
+// 60–90 second founder video for the About page. Leave the ID empty and the
+// section doesn't render at all, so the page is never published with a gap.
+//
+// This is for a video made for Aevoxis: the Article 50 problem, what the
+// Justification Gate does, who it's for. The existing speaker reel belongs on
+// the personal site instead — it sells speaking engagements, which is a
+// different offer from compliance engineering.
+export const founderVideo = {
+  youtubeId: "",
+  title: "Why I built Aevoxis",
+  caption: "90 seconds on what Article 50 asks for and why it belongs in the code.",
+};
+
+// The design-partner offer. PLACES is the number still open — change the number
+// here and it updates the page, the meta description and llms.txt together.
+// When it reaches 0, the page shows a closed state instead of the call to action.
+export const designPartner = {
+  places: 5,
+  weeks: 4,
+  steps: [
+    {
+      week: "Week 1",
+      title: "Find every place Article 50 bites",
+      text: "I go through your product and list where it talks to people, where it generates content, and where either is published. You get that list whether or not we continue.",
+    },
+    {
+      week: "Week 2",
+      title: "Build the interaction disclosure",
+      text: "Art. 50(1): people are told they're talking to AI, in the product rather than in a policy page, with a record that the disclosure was shown.",
+    },
+    {
+      week: "Week 3",
+      title: "Mark the generated content",
+      text: "Art. 50(2): machine-readable marking applied to synthetic text, images, audio or video at generation time, not bolted on afterwards.",
+    },
+    {
+      week: "Week 4",
+      title: "Hand over",
+      text: "The code is yours, in your repository, with a written note of what it covers and what it deliberately doesn't. No lock-in and no retainer.",
+    },
+  ],
+  youGet: [
+    "Four weeks of my time, free",
+    "Article 50(1) and 50(2) working in your product, in your own codebase",
+    "A written gap note you can hand to your legal advisers",
+  ],
+  iGet: [
+    "Honest feedback on what's clumsy, so the product gets built against a real system",
+    "Permission to describe the work as a case study, anonymised if you prefer",
+  ],
+};
+
+// Dated build log. Every entry is something a reader can open and check, so
+// nothing goes in here without a public artefact behind it.
+//
+// `date` is ISO. Use `precision: "month"` or `"year"` when the exact day isn't
+// the point; the page formats accordingly and sorts on the ISO value either way.
+//
+// TODO(Vinita): four entries are missing because I couldn't verify the dates.
+// Send me these and I'll add them: the SSRN posting date of each Article 50
+// preprint, the date the AWS 10,000 AIdeas Top 300 result was announced, and
+// the date the IEEE Software paper was submitted.
+export type ShippedKind = "release" | "writing" | "research" | "recognition" | "product";
+
+export interface ShippedEntry {
+  date: string;
+  precision?: "day" | "month" | "year";
+  kind: ShippedKind;
+  title: string;
+  detail: string;
+  href?: string;
+}
+
+export const shippedLog: ShippedEntry[] = [
+  {
+    date: "2026-07-07",
+    kind: "release",
+    title: "governed-agentic-kg-rag",
+    detail:
+      "Knowledge-graph-augmented multi-agent RAG for industrial fault diagnosis, with a query dispatcher, Neo4j property graph and a human oversight step. Open source.",
+    href: "https://github.com/VinitaSilaparasetty/governed-agentic-kg-rag",
+  },
+  {
+    date: "2026-07-02",
+    kind: "release",
+    title: "agentic-web3-rag v0.1.0 on PyPI",
+    detail:
+      "Consent-gated semantic search over Web3 documentation: nothing is indexed without the maintainer's explicit opt-in, and every answer carries an Article 50 AI-generated marker. Alpha.",
+    href: "https://pypi.org/project/agentic-web3-rag/",
+  },
+  {
+    date: "2026-07-01",
+    kind: "release",
+    title: "pr-automation-agent v0.1.2 on PyPI",
+    detail:
+      "Autonomous pull-request generation with governance instrumentation: every automated change is logged with the input that triggered it. Beta.",
+    href: "https://pypi.org/project/pr-automation-agent/",
+  },
+  {
+    date: "2026-06-30",
+    kind: "release",
+    title: "pr-automation-agent, first release",
+    detail: "First public version, built out of the Protocol Labs Dev Guild cohort.",
+    href: "https://github.com/VinitaSilaparasetty/pr-automation-agent",
+  },
+  {
+    date: "2026-06-17",
+    kind: "writing",
+    title: "Wiring Article 14 into a production LangChain RAG chatbot",
+    detail: "A working implementation guide, with the oversight step in the execution path rather than beside it.",
+    href: "/blog/eu-ai-act-langchain-rag-integration",
+  },
+  {
+    date: "2026-06-16",
+    kind: "writing",
+    title: "EU AI Act Articles 12, 13 and 14: a technical implementation guide",
+    detail: "Logging, transparency and human oversight as architecture, demonstrated on the Spec-Drift Chronometer.",
+    href: "/blog/eu-ai-act-articles-12-13-14-technical-implementation",
+  },
+  {
+    date: "2026-02-17",
+    kind: "product",
+    title: "Spec-Drift Chronometer, first commit",
+    detail:
+      "Drift measurement against a human-approved specification, the Justification Gate, and a hash-verified audit trail. Built for the AWS 10,000 AIdeas Competition on Lambda in eu-central-1 with Bedrock; the public demo now runs on Render.",
+    href: DEMO_REPO_URL,
+  },
+  {
+    date: "2026-02-07",
+    kind: "product",
+    title: "multi-agent-audit-poc",
+    detail:
+      "The first proof that Article 14 oversight can be an interrupt in a LangGraph execution path, not a review meeting afterwards.",
+    href: "https://github.com/VinitaSilaparasetty/multi-agent-audit-poc",
+  },
+];
+
 export const proofPoints = [
   { value: "Top 300", label: "of 10,000+ entries, AWS 10,000 AIdeas Competition 2025", href: DEMO_ARTICLE_PATH },
   { value: "Google Developer Expert", label: "Machine Learning", href: "https://g.dev/vinitasilaparasetty" },

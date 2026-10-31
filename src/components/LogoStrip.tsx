@@ -16,7 +16,7 @@ const credentials: CredentialItem[] = [
   },
   {
     title: "Google Women Techmakers",
-    detail: "Community member", // TODO(Vinita): replace with your exact role, e.g. "Ambassador"
+    detail: "Ambassador",
     href: "https://www.womentechmakers.com/",
   },
   {

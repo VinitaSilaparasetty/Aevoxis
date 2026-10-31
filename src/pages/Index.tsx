@@ -188,7 +188,9 @@ export default function HomePage() {
                 </a>
                 {i < article50Papers.length - 1 ? "; " : "."}
               </span>
-            ))}
+            ))}{" "}
+            A third paper, documenting twelve failure modes found by stress-testing a live governance system, is
+            under review at IEEE Software.
           </p>
         </div>
       </section>

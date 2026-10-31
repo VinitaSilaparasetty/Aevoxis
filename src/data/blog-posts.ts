@@ -407,7 +407,7 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `author-bio`,
-        text: `Vinita Silaparasetty is an AI Governance Engineer and founder of Aevoxis Solutions, operating under SMartDe eG, Germany. Published author (Apress), Google Developer Expert (ML), M.Sc. Data Science Newcastle University (Russell Group). The Spec-Drift Chronometer was developed as an entry for the AWS 10,000 AIdeas Competition 2025, Top 300 Finalist from over 10,000 global submissions.`,
+        text: `Vinita Silaparasetty is an AI Governance Engineer and founder of Aevoxis Solutions, operating under SMartDE eG, Germany. Published author (Apress), Google Developer Expert (ML), M.Sc. Data Science Newcastle University (Russell Group). The Spec-Drift Chronometer was developed as an entry for the AWS 10,000 AIdeas Competition 2025, Top 300 Finalist from over 10,000 global submissions.`,
         disclosure: `Parts of this article were written with AI writing assistance (Claude, Anthropic). All technical concepts, system architecture, implementation decisions, and intellectual content are original work by the author. The Spec-Drift Chronometer was designed, built, and documented by Vinita Silaparasetty.`,
       },
     ],
@@ -872,6 +872,360 @@ python rag_chatbot.py`,
         type: `author-bio`,
         text: `Vinita Silaparasetty is an AI Governance Engineer at Aevoxis Solutions (aevoxis.de), specialising in EU AI Act compliance architecture for enterprise AI deployments. Published author (Apress), Google Developer Expert (ML), M.Sc. Data Science Newcastle University. The Spec-Drift Chronometer is a Top 300 finalist in the AWS 10,000 AIdeas Competition 2025.`,
         disclosure: `Parts of this article were written with AI writing assistance (Claude, Anthropic). All technical concepts, integration architecture, code examples, and intellectual content are original work by the author. This article does not constitute legal advice.`,
+      },
+    ],
+  },
+  {
+    slug: `how-to-mark-ai-generated-content-in-code`,
+    title: `How to Mark AI-Generated Content in Code: EU AI Act Article 50(2)`,
+    metaDescription: `A practical guide to machine-readable marking of AI-generated output under EU AI Act Article 50(2): C2PA Content Credentials, the IPTC digital source type, why metadata alone fails, and what to log so you can prove the marking happened.`,
+    canonicalPath: `/blog/how-to-mark-ai-generated-content-in-code`,
+    datePublishedISO: `2026-10-29`,
+    author: `Vinita Silaparasetty`,
+    authorRole: `AI Governance Engineer, Aevoxis Solutions`,
+    publishedDate: `October 2026`,
+    readingTime: `12 minutes`,
+    excerpt: `Article 50(2) says AI-generated output must be marked in a machine-readable format. It does not say how. This is the engineering answer: what to attach, where it survives, where it gets stripped, and what you need to keep in order to show an auditor that you did it.`,
+    tags: [`EU AI Act`, `Article 50`, `C2PA`, `Content Provenance`, `Compliance Engineering`],
+    keywords: [
+      `EU AI Act Article 50(2)`,
+      `machine-readable marking AI content`,
+      `C2PA Content Credentials Python`,
+      `mark AI-generated images in code`,
+      `trainedAlgorithmicMedia`,
+      `AI content watermarking EU`,
+    ],
+    howTo: {
+      name: `How to mark AI-generated content for EU AI Act Article 50(2)`,
+      steps: [
+        {
+          name: `Find every generation point`,
+          text: `List every place your system returns model output to a user or writes it to storage: the chat endpoint, the image route, the batch job, the retry path. Marking has to happen at each of them, because anything you miss ships unmarked.`,
+        },
+        {
+          name: `Attach a signed C2PA manifest`,
+          text: `At generation time, attach a C2PA manifest recording a c2pa.created action with the IPTC digital source type trainedAlgorithmicMedia, signed with a certificate that identifies you as the provider. Use the c2pa-python library for images, audio and video.`,
+        },
+        {
+          name: `Add a second marking layer`,
+          text: `Metadata is removed by most social platforms on upload. Add an invisible watermark carried in the pixels or samples so the marking survives re-encoding, screenshotting and stripping. The Commission's Code of Practice asks for at least two layers where one is not enough on its own.`,
+        },
+        {
+          name: `Log that the marking happened`,
+          text: `Write an immutable record for each generation: what was produced, which marking layers were applied, the manifest identifier and the model version. Without it you can state that you mark content but you cannot show it.`,
+        },
+        {
+          name: `Verify in CI`,
+          text: `Add a test that generates one asset of each media type through the real path, reads the manifest back, and fails the build if the digital source type is missing. Marking that is not tested quietly stops working.`,
+        },
+      ],
+    },
+    content: [
+      {
+        type: `paragraph`,
+        text: `EU AI Act Article 50(2) is four lines long and contains an entire engineering project. Providers of AI systems that generate synthetic audio, image, video or text must ensure the outputs are marked in a machine-readable format and detectable as artificially generated or manipulated. The marking has to be effective, interoperable, robust and reliable, as far as that is technically feasible.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Those four adjectives are the whole problem. Effective and interoperable push you towards an open standard that someone else's software can read. Robust and reliable push you towards something that survives the internet, where files are re-encoded, cropped and stripped of metadata as a matter of routine. No single technique gives you all four, which is why a compliant implementation is a stack rather than a function call.`,
+      },
+      {
+        type: `paragraph`,
+        text: `This article is the implementation. It assumes you already generate content in production and need to add marking to it without rewriting the system.`,
+      },
+      {
+        type: `h2`,
+        text: `What the law actually asks for, and when`,
+      },
+      {
+        type: `paragraph`,
+        text: `Article 50 has applied since 2 August 2026. For AI systems that were already placed on the market before that date and generate synthetic content, the machine-readable marking duty bites on 2 December 2026. If your system is live today, that is the deadline that matters.`,
+      },
+      {
+        type: `paragraph`,
+        text: `The Act names no standard. In June 2026 the European Commission published the final Code of Practice on Transparency of AI-generated Content, which fills that gap. It is voluntary, and signing it is not the same as complying with the Act, but it is the clearest statement available of what regulators consider adequate. Two things in it change how you build.`,
+      },
+      {
+        type: `unordered-list`,
+        items: [
+          `It splits the duties by role. Providers mark and make content detectable. Deployers label deepfakes and AI-generated text published on matters of public interest. If you build the model service and someone else publishes with it, you are each on the hook for a different half.`,
+          `It asks for at least two layers of machine-readable marking where one layer is not enough on its own, for example metadata combined with a watermark. This is the sentence that rules out the one-line fix.`,
+        ],
+      },
+      {
+        type: `paragraph`,
+        text: `The reason for two layers is not bureaucratic. It is that the two available techniques fail in opposite directions, and a marking scheme that fails silently is worse than none, because you will report compliance you do not have.`,
+      },
+      {
+        type: `h2`,
+        text: `Why metadata alone fails`,
+      },
+      {
+        type: `paragraph`,
+        text: `The natural first implementation is to write something into the file's metadata. It is cheap, it is readable by any tool that understands the container, and it carries arbitrary structured detail. It is also the first thing to be destroyed.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Most social platforms re-encode uploaded media and discard metadata they do not recognise. Screenshotting destroys it completely. Many image pipelines strip it deliberately, because metadata is also where location data and camera serial numbers live, so removing it is a privacy measure. Your marking is collateral damage in someone else's correct decision.`,
+      },
+      {
+        type: `paragraph`,
+        text: `So metadata gives you interoperable and effective, and fails at robust. A watermark carried in the pixels or the audio samples gives you robust, and is weaker on interoperable, because reading it generally requires the detector that matches the embedder. Hence the stack: metadata as the rich, readable layer, watermark as the layer that survives.`,
+      },
+      {
+        type: `h2`,
+        text: `Layer one: a signed C2PA manifest`,
+      },
+      {
+        type: `paragraph`,
+        text: `C2PA, from the Coalition for Content Provenance and Authenticity, is the standard the Code of Practice treats as the reference for the metadata layer, and it is what the major model providers have adopted. It is worth understanding what it actually is, because "C2PA metadata" undersells it.`,
+      },
+      {
+        type: `paragraph`,
+        text: `A C2PA manifest is a cryptographically signed statement about an asset. It records a set of assertions (what happened to this file) and is signed with a certificate that identifies who is making the claim. The signature covers a hash of the asset, so if someone edits the pixels and leaves the manifest in place, verification fails rather than passing with a lie. That is the difference between provenance and a comment field.`,
+      },
+      {
+        type: `paragraph`,
+        text: `The assertion that does the Article 50(2) work is a c2pa.created action carrying an IPTC digital source type. For fully model-generated content the value is trainedAlgorithmicMedia. This is the machine-readable flag an auditor's tool, a platform's ingest pipeline or a browser extension reads to decide that the asset is synthetic.`,
+      },
+      {
+        type: `code`,
+        language: `python`,
+        code: `# pip install c2pa-python
+import c2pa
+
+TRAINED_ALGORITHMIC_MEDIA = (
+    "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia"
+)
+
+def manifest_for(model_id: str, media_type: str) -> dict:
+    """The provenance claim attached to every asset this service generates."""
+    return {
+        "claim_generator_info": [
+            {"name": "aevoxis-image-service", "version": "1.4.0"}
+        ],
+        "format": media_type,
+        "title": "AI-generated image",
+        "assertions": [
+            {
+                "label": "c2pa.actions",
+                "data": {
+                    "actions": [
+                        {
+                            "action": "c2pa.created",
+                            # The Article 50(2) flag: this asset is model output.
+                            "digitalSourceType": TRAINED_ALGORITHMIC_MEDIA,
+                            "softwareAgent": {"name": model_id},
+                        }
+                    ]
+                },
+            }
+        ],
+    }`,
+      },
+      {
+        type: `paragraph`,
+        text: `Signing it attaches the manifest to the file. The signer wraps a private key and the certificate chain that identifies you as the provider; the builder writes a new file with the manifest embedded.`,
+      },
+      {
+        type: `code`,
+        language: `python`,
+        code: `def mark(raw_path: str, signed_path: str, model_id: str, media_type: str) -> None:
+    definition = manifest_for(model_id, media_type)
+    with c2pa.Builder(definition, context) as builder:
+        builder.sign_file(raw_path, signed_path, signer)`,
+      },
+      {
+        type: `paragraph`,
+        text: `The exact constructor shape for the context and the signer moves between releases of the library, so take those from the signing example in the contentauth/c2pa-python repository rather than from here. The manifest definition above is the part that encodes the regulatory requirement, and that is stable.`,
+      },
+      {
+        type: `h3`,
+        text: `Where to put the call`,
+      },
+      {
+        type: `paragraph`,
+        text: `Put it at the point of generation, not at the point of publication. Three reasons, in increasing order of how much they will cost you if you get it wrong.`,
+      },
+      {
+        type: `unordered-list`,
+        items: [
+          `Publication is not the only exit. Content leaves through downloads, APIs, webhooks, internal tools and support exports. Marking at publication marks one of those paths.`,
+          `Article 50(2) is a duty on the provider of the generating system, so the claim belongs where the generation happened and where you can sign for it honestly.`,
+          `If marking is a separate pipeline step, it will one day be skipped by a retry, a cache hit or a code path added by someone who did not know it existed. Unmarked content then exists in your system and you have no way to find it.`,
+        ],
+      },
+      {
+        type: `paragraph`,
+        text: `The architectural version of this point: generation should not be able to return an unmarked asset. If the only way to get bytes out of the image service is through a function that marks them, the failure mode disappears rather than being documented.`,
+      },
+      {
+        type: `h2`,
+        text: `Layer two: the watermark that survives`,
+      },
+      {
+        type: `paragraph`,
+        text: `The second layer is an imperceptible signal embedded in the content itself, so it travels through re-encoding, resizing, cropping and screenshotting. For images and video the mark lives in the pixels; for audio, in the waveform.`,
+      },
+      {
+        type: `paragraph`,
+        text: `What you use depends on your generation stack. Some model providers emit a watermark themselves, in which case your job is to verify it is switched on and that your pipeline does not re-encode it away. Otherwise you embed one. Whichever route you take, two properties decide whether it is worth anything: how much distortion it survives, and whether anyone other than you can detect it.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Be honest in your documentation about the second one. A watermark only you can read is still useful: it lets you answer the question "did we generate this?" when a regulator or a journalist asks. But it is weaker on the interoperability the Act asks for than a published, signed manifest, which is exactly why neither layer replaces the other.`,
+      },
+      {
+        type: `h2`,
+        text: `Marking text`,
+      },
+      {
+        type: `paragraph`,
+        text: `Text is the hard case and deserves plain speaking rather than a confident answer. A paragraph of prose has nowhere to hide a signature: there is no metadata container that survives a copy and paste into a text box, and statistical watermarking of token choices degrades as soon as the text is edited, translated or summarised, which is what people do to generated text.`,
+      },
+      {
+        type: `paragraph`,
+        text: `What works in practice is marking at the boundary of the system rather than in the words. Attach provenance to the document, the API response or the file that carries the text, keep a server-side record of what you generated, and make the visible disclosure carry the weight where the machine-readable layer cannot. The Act recognises the limit: the obligation extends as far as it is technically feasible. Document where that line sits for your system and why, because "we concluded it was not feasible" is a defensible position and "we did not think about it" is not.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Note also that text generated and published on matters of public interest carries a separate labelling duty that falls on the deployer, and that one is about a human-visible label rather than a machine-readable mark. If you both generate and publish, you owe both.`,
+      },
+      {
+        type: `h2`,
+        text: `The part everyone forgets: proving it`,
+      },
+      {
+        type: `paragraph`,
+        text: `Suppose you do all of the above. An auditor asks you to show that the image someone complained about last March was marked when it left your system. What do you produce?`,
+      },
+      {
+        type: `paragraph`,
+        text: `The asset itself is not proof: it has been through three platforms since and the metadata is long gone. The code is not proof either; it shows what the system does now, not what it did in March. What answers the question is a record written at generation time and never edited since.`,
+      },
+      {
+        type: `code`,
+        language: `python`,
+        code: `import hashlib, json
+from datetime import datetime, timezone
+
+def record_marking(asset_bytes: bytes, manifest_id: str, model_id: str,
+                   layers: list[str]) -> dict:
+    """Written once per generated asset, append-only, never updated."""
+    entry = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "asset_sha256": hashlib.sha256(asset_bytes).hexdigest(),
+        "manifest_id": manifest_id,
+        "model": model_id,
+        "marking_layers": layers,          # e.g. ["c2pa", "watermark"]
+        "article": "50(2)",
+    }
+    entry["entry_sha256"] = hashlib.sha256(
+        json.dumps(entry, sort_keys=True).encode()
+    ).hexdigest()
+    return entry`,
+      },
+      {
+        type: `paragraph`,
+        text: `This is the same move as Article 12 logging for high-risk systems, which is the point: the record-keeping component you build for Article 50 today is the one you extend for Articles 12 to 14 when the high-risk duties apply in December 2027. Teams that treat the two as separate projects build the same thing twice.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Hashing the entry is cheap and makes later tampering detectable. Storing the asset hash rather than the asset keeps the log small and keeps you out of a second problem: an archive of every image you ever generated is a data protection liability you probably do not want.`,
+      },
+      {
+        type: `h2`,
+        text: `Test it, or it will rot`,
+      },
+      {
+        type: `paragraph`,
+        text: `Marking is invisible by design, which means it can stop working for months without anyone noticing. A library upgrade changes a default. An optimisation re-encodes images on upload and strips the manifest. A new endpoint returns raw model output because its author did not know the marking helper existed.`,
+      },
+      {
+        type: `paragraph`,
+        text: `One integration test catches all three: generate an asset through the real production path, read the manifest back out, assert the digital source type is present, and fail the build if it is not.`,
+      },
+      {
+        type: `code`,
+        language: `python`,
+        code: `def test_generated_images_carry_the_article_50_marking(client):
+    asset = client.post("/generate", json={"prompt": "a quiet street"}).content
+
+    reader = c2pa.Reader.from_bytes("image/png", asset)
+    actions = [
+        a
+        for m in reader.json()["manifests"].values()
+        for s in m["assertions"]
+        if s["label"] == "c2pa.actions"
+        for a in s["data"]["actions"]
+    ]
+
+    assert any(
+        a.get("digitalSourceType") == TRAINED_ALGORITHMIC_MEDIA
+        for a in actions
+    ), "generated image left the service without Article 50(2) marking"`,
+      },
+      {
+        type: `paragraph`,
+        text: `Run it against every media type you generate and every route that returns generated content. The test is also the cheapest compliance artefact you will ever produce: a named, dated, version-controlled check that the obligation is met, which is considerably more persuasive than a policy document asserting the same thing.`,
+      },
+      {
+        type: `h2`,
+        text: `A four-week order of work`,
+      },
+      {
+        type: `paragraph`,
+        text: `If your system is live and 2 December 2026 is the date you are working to, this is the order that gets the most risk off the table first.`,
+      },
+      {
+        type: `unordered-list`,
+        items: [
+          `Week one: inventory. Every route, job and worker that returns or stores model output. This is the step teams skip and the one that determines whether the rest is complete or merely present.`,
+          `Week two: C2PA manifests on images, audio and video at generation time, with the digital source type set and the certificate chain sorted out. Certificates take longer to obtain than the code takes to write, so start them on day one.`,
+          `Week three: second layer where the content will be redistributed, plus the generation log.`,
+          `Week four: the CI test, and a written note of what is covered, what is not, and why. Hand that note to your legal advisers; it is what they need in order to tell you whether you are done.`,
+        ],
+      },
+      {
+        type: `paragraph`,
+        text: `Four weeks is realistic for a system that already has a clean generation boundary. It is optimistic for one where model calls are scattered across the codebase, which is itself a useful thing to discover in week one rather than in week four.`,
+      },
+      {
+        type: `faq`,
+        items: [
+          {
+            question: `Does Article 50(2) apply to my system if I use someone else's model via an API?`,
+            answer: `It depends on whether you are acting as a provider of an AI system that generates synthetic content, which can be true even when the model is not yours. Many teams building on a hosted model are providers of their own system for the purposes of the Act. Treat the question as one for your legal advisers, and in the meantime build the marking, because the engineering is the same either way and you cannot retrofit marking onto content you have already shipped.`,
+          },
+          {
+            question: `Is C2PA legally required?`,
+            answer: `No. The AI Act names no standard. It requires marking that is machine-readable, effective, interoperable, robust and reliable. C2PA is the reference the Commission's Code of Practice points to and what the major providers have implemented, which makes it the pragmatic choice, but the obligation is to the properties, not the format.`,
+          },
+          {
+            question: `What if the marking gets stripped after my content leaves?`,
+            answer: `The duty is on you to mark the output, not to control what third parties do with it afterwards. That is precisely why the second layer matters: a watermark that survives re-encoding means the content is still detectable as synthetic when the metadata is gone, and your generation log means you can still demonstrate that you marked it at the point it left your system.`,
+          },
+          {
+            question: `Do I need to mark content a human has edited?`,
+            answer: `C2PA has assertions for that case, and the IPTC vocabulary distinguishes fully generated media from media that has been algorithmically modified. Where the output is a mix, record the actions rather than picking one label: a manifest that says what the model did and what the human did afterwards is both more honest and more useful than a single flag.`,
+          },
+          {
+            question: `We generate content only for internal use. Does this apply?`,
+            answer: `Scope is a legal question, and the answer turns on whether the system is placed on the market or put into service and whether the output reaches people. The engineering advice is the same regardless: internal content escapes, through exports, screenshots and support tickets, and marking it costs little once the generation boundary is clean.`,
+          },
+        ],
+      },
+      {
+        type: `cta`,
+        heading: `Want this built into your product?`,
+        body: `I'm taking five teams as design partners: Article 50 disclosure and content marking working in your own codebase, in four weeks, free. If you ship a chatbot, a voice agent or anything that generates content, apply for a place.`,
+        linkText: `See the design-partner places`,
+        linkHref: `/early-access`,
+      },
+      {
+        type: `author-bio`,
+        text: `Vinita Silaparasetty is an AI Governance Engineer and founder of Aevoxis Solutions, operating under SMartDE eG, Germany. She has published two SSRN preprints on implementing Article 50, covering generative and agentic systems, and has an empirical paper under review at IEEE Software documenting twelve failure modes found by stress-testing a live governance system. Google Developer Expert (ML), Google Women Techmakers Ambassador, AWS Community Builder, Apress author, M.Sc. Data Science, Newcastle University (Russell Group).`,
+        disclosure: `Parts of this article were written with AI writing assistance (Claude, Anthropic). All technical concepts, architecture, code examples and intellectual content are original work by the author. This article is engineering guidance and does not constitute legal advice: whether and how Article 50 applies to your system is a question for your legal advisers.`,
       },
     ],
   },
