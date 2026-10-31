@@ -6,6 +6,7 @@ export const DEMO_REPO_URL = "https://github.com/VinitaSilaparasetty/spec-drift_
 export const DEMO_ARTICLE_PATH = "/blog/eu-ai-act-articles-12-13-14-technical-implementation";
 export const GITHUB_PROFILE_URL = "https://github.com/VinitaSilaparasetty";
 export const CASE_STUDY_PATH = "/work/in-house-ai-support-chatbot";
+export const SCENARIOS_PATH = "/work/illustrative-scenarios";
 
 // Tally form ID for the early-access list. Leave empty until the form exists;
 // the early-access page then falls back to email.

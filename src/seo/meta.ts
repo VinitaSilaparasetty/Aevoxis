@@ -128,6 +128,25 @@ const staticRoutes: Record<string, StaticRoute> = {
       },
     ],
   },
+  "/work/illustrative-scenarios": {
+    title: "Illustrative Scenarios: EU AI Act Engineering – Aevoxis",
+    description:
+      "Worked examples, not client case studies: how Aevoxis would approach Article 50 disclosure, content marking and Articles 12–14 logging and human oversight.",
+    lang: "en",
+    ogType: "article",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: "How an Engagement Would Work: Illustrative Scenarios",
+        description:
+          "Illustrative scenarios with invented companies, not client work: Article 50(1) disclosure, Article 50(2) and 50(4) marking, and Articles 12–14 for a high-risk hiring tool.",
+        url: `${SITE_URL}/work/illustrative-scenarios`,
+        inLanguage: "en",
+        author: AUTHOR,
+      },
+    ],
+  },
   "/early-access": {
     title: "Early Access – Aevoxis: Article 50 now, Articles 12–14 next",
     description:

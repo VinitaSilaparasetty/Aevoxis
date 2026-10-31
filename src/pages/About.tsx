@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LogoStrip } from "@/components/LogoStrip";
 import { PERSONAL_SITE_URL } from "@/seo/meta";
-import { DEMO_ARTICLE_PATH, CASE_STUDY_PATH } from "@/data/site-content";
+import { DEMO_ARTICLE_PATH, CASE_STUDY_PATH, SCENARIOS_PATH } from "@/data/site-content";
 
 const credentials = [
   { label: "Google Developer Expert", institution: "Machine Learning" },
@@ -66,7 +66,11 @@ export default function AboutPage() {
                   <Link to={CASE_STUDY_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
                     scoping an in-house AI support chatbot
                   </Link>
-                  .
+                  . To show how I'd approach EU AI Act work, I've also written up some{" "}
+                  <Link to={SCENARIOS_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
+                    illustrative scenarios
+                  </Link>
+                  . They use invented companies and are not client work.
                 </p>
               </div>
 
