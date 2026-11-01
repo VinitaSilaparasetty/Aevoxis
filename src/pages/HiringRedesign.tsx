@@ -21,6 +21,15 @@ const atAGlance: Array<[string, string]> = [
   ["Status", "Illustrative redesign, not yet used in a live hiring round"],
 ];
 
+const aiNever: string[] = [
+  "Scores, ranks or shortlists candidates",
+  "Recommends who to interview, hire or reject",
+  "Rejects anyone",
+  "Analyses interviews, video, voice or facial expressions",
+  "Sees a candidate's name, photo or age",
+  "Contacts a candidate on its own",
+];
+
 const painPoints: Array<[string, string]> = [
   ["Time:", "reading every CV in full, even clearly unsuitable ones."],
   ["Inconsistency:", "without written criteria, each application was judged slightly differently."],
@@ -193,7 +202,7 @@ export default function HiringRedesignPage() {
             Illustrative redesign · A real 2017 hiring round, rebuilt for 2026
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight mb-4 tracking-tight">
-            Then and Now: Redesigning a Real Hiring Round as an EU-Compliant AI Workflow
+            Then and Now: Keeping People in Charge of Hiring, with AI Only for the Paperwork
           </h1>
           <p className="text-xl text-foreground/80 italic mb-8">
             How I'd rebuild a hiring round I once ran by hand, with AI doing the reading and people making every
@@ -203,9 +212,10 @@ export default function HiringRedesignPage() {
           <div className="rounded-2xl border border-accent/60 bg-secondary/60 p-5 mb-8">
             <p className="text-foreground font-semibold mb-2">Please read this first</p>
             <p className="text-muted-foreground leading-relaxed">
-              The 2017 hiring round is real. The AI workflow is a design study: it has not been built or used in a
-              live hiring round, and it is not client work. No applicant names or details appear here. This page
-              explains the rules for learning purposes and is not legal advice.
+              The 2017 hiring round is real, and no AI was used on it: every application was read by a person. The
+              AI workflow is a design study: it has not been built or used in a live hiring round, and it is not
+              client work. No applicant's name or details appear here. This page explains the rules for learning
+              purposes and is not legal advice.
             </p>
           </div>
 
@@ -219,6 +229,18 @@ export default function HiringRedesignPage() {
             the rules. The key design decision is to keep the AI out of the hiring decision, which can keep a small
             business out of the AI Act's high-risk category.
           </p>
+
+          <div className="rounded-2xl border border-border bg-secondary/40 p-5 mb-8">
+            <p className="text-foreground font-semibold mb-2">What the AI never does</p>
+            <p className="text-muted-foreground leading-relaxed mb-3">
+              In this design, people make every decision about a candidate. The AI never:
+            </p>
+            <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+              {aiNever.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
 
           <h2 className={h2}>At a glance</h2>
           <Table head={["", "Details"]} rows={atAGlance} />
