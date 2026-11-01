@@ -12,8 +12,8 @@ import { CASE_STUDY_PATH, SCENARIOS_PATH } from "@/data/site-content";
 
 const atAGlance: Array<[string, string]> = [
   ["The business", "A small, family-run tutoring business"],
-  ["Roles hired", "A Commerce teacher, an IB/IGCSE teacher and a statistical analyst"],
-  ["Then (2017, real)", "I advertised three roles on Indeed and read, compared and sorted every application by hand"],
+  ["Roles hired", "A Commerce teacher and an IB/IGCSE teacher"],
+  ["Then (2017, real)", "I advertised two teaching roles on Indeed and read, compared and sorted every application by hand"],
   ["Now (2026, illustrative)", "The same hiring round, redesigned as an AI workflow for a small business in Germany today"],
   ["My role", "Then: I ran the hiring for the family business. Now: AI governance engineer, designing the workflow and its compliance"],
   ["Rules applied", "EU AI Act, GDPR, German anti-discrimination law (AGG)"],
@@ -210,7 +210,7 @@ export default function HiringRedesignPage() {
           </div>
 
           <p className={p}>
-            In 2017 I ran the hiring for my mother's tutoring business, advertising three roles and sorting every
+            In 2017 I ran the hiring for my mother's tutoring business, advertising two teaching roles and sorting every
             application by hand. Here I take that real hiring round and redesign it as an AI-assisted workflow that
             would comply with the EU AI Act and GDPR if the business operated in Germany today.
           </p>
@@ -229,7 +229,7 @@ export default function HiringRedesignPage() {
             and very little choosing between good candidates.
           </p>
           <p className={p}>
-            We advertised three roles on Indeed. Applications arrived as email notifications with CVs attached in
+            We advertised two teaching roles on Indeed. Applications arrived as email notifications with CVs attached in
             different formats (PDF and Word). Each one had to be opened, read and compared by hand against what the
             role needed: subject knowledge, curriculum experience such as IB or IGCSE, and location.
           </p>
