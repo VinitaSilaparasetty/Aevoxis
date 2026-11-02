@@ -6,7 +6,7 @@ import logo from "@/assets/logo.png";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Engineering", href: "/services/eu-ai-act-engineering" },
+  { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
   { name: "Insights", href: "/blog" },
   { name: "Contact", href: "/contact" },
