@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Services from "./pages/Services.tsx";
 import EuAiActEngineering from "./pages/EuAiActEngineering.tsx";
+import AgenticWorkflows from "./pages/AgenticWorkflows.tsx";
 import Moved from "./pages/Moved.tsx";
 import About from "./pages/About.tsx";
 import EarlyAccess from "./pages/EarlyAccess.tsx";
@@ -31,6 +32,7 @@ export const AppRoutes = () => (
       <Route path="/" element={<Index />} />
       <Route path="/services" element={<Services />} />
       <Route path="/services/eu-ai-act-engineering" element={<EuAiActEngineering />} />
+      <Route path="/services/agentic-ai-workflows" element={<AgenticWorkflows />} />
       <Route
         path="/services/technical-writing-curriculum"
         element={<Moved to={`${PERSONAL_SITE_URL}/services.html`} label="Vinita Silaparasetty's site" />}

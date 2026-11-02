@@ -124,6 +124,7 @@ The working prototype is the Spec-Drift Chronometer: real-time drift detection a
 
 - [Home](${SITE_URL}/): what Aevoxis builds and why
 - [Article 50 and Articles 12–14 engineering](${SITE_URL}/services/eu-ai-act-engineering): engagements while the product is in development
+- [Agentic AI workflow development](${SITE_URL}/services/agentic-ai-workflows): agents built with logging, limited permissions and human approval from day one
 - [About Vinita Silaparasetty](${SITE_URL}/about)
 - [Case study: scoping an in-house AI support chatbot](${SITE_URL}/work/in-house-ai-support-chatbot): independent consulting work from early 2025, before the Aevoxis name
 - [Then and now: keeping people in charge of hiring](${SITE_URL}/work/ai-hiring-workflow-redesign): a real 2017 hiring round redesigned for the EU AI Act and GDPR, with people making every decision and AI only doing the paperwork; illustrative, not client work

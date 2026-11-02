@@ -7,6 +7,7 @@ const footerLinks = {
   product: [
     { name: "Early access", href: "/early-access" },
     { name: "Article 50 and Articles 12–14 engineering", href: "/services/eu-ai-act-engineering" },
+    { name: "Agentic AI workflows", href: "/services/agentic-ai-workflows" },
     { name: "Services", href: "/services" },
   ],
   company: [

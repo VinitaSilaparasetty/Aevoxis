@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Rocket } from "lucide-react";
+import { ArrowRight, Shield, Rocket, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -16,19 +16,19 @@ const Services = () => (
           <span className="text-xs font-medium text-accent tracking-wide">SERVICES</span>
         </div>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
-          Two ways to meet{" "}
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">the EU AI Act</span>
+          AI systems that are{" "}
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">useful and accountable</span>
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-          Article 50 transparency applies today and the Articles 12–14 high-risk duties follow in December 2027.
-          The Aevoxis product is in development; until it's ready, I build the same mechanisms directly into your
-          system.
+          I build EU AI Act compliance into existing AI systems, and I build new agentic workflows with the same
+          logging and human oversight from the start. Article 50 transparency applies today and the Articles 12–14
+          high-risk duties follow in December 2027.
         </p>
       </div>
     </section>
 
     <section className="px-4 sm:px-6 lg:px-8 pb-20">
-      <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ServiceCard
           icon={<Rocket className="w-7 h-7" />}
           title="Aevoxis tooling (early access)"
@@ -42,6 +42,13 @@ const Services = () => (
           description="A gap analysis of your system, then hands-on implementation: Article 50 disclosure and content marking now, audit logging, transparency and oversight in your own code for what follows."
           href="/services/eu-ai-act-engineering"
           variant="blue"
+        />
+        <ServiceCard
+          icon={<Workflow className="w-7 h-7" />}
+          title="Agentic AI workflow development"
+          description="AI agents that take over a real process in your tools, with every step logged, limited permissions and a person approving anything consequential. Scoping, build and handover."
+          href="/services/agentic-ai-workflows"
+          variant="cyan"
         />
       </div>
     </section>

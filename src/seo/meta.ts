@@ -1,5 +1,5 @@
 import { blogPosts, type BlogPost } from "@/data/blog-posts";
-import { homeFaq, engagementFaq } from "@/data/site-content";
+import { homeFaq, engagementFaq, agenticFaq } from "@/data/site-content";
 
 function faqPage(items: Array<{ question: string; answer: string }>) {
   return {
@@ -72,9 +72,9 @@ const staticRoutes: Record<string, StaticRoute> = {
     ],
   },
   "/services": {
-    title: "Services – EU AI Act Article 50 and Articles 12–14 – Aevoxis",
+    title: "Services – EU AI Act Engineering and Agentic AI Workflows – Aevoxis",
     description:
-      "Engineering engagements for the EU AI Act: Article 50 transparency and content marking, which apply today, and the Articles 12–14 logging, transparency and human-oversight duties that follow.",
+      "Engineering engagements for the EU AI Act (Article 50 transparency today, Articles 12–14 next) and agentic AI workflow development with logging and human oversight built in.",
     lang: "en",
   },
   "/services/eu-ai-act-engineering": {
@@ -92,6 +92,23 @@ const staticRoutes: Record<string, StaticRoute> = {
         areaServed: "European Union",
       },
       faqPage(engagementFaq),
+    ],
+  },
+  "/services/agentic-ai-workflows": {
+    title: "Agentic AI Workflow Development – Aevoxis",
+    description:
+      "Design and development of agentic AI workflows with LangGraph, LangChain or CrewAI on AWS Bedrock, with step logging, limited permissions and human approval built in from day one.",
+    lang: "en",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Agentic AI workflow development",
+        serviceType: "AI workflow automation",
+        provider: { "@id": ORGANIZATION["@id"] },
+        areaServed: "European Union",
+      },
+      faqPage(agenticFaq),
     ],
   },
   "/services/technical-writing-curriculum": {

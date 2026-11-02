@@ -91,3 +91,33 @@ export const engagementFaq = [
       "Through SMartDE eG, a cooperative for self-employed professionals in Germany. Its details are in the Impressum.",
   },
 ];
+
+export const AGENTIC_PATH = "/services/agentic-ai-workflows";
+
+export const agenticFaq = [
+  {
+    question: "What kind of workflows do you build?",
+    answer:
+      "Multi-step AI workflows that do real work inside your existing tools: triaging and answering support requests, processing documents, preparing drafts for review, or automating developer tasks such as pull request review. Each one is scoped to a single process with a measurable result.",
+  },
+  {
+    question: "Which tech stacks do you work with?",
+    answer:
+      "Python, with LangGraph, LangChain or CrewAI for orchestration, on AWS (Lambda, Bedrock) or with self-hosted open-source models. I connect agents to your systems through their APIs. Other stacks are possible; ask.",
+  },
+  {
+    question: "How do you keep an agent under control?",
+    answer:
+      "Every workflow is built with logging of each step, clear limits on what the agent may do on its own, and a human approval point before anything consequential happens. If the workflow falls under the EU AI Act, the same components cover the Article 50 disclosure and, where relevant, the Articles 12–14 duties.",
+  },
+  {
+    question: "Do we own the code?",
+    answer:
+      "Yes. The workflow runs in your environment, and you get the code, documentation and a handover session so your team can maintain and extend it.",
+  },
+  {
+    question: "How are projects invoiced?",
+    answer:
+      "Through SMartDE eG, a cooperative for self-employed professionals in Germany. Its details are in the Impressum.",
+  },
+];
