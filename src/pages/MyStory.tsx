@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PERSONAL_SITE_URL } from "@/seo/meta";
-import { CASE_STUDY_PATH, DEMO_ARTICLE_PATH } from "@/data/site-content";
+import { CASE_STUDY_PATH, DEMO_ARTICLE_PATH, HIRING_REDESIGN_PATH } from "@/data/site-content";
 
 // Facts here come from Vinita's LinkedIn profile and her own account (claude.ai "Case study writing" chat, Oct 2026).
 // Always say "design patent": an Indian design registration protects how the product looks, not how it works.
@@ -89,6 +89,12 @@ export default function MyStoryPage() {
                 Scoping an in-house AI support chatbot
               </Link>
               , independent consulting from early 2025
+            </li>
+            <li>
+              <Link to={HIRING_REDESIGN_PATH} className={link}>
+                Then and now: keeping people in charge of hiring
+              </Link>
+              , a real 2017 hiring round redesigned for the EU AI Act (illustrative, not client work)
             </li>
             <li>
               <a href={`${PERSONAL_SITE_URL}/case-study-cpd-course.html`} className={link}>

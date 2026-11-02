@@ -11,11 +11,35 @@ import {
   DEMO_REPO_URL,
   DEMO_URL,
   GITHUB_PROFILE_URL,
+  CASE_STUDY_PATH,
+  HIRING_REDESIGN_PATH,
+  SCENARIOS_PATH,
   article50Papers,
   homeFaq,
   openSourcePackages,
   proofPoints,
 } from "@/data/site-content";
+
+const selectedWork = [
+  {
+    label: "Client work, 2025",
+    title: "Scoping an in-house AI support chatbot",
+    summary: "Why a vendor chatbot fell short, a Rasa and Claude design, and a four-week pilot with one success metric.",
+    href: CASE_STUDY_PATH,
+  },
+  {
+    label: "Illustrative redesign",
+    title: "Then and now: keeping people in charge of hiring",
+    summary: "A real 2017 hiring round, redesigned under the EU AI Act, GDPR and AGG. People decide; AI only does the paperwork.",
+    href: HIRING_REDESIGN_PATH,
+  },
+  {
+    label: "Worked examples",
+    title: "Illustrative EU AI Act scenarios",
+    summary: "How I'd approach Article 50 disclosure, content marking, logging and human oversight. Invented companies, not client work.",
+    href: SCENARIOS_PATH,
+  },
+];
 
 const transparencyDuties = [
   {
@@ -347,6 +371,30 @@ export default function HomePage() {
                 <Github className="w-4 h-4" /> All repositories on GitHub
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Selected work */}
+      <section className="relative pb-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 tracking-tight">Selected work</h2>
+          <p className="text-muted-foreground leading-relaxed mb-10 max-w-2xl">
+            One client project and two worked examples. Each is labelled for what it is.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {selectedWork.map((item) => (
+              <Link key={item.href} to={item.href} className="premium-card premium-card-cyan p-8 h-full block">
+                <div className="relative z-10 flex flex-col h-full">
+                  <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{item.label}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">{item.summary}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 text-primary font-medium">
+                    Read it <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

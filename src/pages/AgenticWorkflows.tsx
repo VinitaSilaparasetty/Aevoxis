@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FaqList } from "@/components/FaqList";
 import { InstallCommand } from "@/components/InstallCommand";
-import { agenticFaq, article50Papers, openSourcePackages, CASE_STUDY_PATH } from "@/data/site-content";
+import { agenticFaq, article50Papers, openSourcePackages, CASE_STUDY_PATH, HIRING_REDESIGN_PATH } from "@/data/site-content";
 
 const services = [
   {
@@ -123,6 +123,13 @@ export default function AgenticWorkflowsPage() {
                   {article50Papers[1].title}
                 </a>
                 .
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                For an AI workflow designed so people make every decision, see{" "}
+                <Link to={HIRING_REDESIGN_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
+                  Then and now: keeping people in charge of hiring
+                </Link>{" "}
+                (an illustrative redesign, not client work).
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 For how I scope an AI project with a client, read{" "}
