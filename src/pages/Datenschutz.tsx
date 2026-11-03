@@ -128,7 +128,6 @@ export default function DatenschutzPage() {
                     (berechtigtes Interesse am sicheren und funktionsfähigen Betrieb der Website).
                   </p>
                   <p>
-                    Die Verarbeitung erfolgt auf Basis eines Auftragsverarbeitungsvertrags gemäß Art. 28 DSGVO.
                     Microsoft ist unter dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO). Weitere
                     Informationen:{" "}
                     <a
@@ -285,8 +284,7 @@ export default function DatenschutzPage() {
                     </div>
                   </div>
                   <p className="text-sm">
-                    Tally verarbeitet Daten auf Servern innerhalb der Europäischen Union. Es besteht ein
-                    Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Weitere Informationen:{" "}
+                    Tally verarbeitet Daten auf Servern innerhalb der Europäischen Union. Weitere Informationen:{" "}
                     <a
                       href="https://tally.so/help/privacy-policy"
                       target="_blank"
