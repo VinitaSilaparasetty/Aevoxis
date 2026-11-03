@@ -38,6 +38,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: `A working implementation of EU AI Act human oversight and logging requirements using real-time drift detection, a Justification Gate, and a cryptographically verifiable audit trail. Live demo included.`,
     canonicalPath: `/blog/eu-ai-act-articles-12-13-14-technical-implementation`,
     datePublishedISO: `2026-06-16`,
+    dateModifiedISO: `2026-11-03`,
     author: `Vinita Silaparasetty`,
     authorRole: `AI Governance Engineer, Aevoxis Solutions`,
     publishedDate: `June 2026`,
@@ -54,6 +55,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: `paragraph`,
         text: `This article argues for a different approach: EU AI Act compliance as architecture. Not a policy layer sitting on top of a generative AI system, but governance logic built into the execution path of the system itself. The Spec-Drift Chronometer is a working, open-source demonstration of what that looks like in practice, built for the August 2, 2026 applicability deadline.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Update, November 2026: when this article was written, the high-risk rules were due to apply on August 2, 2026. The Digital Omnibus on AI (Regulation (EU) 2026/1744, in force since 27 July 2026) moved them. Articles 12, 13 and 14 now apply from 2 December 2027 for Annex III high-risk systems, and from 2 August 2028 for high-risk AI in products covered by Annex I. The architecture described below is unchanged.`,
       },
       {
         type: `h2`,
@@ -400,8 +405,8 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `cta`,
-        heading: `Is Your Generative AI System Ready for August 2, 2026?`,
-        body: `EU AI Act Article 14 becomes fully applicable on August 2, 2026 for high-risk AI systems. Enterprises deploying autonomous AI systems that fall within Annex III high-risk categories — including systems used in employment, education, credit, biometric identification, or critical infrastructure — need to demonstrate human oversight capability before that date. If you are assessing your organisation's autonomous AI systems for Article 14 compliance and want a technical second opinion on your architecture, the EU AI Act Technical Readiness Assessment at aevoxis.de takes approximately five minutes and results in a personalised response within 24 hours.`,
+        heading: `Is Your Generative AI System Ready for December 2, 2027?`,
+        body: `EU AI Act Article 14 applies to Annex III high-risk AI systems from December 2, 2027, following the Digital Omnibus on AI. Enterprises deploying autonomous AI systems that fall within Annex III high-risk categories — including systems used in employment, education, credit, biometric identification, or critical infrastructure — need to demonstrate human oversight capability before that date. If you are assessing your organisation's autonomous AI systems for Article 14 compliance and want a technical second opinion on your architecture, the EU AI Act Technical Readiness Assessment at aevoxis.de takes approximately five minutes and results in a personalised response within 24 hours.`,
         linkText: `Start the Assessment`,
         linkHref: `/contact`,
       },
