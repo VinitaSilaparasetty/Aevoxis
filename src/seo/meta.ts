@@ -23,6 +23,7 @@ export const AUTHOR = {
   "@id": `${SITE_URL}/about#vinita`,
   name: "Vinita Silaparasetty",
   jobTitle: "AI Governance Engineer",
+  image: `${SITE_URL}/vinita.jpg`,
   url: `${SITE_URL}/about`,
   sameAs: [
     "https://www.linkedin.com/in/vinita-silaparasetty",

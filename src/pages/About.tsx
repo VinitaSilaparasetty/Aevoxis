@@ -102,10 +102,7 @@ export default function AboutPage() {
               <div className="premium-card premium-card-blue p-10">
                 <div className="relative z-10">
                   <div className="text-center mb-10">
-                    {/* Replace with a photo: <img src="/vinita.jpg" alt="Vinita Silaparasetty" className="w-28 h-28 rounded-full mx-auto mb-6 object-cover" /> */}
-                    <div className="w-28 h-28 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 mx-auto mb-6 flex items-center justify-center border border-border">
-                      <span className="text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">VS</span>
-                    </div>
+                    <img src="/vinita.jpg" alt="Portrait of Vinita Silaparasetty" width={112} height={112} className="w-28 h-28 rounded-full mx-auto mb-6 object-cover border border-border" />
                     <h2 className="text-2xl font-bold text-foreground mb-2">Vinita Silaparasetty</h2>
                     <p className="text-primary font-medium">AI Governance Engineer</p>
                   </div>
