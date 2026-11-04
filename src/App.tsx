@@ -15,6 +15,8 @@ import CaseStudyChatbot from "./pages/CaseStudyChatbot.tsx";
 import IllustrativeScenarios from "./pages/IllustrativeScenarios.tsx";
 import MyStory from "./pages/MyStory.tsx";
 import HiringRedesign from "./pages/HiringRedesign.tsx";
+import AiLiteracyCourse from "./pages/AiLiteracyCourse.tsx";
+import AiUseChecker from "./pages/AiUseChecker.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import Datenschutz from "./pages/Datenschutz.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -43,6 +45,8 @@ export const AppRoutes = () => (
       <Route path="/work/in-house-ai-support-chatbot" element={<CaseStudyChatbot />} />
       <Route path="/work/illustrative-scenarios" element={<IllustrativeScenarios />} />
       <Route path="/work/ai-hiring-workflow-redesign" element={<HiringRedesign />} />
+      <Route path="/work/ai-literacy-course" element={<AiLiteracyCourse />} />
+      <Route path="/work/ai-use-checker" element={<AiUseChecker />} />
       <Route path="/impressum" element={<Impressum />} />
       <Route path="/datenschutz" element={<Datenschutz />} />
       <Route path="/contact" element={<Contact />} />

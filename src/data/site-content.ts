@@ -8,6 +8,9 @@ export const GITHUB_PROFILE_URL = "https://github.com/VinitaSilaparasetty";
 export const CASE_STUDY_PATH = "/work/in-house-ai-support-chatbot";
 export const SCENARIOS_PATH = "/work/illustrative-scenarios";
 export const HIRING_REDESIGN_PATH = "/work/ai-hiring-workflow-redesign";
+export const AI_LITERACY_COURSE_PATH = "/work/ai-literacy-course";
+export const AI_USE_CHECKER_PATH = "/work/ai-use-checker";
+export const JOB_AID_PDF_PATH = "/downloads/five-rules-before-you-hit-enter.pdf";
 
 // Tally form ID for the early-access list. Leave empty until the form exists;
 // the early-access page then falls back to email.

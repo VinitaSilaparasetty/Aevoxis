@@ -201,6 +201,46 @@ const staticRoutes: Record<string, StaticRoute> = {
       },
     ],
   },
+  "/work/ai-literacy-course": {
+    title: "Case Study: AI Literacy at Work, a 20-Minute Course – Aevoxis",
+    description:
+      "The learning design behind a 20-minute Articulate Rise course that teaches non-technical staff to use AI safely under the EU AI Act: audience, objectives, design choices and scenarios.",
+    lang: "en",
+    ogType: "article",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: "AI Literacy at Work: Designing a 20-Minute Course for Non-Technical Staff",
+        description:
+          "Self-initiated learning-design case study: who the course is for, its four objectives, eight design choices and three workplace scenarios built around five safe-use rules.",
+        url: `${SITE_URL}/work/ai-literacy-course`,
+        inLanguage: "en",
+        author: AUTHOR,
+      },
+    ],
+  },
+  "/work/ai-use-checker": {
+    title: "Is This AI Use OK? A Five-Question Checker – Aevoxis",
+    description:
+      "Answer five questions about an everyday AI task at work and get a go, fix-first or stop, based on five safe-use rules. Runs in your browser; nothing is stored. Not legal advice.",
+    lang: "en",
+    ogType: "website",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Is this AI use OK?",
+        description:
+          "An interactive check of everyday workplace AI use against five rules: protect data, check before you use, be open, a human decides, speak up.",
+        url: `${SITE_URL}/work/ai-use-checker`,
+        applicationCategory: "EducationalApplication",
+        operatingSystem: "Any",
+        inLanguage: "en",
+        author: AUTHOR,
+      },
+    ],
+  },
   "/early-access": {
     title: "Early Access – Aevoxis: Article 50 now, Articles 12–14 next",
     description:

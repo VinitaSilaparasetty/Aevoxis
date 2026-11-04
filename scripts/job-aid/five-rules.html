@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Five rules before you hit Enter</title>
+<!-- One-page A4 job aid from Lesson 3 of "AI Literacy at Work".
+     Regenerate the PDF with: node scripts/job-aid/build.mjs -->
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #161a2b;
+    --muted: #4a5068;
+    --primary: #0062b8;
+    --accent: #00b8de;
+    --wash: #eef5fc;
+    --line: #d5dfeb;
+    --stop: #b42318;
+    --stop-wash: #fdf0ef;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 210mm; height: 297mm; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+    color: var(--ink);
+    font-size: 9.8pt;
+    line-height: 1.38;
+    padding: 11mm 14mm 9mm;
+    display: flex;
+    flex-direction: column;
+  }
+  header { border-bottom: 3px solid var(--primary); padding-bottom: 4mm; margin-bottom: 4mm; }
+  .eyebrow { font-size: 8.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); }
+  h1 { font-size: 25pt; line-height: 1.1; margin: 1.5mm 0 1.5mm; letter-spacing: -.01em; }
+  .lede { color: var(--muted); font-size: 10.5pt; }
+
+  .check {
+    background: var(--wash);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--primary);
+    border-radius: 3mm;
+    padding: 3.5mm 5mm;
+    margin-bottom: 5mm;
+  }
+  .check h2 { font-size: 11.5pt; margin-bottom: 2mm; }
+  .check ol { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .check li { display: flex; gap: 2.5mm; align-items: flex-start; font-weight: 600; }
+  .box { flex: none; width: 4.2mm; height: 4.2mm; border: 1.6px solid var(--primary); border-radius: 1mm; margin-top: .6mm; background: #fff; }
+  .check p { font-size: 9pt; color: var(--muted); margin-top: 2.5mm; }
+
+  .rules { display: flex; flex-direction: column; gap: 0; margin-bottom: 4mm; }
+  .rule { display: grid; grid-template-columns: 11mm 1fr 58mm; gap: 4mm; align-items: start; padding: 2.4mm 0; border-bottom: 1px solid var(--line); }
+  .rule:last-child { border-bottom: 0; }
+  .num { width: 11mm; height: 11mm; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 700; font-size: 14pt; display: flex; align-items: center; justify-content: center; }
+  .rule h3 { font-size: 12pt; margin-bottom: .8mm; }
+  .rule p { color: var(--muted); }
+  .ask { font-size: 9pt; background: var(--wash); border-radius: 2mm; padding: 2mm 3mm; }
+  .ask b { display: block; color: var(--primary); font-size: 7.5pt; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .5mm; }
+
+  .paste { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 4mm; }
+  .col { border: 1px solid var(--line); border-radius: 3mm; padding: 3mm 4mm; }
+  .col h2 { font-size: 10.5pt; margin-bottom: 1.5mm; }
+  .col ul { padding-left: 4mm; color: var(--muted); font-size: 9.2pt; }
+  .col.ok { border-top: 4px solid var(--accent); }
+  .col.no { border-top: 4px solid var(--stop); background: var(--stop-wash); }
+  .col .note { font-size: 8.5pt; color: var(--muted); margin-top: 1.5mm; font-style: italic; }
+
+  .report { display: flex; align-items: center; gap: 4mm; border: 1.5px dashed var(--primary); border-radius: 3mm; padding: 3mm 4mm; margin-bottom: 4mm; }
+  .report strong { white-space: nowrap; }
+  .blank { flex: 1; border-bottom: 1px solid var(--ink); height: 5mm; }
+
+  footer { margin-top: auto; display: flex; justify-content: space-between; gap: 6mm; font-size: 7.8pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 2.5mm; }
+</style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">AI at work · One-page job aid</p>
+    <h1>Five rules before you hit Enter</h1>
+    <p class="lede">You don't need to be technical to use AI safely. These five rules cover most everyday situations.
+      Your organisation's own AI policy always comes first.</p>
+  </header>
+
+  <section class="check" aria-labelledby="quick">
+    <h2 id="quick">The 10-second check, every time</h2>
+    <ol>
+      <li><span class="box"></span>Is this tool approved by my organisation?</li>
+      <li><span class="box"></span>Have I removed personal and confidential details?</li>
+      <li><span class="box"></span>Will I check the output before I use it?</li>
+    </ol>
+    <p>Any "no"? Stop and fix it first, or ask before you go ahead.</p>
+  </section>
+
+  <section class="rules" aria-label="The five rules">
+    <div class="rule">
+      <div class="num">1</div>
+      <div><h3>Protect data</h3>
+        <p>Don't paste personal data (names, contact details, health or HR information) or confidential business
+          information into a tool your organisation hasn't approved. GDPR still applies when you use AI.</p></div>
+      <div class="ask"><b>Ask yourself</b>Would I be comfortable if this text were stored outside the company?</div>
+    </div>
+    <div class="rule">
+      <div class="num">2</div>
+      <div><h3>Check before you use</h3>
+        <p>AI predicts likely words; it doesn't look up the truth. Verify facts, figures, quotes and links. Open every
+          source it gives you and confirm it says what the AI claims.</p></div>
+      <div class="ask"><b>Ask yourself</b>Have I opened the source, or am I trusting that it exists?</div>
+    </div>
+    <div class="rule">
+      <div class="num">3</div>
+      <div><h3>Be open</h3>
+        <p>Say when content was made or heavily shaped by AI, especially text or images that people will rely on or
+          that could be mistaken for real.</p></div>
+      <div class="ask"><b>Ask yourself</b>Would the reader feel misled if they learned AI wrote this?</div>
+    </div>
+    <div class="rule">
+      <div class="num">4</div>
+      <div><h3>A human decides</h3>
+        <p>Never let AI make decisions about people, such as hiring, performance or customer complaints, on its own.
+          AI can suggest; a person decides and is accountable.</p></div>
+      <div class="ask"><b>Ask yourself</b>If this decision is challenged, who explains it? It must be a person.</div>
+    </div>
+    <div class="rule">
+      <div class="num">5</div>
+      <div><h3>Speak up</h3>
+        <p>If an AI tool gives a biased, harmful or badly wrong result, report it. Mistakes caught early are cheap.</p></div>
+      <div class="ask"><b>Ask yourself</b>Could this go wrong again for someone who doesn't notice?</div>
+    </div>
+  </section>
+
+  <section class="paste" aria-label="What you can paste">
+    <div class="col ok">
+      <h2>Usually fine in any tool</h2>
+      <ul>
+        <li>Public information, such as a published news article</li>
+        <li>Generic questions, such as how to structure a project plan</li>
+        <li>Your own wording to polish, with names and details removed</li>
+      </ul>
+    </div>
+    <div class="col no">
+      <h2>Only in approved tools, if at all</h2>
+      <ul>
+        <li>Customer or employee names, emails, addresses, order history</li>
+        <li>Health, HR or performance information</li>
+        <li>Unannounced plans, deals, prices or financial results</li>
+      </ul>
+      <p class="note">Not sure? Treat it as confidential and ask.</p>
+    </div>
+  </section>
+
+  <div class="report">
+    <strong>Something looks wrong? Report it to:</strong>
+    <span class="blank" aria-label="Write your contact here"></span>
+  </div>
+
+  <footer>
+    <span>From the course "AI Literacy at Work: Using AI Tools Safely under the EU AI Act". General guidance, not legal
+      advice. Follow your organisation's AI policy.</span>
+    <span style="white-space:nowrap">Vinita Silaparasetty · aevoxis.de</span>
+  </footer>
+</body>
+</html>

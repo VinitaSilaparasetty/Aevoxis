@@ -128,6 +128,9 @@ The working prototype is the Spec-Drift Chronometer: real-time drift detection a
 - [About Vinita Silaparasetty](${SITE_URL}/about)
 - [Case study: scoping an in-house AI support chatbot](${SITE_URL}/work/in-house-ai-support-chatbot): independent consulting work from early 2025, before the Aevoxis name
 - [Then and now: keeping people in charge of hiring](${SITE_URL}/work/ai-hiring-workflow-redesign): a real 2017 hiring round redesigned for the EU AI Act and GDPR, with people making every decision and AI only doing the paperwork; illustrative, not client work
+- [Case study: AI Literacy at Work](${SITE_URL}/work/ai-literacy-course): the learning design of a 20-minute course for non-technical staff on using AI safely under the EU AI Act; self-initiated, not client work
+- [Is this AI use OK? checker](${SITE_URL}/work/ai-use-checker): five questions about an everyday AI task, checked against the course's five safe-use rules
+- [Job aid: Five rules before you hit Enter](${SITE_URL}/downloads/five-rules-before-you-hit-enter.pdf): one-page PDF
 - [Early access](${SITE_URL}/early-access)
 - [Contact](${SITE_URL}/contact)
 

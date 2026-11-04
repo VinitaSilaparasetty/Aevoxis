@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LogoStrip } from "@/components/LogoStrip";
 import { PERSONAL_SITE_URL } from "@/seo/meta";
-import { DEMO_ARTICLE_PATH, CASE_STUDY_PATH, SCENARIOS_PATH, HIRING_REDESIGN_PATH } from "@/data/site-content";
+import { DEMO_ARTICLE_PATH, CASE_STUDY_PATH, SCENARIOS_PATH, HIRING_REDESIGN_PATH, AI_LITERACY_COURSE_PATH } from "@/data/site-content";
 
 const credentials = [
   { label: "Google Developer Expert", institution: "Machine Learning" },
@@ -79,7 +79,12 @@ export default function AboutPage() {
                   <Link to={HIRING_REDESIGN_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
                     redesigned a real hiring round I ran by hand in 2017
                   </Link>{" "}
-                  as an AI workflow that would meet the EU AI Act and GDPR today.
+                  as an AI workflow that would meet the EU AI Act and GDPR today. On the learning-design side, I've
+                  designed{" "}
+                  <Link to={AI_LITERACY_COURSE_PATH} className="text-primary underline underline-offset-4 hover:text-accent">
+                    AI Literacy at Work
+                  </Link>
+                  , a 20-minute course that teaches non-technical staff to use AI safely.
                 </p>
               </div>
 
