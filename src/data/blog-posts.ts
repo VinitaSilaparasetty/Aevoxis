@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `paragraph`,
-        text: `The logs must capture the data that triggered the decision, the decision itself and enough context for a human reviewer to reconstruct what happened and why.`,
+        text: `Article 12 asks for automatic logs over the system's lifetime, detailed enough to trace how it works (Art. 12(1) and (2)). It lists specific fields only for remote biometric identification systems (Art. 12(3)). In practice, I recommend logging the input that triggered a decision, the decision itself and enough context for a reviewer to reconstruct what happened and why.`,
       },
       {
         type: `paragraph`,
@@ -134,11 +134,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `paragraph`,
-        text: `Article 13 requires AI systems to be transparent enough for deployers and users to interpret outputs and use the system appropriately.`,
+        text: `Article 13 requires high-risk AI systems to be transparent enough for deployers to interpret the output and use it appropriately (Art. 13(1)).`,
       },
       {
         type: `paragraph`,
-        text: `So the system must give more than an output. It must give enough context about how that output was produced for a non-technical stakeholder to evaluate it.`,
+        text: `In practice, I recommend giving more than an output. Give enough context about how that output was produced for the person overseeing the system to evaluate it.`,
       },
       {
         type: `paragraph`,
@@ -618,7 +618,7 @@ DEMO_MODE=true ./dev.sh`,
       {
         type: `unordered-list`,
         items: [
-          `Monitor the AI system's operation in real time`,
+          `Duly monitor the AI system's operation, including detecting anomalies, dysfunctions and unexpected performance`,
           `Understand the system's outputs and their significance`,
           `Override, interrupt or halt the system when necessary`,
           `Detect and address failures, including unexpected behavior`,
@@ -626,7 +626,7 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `paragraph`,
-        text: `The key phrase is "implemented into the AI system by the provider." That makes it an engineering requirement, not a governance document requirement.`,
+        text: `The key words are "identified and built, when technically feasible, into the high-risk AI system by the provider" (Art. 14(3)(a)). For those measures, that makes it an engineering requirement, not a governance document requirement.`,
       },
       {
         type: `paragraph`,
@@ -933,7 +933,7 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `If you are on a free tier, change the model in rag_chatbot.py and langgraph_example.py to one your account can access. A common alternative is gpt-3.5-turbo.`,
+        text: `If you are on a free tier, change the model in rag_chatbot.py and langgraph_example.py to one your account can access. Check the model list in your OpenAI account settings.`,
       },
       {
         type: `h3`,
@@ -1009,7 +1009,7 @@ python rag_chatbot.py`,
           },
           {
             question: `Does this integration satisfy Article 14 on its own or are additional measures needed?`,
-            answer: `This integration covers the technical enforcement side of Article 14. It makes sure human sign-off is required before architectural changes take effect in production. It does not cover the full scope of Article 14, which also includes risk management documentation, user interface oversight tools and operator training. For high-risk AI systems under Annex III, this integration is one part of a broader compliance program.`,
+            answer: `This integration covers the technical enforcement side of Article 14. It makes sure human sign-off is required before architectural changes take effect in production. It does not cover the full scope of Article 14, which also asks for human-machine interface tools that let people oversee the system (Art. 14(1)). Deployers must also give oversight to people with the necessary competence, training and authority (Art. 26(2)). Risk management is a separate obligation (Art. 9). For high-risk AI systems under Annex III, this integration is one part of a broader compliance program.`,
           },
           {
             question: `What is the performance overhead of the Warden callback?`,
