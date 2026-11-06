@@ -35,30 +35,34 @@ export const blogPosts: BlogPost[] = [
   {
     slug: `eu-ai-act-articles-12-13-14-technical-implementation`,
     title: `EU AI Act Articles 12, 13 and 14: A Technical Implementation Guide`,
-    metaDescription: `A working implementation of EU AI Act human oversight and logging requirements using real-time drift detection, a Justification Gate, and a cryptographically verifiable audit trail. Live demo included.`,
+    metaDescription: `A working implementation of EU AI Act human oversight and logging requirements using real-time drift detection, a Justification Gate and a cryptographically verifiable audit trail. Live demo included.`,
     canonicalPath: `/blog/eu-ai-act-articles-12-13-14-technical-implementation`,
     datePublishedISO: `2026-06-16`,
-    dateModifiedISO: `2026-11-03`,
+    dateModifiedISO: `2026-11-06`,
     author: `Vinita Silaparasetty`,
     authorRole: `AI Governance Engineer, Aevoxis Solutions`,
     publishedDate: `June 2026`,
     readingTime: `10 minutes`,
-    excerpt: `Most discussions of EU AI Act compliance treat Articles 12, 13, and 14 as documentation requirements. This article argues for a different approach: EU AI Act compliance as architecture — governance logic built into the execution path of the system itself.`,
+    excerpt: `Most discussions of EU AI Act compliance treat Articles 12, 13 and 14 as documentation work. I treat them as architecture: governance logic built into the execution path of the system itself. Here is a working example.`,
     tags: [`EU AI Act`, `AI Governance`, `Compliance Engineering`, `AWS`],
     liveDemo: { label: `spec-drift-chronometer.aevoxis.de`, href: `https://spec-drift-chronometer.aevoxis.de` },
     sourceCode: { label: `GitHub`, href: `https://github.com/VinitaSilaparasetty/spec-drift_chronometer` },
     content: [
       {
         type: `paragraph`,
-        text: `Most discussions of EU AI Act compliance treat Articles 12, 13, and 14 as documentation requirements. Write a risk management policy. Keep logs. Have a human somewhere in the process. Tick the boxes.`,
+        text: `Most discussions of EU AI Act compliance treat Articles 12, 13 and 14 as documentation work. Write a risk management policy. Keep logs. Put a human somewhere in the process. Tick the boxes.`,
       },
       {
         type: `paragraph`,
-        text: `This article argues for a different approach: EU AI Act compliance as architecture. Not a policy layer sitting on top of a generative AI system, but governance logic built into the execution path of the system itself. The Spec-Drift Chronometer is a working, open-source demonstration of what that looks like in practice, built for the August 2, 2026 applicability deadline.`,
+        text: `I see it differently. I treat compliance as architecture: governance logic built into the execution path of the system, not a policy layer sitting on top of a generative AI system.`,
       },
       {
         type: `paragraph`,
-        text: `Update, November 2026: when this article was written, the high-risk rules were due to apply on August 2, 2026. The Digital Omnibus on AI (Regulation (EU) 2026/1744, in force since 27 July 2026) moved them. Articles 12, 13 and 14 now apply from 2 December 2027 for Annex III high-risk systems, and from 2 August 2028 for high-risk AI in products covered by Annex I. The architecture described below is unchanged.`,
+        text: `The Spec-Drift Chronometer shows what that looks like in practice. It is a working, open-source demonstration, built for the August 2, 2026 applicability deadline.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Update, November 2026: When this article was written, the high-risk rules were due to apply on August 2, 2026. The Digital Omnibus on AI (Regulation (EU) 2026/1744, in force since 27 July 2026) moved them. Articles 12, 13 and 14 now apply from 2 December 2027 for Annex III high-risk systems. For high-risk AI in products covered by Annex I, they apply from 2 August 2028. The architecture described below is unchanged.`,
       },
       {
         type: `h2`,
@@ -66,19 +70,31 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `paragraph`,
-        text: `When an autonomous AI system generates outputs over time, something predictable happens. The outputs begin to deviate from the original human-approved specification. This is not a failure mode — it is the natural behaviour of any system operating at the boundary between human intent and probabilistic inference.`,
+        text: `An autonomous AI system that generates outputs over time does something predictable. Its outputs start to move away from the original human-approved specification.`,
       },
       {
         type: `paragraph`,
-        text: `I call this Spec-Drift: the measurable delta between what a human architect specified and what an autonomous system actually produces.`,
+        text: `Nothing is broken when this happens. Any system that sits between human intent and probabilistic inference behaves this way.`,
       },
       {
         type: `paragraph`,
-        text: `In a traditional software system, this kind of deviation is caught by code review, testing, and deployment pipelines. In an autonomous AI system operating in real time, none of those mechanisms exist. The system makes decisions, takes actions, and modifies state without a human seeing each individual output. By the time drift is noticed, it has often compounded into something much harder to remediate.`,
+        text: `I call this Spec-Drift: the measurable gap between what a human architect specified and what an autonomous system actually produces.`,
       },
       {
         type: `paragraph`,
-        text: `From a regulatory perspective, this is precisely the scenario EU AI Act Article 14 was written to address. The Article requires that AI systems allow human oversight to intervene, prevent, correct, and override outputs. But the technical question the regulation does not answer is: how do you intervene in a system that operates faster than human review cycles?`,
+        text: `In traditional software, code review, testing and deployment pipelines catch this kind of deviation. An autonomous AI system running in real time has none of those checks.`,
+      },
+      {
+        type: `paragraph`,
+        text: `It makes decisions, takes actions and changes state without a human seeing each output. By the time someone notices the drift, it has often compounded into something much harder to fix.`,
+      },
+      {
+        type: `paragraph`,
+        text: `This is exactly the scenario EU AI Act Article 14 was written for. The Article requires that AI systems allow human oversight to intervene, prevent, correct and override outputs.`,
+      },
+      {
+        type: `paragraph`,
+        text: `The regulation does not answer the technical question, though. How do you intervene in a system that runs faster than human review cycles?`,
       },
       {
         type: `paragraph`,
@@ -86,11 +102,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `h2`,
-        text: `What Do EU AI Act Articles 12, 13, and 14 Actually Require Technically?`,
+        text: `What Do EU AI Act Articles 12, 13 and 14 Actually Require Technically?`,
       },
       {
         type: `paragraph`,
-        text: `Most commentary on these articles stays at the policy level. Here is what they require at the technical implementation level.`,
+        text: `Most commentary on these articles stays at the policy level. Let's take a look at what they mean at the implementation level.`,
       },
       {
         type: `h3`,
@@ -98,11 +114,19 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `paragraph`,
-        text: `Article 12 requires that high-risk AI systems automatically log events throughout their operation to a degree that enables post-hoc auditing of system behaviour. The logs must capture the data that triggered the system's decision, the decision itself, and enough context for a human reviewer to reconstruct what happened and why.`,
+        text: `Article 12 requires high-risk AI systems to log events automatically throughout their operation. The logging must be good enough to audit the system's behavior after the fact.`,
       },
       {
         type: `paragraph`,
-        text: `The technical implication is that logging cannot be an afterthought. If logging is added after a system is built, the data needed to reconstruct a decision often does not exist because it was never retained. Article 12 compliance requires logging to be designed into the system architecture from the beginning.`,
+        text: `The logs must capture the data that triggered the decision, the decision itself and enough context for a human reviewer to reconstruct what happened and why.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Why is it important? If logging is added after the system is built, the data needed to reconstruct a decision often does not exist. It was never retained.`,
+      },
+      {
+        type: `paragraph`,
+        text: `So design logging into the system architecture from the beginning. Logging cannot be an afterthought.`,
       },
       {
         type: `h3`,
@@ -110,11 +134,15 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `paragraph`,
-        text: `Article 13 requires that AI systems provide sufficient transparency to allow deployers and users to interpret outputs and use the system appropriately. This means the system must provide not just an output but enough context about how that output was produced for a non-technical stakeholder to evaluate it.`,
+        text: `Article 13 requires AI systems to be transparent enough for deployers and users to interpret outputs and use the system appropriately.`,
       },
       {
         type: `paragraph`,
-        text: `The technical implication is that transparency must be surfaced through the interface, not just documented in technical files. A reasoning trace that lives in a log file nobody reads is not transparency in the Article 13 sense.`,
+        text: `So the system must give more than an output. It must give enough context about how that output was produced for a non-technical stakeholder to evaluate it.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Note: Transparency has to show up in the interface, not only in technical files. A reasoning trace in a log file nobody reads is not transparency in the Article 13 sense.`,
       },
       {
         type: `h3`,
@@ -122,11 +150,23 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `paragraph`,
-        text: `Article 14 requires that high-risk AI systems be designed to allow natural persons to effectively oversee the system during operation. Specifically, the system must allow humans to decide not to use the system in a particular situation, to intervene in its operation, and to override its outputs.`,
+        text: `Article 14 requires high-risk AI systems to be designed so that natural persons can effectively oversee them during operation.`,
       },
       {
         type: `paragraph`,
-        text: `The technical implication is that human oversight cannot be a passive capability. Building an override button that exists but is never triggered does not satisfy Article 14 in spirit. The oversight mechanism must be active — it must be in the critical path of the system's operation, not a bypass lane beside it.`,
+        text: `In particular, humans must be able to decide not to use the system in a particular situation, intervene in its operation and override its outputs.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Note: Human oversight cannot be a passive capability. An override button that exists but is never triggered does not satisfy Article 14 in spirit.`,
+      },
+      {
+        type: `paragraph`,
+        text: `The oversight mechanism must be active. It has to sit in the critical path of the system's operation, not in a bypass lane beside it.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Now that you know what the three articles ask for, you are ready to see how the Chronometer implements them.`,
       },
       {
         type: `h2`,
@@ -134,7 +174,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: `paragraph`,
-        text: `The system implements all three articles through a single architectural pattern: the Governance Loop.`,
+        text: `The system covers all three articles with one architectural pattern: the Governance Loop.`,
       },
       {
         type: `preformatted`,
@@ -169,7 +209,7 @@ Audit Log                    Justification Gate
       },
       {
         type: `paragraph`,
-        text: `Every component in this loop maps to a specific regulatory obligation. This is not coincidence — the architecture was designed around the obligations, not the other way around.`,
+        text: `Every component in this loop maps to a specific regulatory obligation. That is on purpose. The architecture was designed around the obligations, not the other way around.`,
       },
       {
         type: `h2`,
@@ -177,7 +217,11 @@ Audit Log                    Justification Gate
       },
       {
         type: `paragraph`,
-        text: `The foundation of the system is the Sovereign Spec Vault: a set of human-authored specification files stored in .kiro/steering/. These files define the approved boundaries within which the autonomous system is permitted to operate.`,
+        text: `The foundation of the system is the Sovereign Spec Vault: a set of human-authored specification files stored in .kiro/steering/.`,
+      },
+      {
+        type: `paragraph`,
+        text: `These files define the approved boundaries the autonomous system is allowed to operate within.`,
       },
       {
         type: `preformatted`,
@@ -207,11 +251,15 @@ Audit Log                    Justification Gate
       },
       {
         type: `paragraph`,
-        text: `The drift threshold of 0.0075 is the critical value. When measured deviation between the system's current output and the approved specification exceeds this value, the Justification Gate activates.`,
+        text: `The drift threshold of 0.0075 is the value that matters most. When the measured gap between the system's current output and the approved specification goes above it, the Justification Gate activates.`,
       },
       {
         type: `paragraph`,
-        text: `The vault is human-authored and version-controlled. It cannot be modified by the autonomous system. This technical constraint — the specification is read-only for the AI system but editable by the human architect — is the structural foundation of Article 14 compliance.`,
+        text: `The vault is human-authored and version-controlled. The autonomous system cannot modify it.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Why is it important? The specification is read-only for the AI system but editable by the human architect. That constraint is the structural foundation of Article 14 compliance.`,
       },
       {
         type: `h2`,
@@ -240,7 +288,24 @@ async def get_drift_state():
       },
       {
         type: `paragraph`,
-        text: `This response powers the real-time dashboard display. A non-technical stakeholder can see the current drift index as a number, whether it is within the approved threshold, the system health status in plain language, and the warden's current operational state — without needing to understand how drift is calculated. The interface is designed to make governance decisions possible without technical knowledge. This is Article 13 transparency surfaced through the interface, not buried in a log file.`,
+        text: `This response powers the real-time dashboard. A non-technical stakeholder can see:`,
+      },
+      {
+        type: `unordered-list`,
+        items: [
+          `the current drift index as a number`,
+          `whether it is within the approved threshold`,
+          `the system health status in plain language`,
+          `the Warden's current operational state`,
+        ],
+      },
+      {
+        type: `paragraph`,
+        text: `They do not need to understand how drift is calculated. The interface is designed so that people can make governance decisions without technical knowledge.`,
+      },
+      {
+        type: `paragraph`,
+        text: `This is Article 13 transparency surfaced through the interface, not buried in a log file.`,
       },
       {
         type: `h2`,
@@ -248,11 +313,20 @@ async def get_drift_state():
       },
       {
         type: `paragraph`,
-        text: `When drift exceeds the sovereign threshold, the system does not automatically take corrective action. It stops and requires a human decision. This is the Justification Gate.`,
+        text: `When drift exceeds the sovereign threshold, the system does not take corrective action on its own. It stops and asks for a human decision. This is the Justification Gate.`,
       },
       {
         type: `paragraph`,
-        text: `The gate presents the human with the specific drift value and how far it exceeds the threshold, the exact specification clause that was violated, the AI model that produced the non-compliant output, and a text field requiring a written justification before the system proceeds.`,
+        text: `The gate shows the human:`,
+      },
+      {
+        type: `unordered-list`,
+        items: [
+          `the drift value and how far it exceeds the threshold`,
+          `the exact specification clause that was violated`,
+          `the AI model that produced the non-compliant output`,
+          `a text field for a written justification, which is required before the system proceeds`,
+        ],
       },
       {
         type: `paragraph`,
@@ -261,18 +335,22 @@ async def get_drift_state():
       {
         type: `unordered-list`,
         items: [
-          `Semantic relevance: Does the justification address the type of drift detected? A justification about database schema changes does not satisfy a drift in content generation behaviour.`,
-          `Specification cross-reference: Is the justification consistent with the specific specification clause that was violated?`,
-          `Article 14 guardrails: Does the justification demonstrate that a human genuinely understood the deviation and made a conscious governance decision?`,
+          `Semantic relevance: Does the justification address the type of drift detected? A justification about database schema changes does not cover a drift in content generation behavior.`,
+          `Specification cross-reference: Is the justification consistent with the specification clause that was violated?`,
+          `Article 14 guardrails: Does the justification show that a human actually understood the deviation and made a conscious governance decision?`,
         ],
       },
       {
         type: `paragraph`,
-        text: `A weak justification — "it is fine" or "I approved this" — scores below the acceptance threshold and is rejected. The rejection itself is logged with the full reasoning trace, creating an Article 12-compliant record of the failed oversight attempt.`,
+        text: `Example: A weak justification such as "it is fine" or "I approved this" scores below the acceptance threshold. The Warden rejects it.`,
       },
       {
         type: `paragraph`,
-        text: `A strong justification — one that references the specific technical reason for the deviation and connects it to a legitimate architectural decision — is approved, and the specification is updated to reflect the new approved boundary.`,
+        text: `The rejection is logged too, with the full reasoning trace. That gives you an Article 12-compliant record of the failed oversight attempt.`,
+      },
+      {
+        type: `paragraph`,
+        text: `A strong justification names the technical reason for the deviation and connects it to a legitimate architectural decision. The Warden approves it and updates the specification to reflect the new approved boundary.`,
       },
       {
         type: `h2`,
@@ -317,11 +395,23 @@ Justification:    Migrating auth layer to OAuth2 to satisfy GDPR
       },
       {
         type: `paragraph`,
-        text: `The SHA-256 hash of the specification at the time of the audit means any post-hoc modification of the specification is detectable. A governance system whose records can be retroactively altered provides no real compliance assurance. This goes beyond what Article 12 strictly requires but addresses a practical concern that any serious compliance buyer should raise.`,
+        text: `The SHA-256 hash of the specification at the time of the audit makes any later change to the specification detectable.`,
       },
       {
         type: `paragraph`,
-        text: `The audit trail includes the model version used for evaluation, the human justification verbatim, and the Warden's decision with full reasoning. Production deployments replace the simulated Warden evaluation with live Amazon Bedrock Nova Pro reasoning in eu-central-1.`,
+        text: `Why is it important? A governance system whose records can be changed after the fact gives you no real compliance assurance.`,
+      },
+      {
+        type: `paragraph`,
+        text: `This goes beyond what Article 12 strictly requires. However, it is a practical concern that any serious compliance buyer should raise.`,
+      },
+      {
+        type: `paragraph`,
+        text: `The audit trail also includes the model version used for evaluation, the human justification word for word and the Warden's decision with full reasoning.`,
+      },
+      {
+        type: `paragraph`,
+        text: `In production deployments, the simulated Warden evaluation is replaced with live Amazon Bedrock Nova Pro reasoning in eu-central-1.`,
       },
       {
         type: `h2`,
@@ -329,7 +419,7 @@ Justification:    Migrating auth layer to OAuth2 to satisfy GDPR
       },
       {
         type: `paragraph`,
-        text: `Honest documentation of a governance system must include its limitations.`,
+        text: `Honest documentation of a governance system has to include its limits. Here are the current ones.`,
       },
       {
         type: `h3`,
@@ -337,7 +427,11 @@ Justification:    Migrating auth layer to OAuth2 to satisfy GDPR
       },
       {
         type: `paragraph`,
-        text: `The live demo uses pre-scripted drift scenarios rather than measuring actual semantic deviation from a real AI system's outputs. The governance logic, the Justification Gate, the audit trail, and the spec vault are fully functional. A production deployment connects the drift measurement endpoint to the output stream of the AI system being governed.`,
+        text: `The live demo uses pre-scripted drift scenarios. It does not measure actual semantic deviation in a real AI system's outputs.`,
+      },
+      {
+        type: `paragraph`,
+        text: `The governance logic, the Justification Gate, the audit trail and the spec vault are fully functional. A production deployment connects the drift measurement endpoint to the output stream of the AI system being governed.`,
       },
       {
         type: `h3`,
@@ -345,7 +439,11 @@ Justification:    Migrating auth layer to OAuth2 to satisfy GDPR
       },
       {
         type: `paragraph`,
-        text: `The initial specification — the human-approved boundaries that define what counts as drift — must be authored manually by a human architect. This is a feature in the Article 14 sense: the human is the source of the specification. But it means the system cannot govern itself into existence.`,
+        text: `A human architect has to write the initial specification by hand. This is the set of human-approved boundaries that defines what counts as drift.`,
+      },
+      {
+        type: `paragraph`,
+        text: `In the Article 14 sense, this is a feature: the human is the source of the specification. But it also means the system cannot govern itself into existence.`,
       },
       {
         type: `h3`,
@@ -353,7 +451,11 @@ Justification:    Migrating auth layer to OAuth2 to satisfy GDPR
       },
       {
         type: `paragraph`,
-        text: `When the Justification Gate rejects a justification, it logs the rejection and returns control to the dashboard. Integrating with a live autonomous system to enforce a hard stop on rejection is an architectural decision that depends on the specific system being governed and is marked as Phase 2 in the roadmap.`,
+        text: `When the Justification Gate rejects a justification, it logs the rejection and returns control to the dashboard.`,
+      },
+      {
+        type: `paragraph`,
+        text: `A hard stop on rejection needs integration with the live autonomous system. That design depends on the system being governed, so it is marked as Phase 2 in the roadmap.`,
       },
       {
         type: `h2`,
@@ -368,45 +470,49 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `paragraph`,
-        text: `Open http://localhost:3000. No AWS credentials required in demo mode.`,
+        text: `Open http://localhost:3000. You do not need AWS credentials in demo mode.`,
       },
       {
         type: `paragraph`,
-        text: `The live demo is available at spec-drift-chronometer.aevoxis.de. For production deployment connecting to Amazon Bedrock and AWS Lambda eu-central-1, see the README in the repository.`,
+        text: `The live demo is available at spec-drift-chronometer.aevoxis.de. For a production deployment with Amazon Bedrock and AWS Lambda eu-central-1, see the README in the repository.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Now that the demo is running, you are ready for the next step: wiring the same gate into a production LangChain RAG chatbot. That is the next article: aevoxis.de/insights/eu-ai-act-langchain-rag-integration.`,
       },
       {
         type: `faq`,
         items: [
           {
             question: `Does the Spec-Drift Chronometer make an AI system fully EU AI Act compliant?`,
-            answer: `No. It demonstrates a technical approach to satisfying the human oversight and logging requirements of Articles 12, 13, and 14 for autonomous AI systems. Full EU AI Act compliance for a high-risk system involves additional requirements including risk management documentation, data governance, technical documentation, and conformity assessment depending on the system category.`,
+            answer: `No. It demonstrates a technical approach to the human oversight and logging requirements of Articles 12, 13 and 14 for autonomous AI systems. Full EU AI Act compliance for a high-risk system involves more. Depending on the system category, that includes risk management documentation, data governance, technical documentation and conformity assessment.`,
           },
           {
             question: `Which types of AI systems does this governance pattern apply to?`,
-            answer: `The Governance Loop pattern is applicable to any autonomous AI system that generates outputs continuously without human review of each individual output. This includes AI coding assistants, autonomous content generation systems, AI-driven process automation, and agentic AI workflows. The specific implementation will vary by system but the architectural pattern — a human-authored specification vault, real-time drift measurement, mandatory human checkpoint, and verifiable audit trail — is transferable across implementation languages and cloud providers.`,
+            answer: `The Governance Loop pattern fits any autonomous AI system that generates outputs continuously without a human reviewing each output. This includes AI coding assistants, autonomous content generation systems, AI-driven process automation and agentic AI workflows. The implementation will vary by system. The pattern itself carries over across implementation languages and cloud providers: a human-authored specification vault, real-time drift measurement, a mandatory human checkpoint and a verifiable audit trail.`,
           },
           {
             question: `Is the Justification Gate a hard block or can it be bypassed?`,
-            answer: `In the current implementation the Justification Gate is a soft block — it requires a human justification before the system records the governance decision, but it does not force-halt an external autonomous system. A hard block implementation that prevents a system from continuing until a valid justification is received is marked as Phase 2 and would be necessary for production deployment in a high-risk AI system context.`,
+            answer: `In the current implementation the Justification Gate is a soft block. It requires a human justification before the system records the governance decision. It does not force-halt an external autonomous system. A hard block that stops a system until a valid justification arrives is marked as Phase 2. It would be necessary for production deployment in a high-risk AI system context.`,
           },
           {
             question: `What is the difference between Article 14 human oversight and simply having a human approve outputs?`,
-            answer: `Article 14 requires that the human oversight mechanism be effective, not merely present. A human who nominally approves outputs without meaningful information about what they are approving does not constitute effective oversight. The Justification Gate addresses this by requiring a documented rationale that the Warden evaluates for semantic relevance to the specific drift detected. A rubber-stamp approval is rejected.`,
+            answer: `Article 14 requires the human oversight mechanism to be effective, not merely present. A human who nominally approves outputs without meaningful information about what they are approving is not effective oversight. The Justification Gate asks for a documented rationale. The Warden evaluates it for semantic relevance to the specific drift detected. A rubber-stamp approval is rejected.`,
           },
           {
             question: `Does the system store personal data?`,
-            answer: `In demo mode the system stores no personal data. The audit trail captures justification text entered by the user, which may contain personal data in a production deployment. Production deployments should include a GDPR-compliant data retention policy for audit trail records and a data subject erasure endpoint, which is included in the production architecture.`,
+            answer: `In demo mode the system stores no personal data. The audit trail captures the justification text the user enters, and in a production deployment that text may contain personal data. Production deployments should include a GDPR-compliant data retention policy for audit trail records and a data subject erasure endpoint. The production architecture includes that endpoint.`,
           },
           {
             question: `Can this be adapted for non-AWS infrastructure?`,
-            answer: `Yes. The Warden Engine is a FastAPI application that can run on any Python-capable infrastructure. The Bedrock integration for production Warden evaluation can be replaced with any LLM provider API. The spec vault uses plain Markdown and JSON files that are infrastructure-agnostic. The audit trail is a generated text file with no cloud dependency.`,
+            answer: `Yes. The Warden Engine is a FastAPI application, so it runs on any infrastructure that can run Python. You can replace the Bedrock integration for production Warden evaluation with any LLM provider API. The spec vault uses plain Markdown and JSON files that are infrastructure-agnostic. The audit trail is a generated text file with no cloud dependency.`,
           },
         ],
       },
       {
         type: `cta`,
         heading: `Is Your Generative AI System Ready for December 2, 2027?`,
-        body: `EU AI Act Article 14 applies to Annex III high-risk AI systems from December 2, 2027, following the Digital Omnibus on AI. Enterprises deploying autonomous AI systems that fall within Annex III high-risk categories — including systems used in employment, education, credit, biometric identification, or critical infrastructure — need to demonstrate human oversight capability before that date. If you are assessing your organisation's autonomous AI systems for Article 14 compliance and want a technical second opinion on your architecture, the EU AI Act Technical Readiness Assessment at aevoxis.de takes approximately five minutes and results in a personalised response within 24 hours.`,
+        body: `EU AI Act Article 14 applies to Annex III high-risk AI systems from December 2, 2027, following the Digital Omnibus on AI. If you deploy autonomous AI systems in Annex III high-risk categories, you need to demonstrate human oversight capability before that date. These categories include systems used in employment, education, credit, biometric identification or critical infrastructure. If you are assessing your organization's autonomous AI systems for Article 14 compliance and want a technical second opinion on your architecture, try the EU AI Act Technical Readiness Assessment at aevoxis.de. It takes about five minutes. You get a personalized response within 24 hours.`,
         linkText: `Start the Assessment`,
         linkHref: `/contact`,
       },
@@ -424,12 +530,13 @@ DEMO_MODE=true ./dev.sh`,
     metaDescription: `Step-by-step guide to wiring EU AI Act Article 14 human oversight into a production LangChain RAG chatbot using the Spec-Drift Chronometer open-source governance framework. Includes working code and a live demo.`,
     canonicalPath: `/insights/eu-ai-act-langchain-rag-integration`,
     datePublishedISO: `2026-06-17`,
+    dateModifiedISO: `2026-11-06`,
     canonicalUrl: `https://aevoxis.de/insights/eu-ai-act-langchain-rag-integration`,
     author: `Vinita Silaparasetty`,
     authorRole: `AI Governance Engineer, Aevoxis Solutions`,
     publishedDate: `June 2026`,
     readingTime: `12 minutes`,
-    excerpt: `Enterprise teams building AI systems in 2026 have two parallel conversations happening in the same company and almost never in the same room. This article closes the gap between compliance documents and production code with a working LangChain RAG integration that enforces EU AI Act Article 14 human oversight at execution time.`,
+    excerpt: `Enterprise teams building AI systems in 2026 have two conversations going on in the same company, and they almost never happen in the same room. This article closes the gap between compliance documents and production code with a working LangChain RAG integration that enforces EU AI Act Article 14 human oversight at execution time.`,
     tags: [`EU AI Act`, `LangChain`, `RAG`, `AI Governance`],
     keywords: [
       `EU AI Act compliance LangChain`,
@@ -447,11 +554,11 @@ DEMO_MODE=true ./dev.sh`,
       steps: [
         {
           name: `Install dependencies`,
-          text: `Install langchain-core, langchain-community, faiss-cpu, and requests in the integrations/langchain_rag directory using pip install -r requirements.txt. No new AI frameworks are required.`,
+          text: `Install langchain-core, langchain-community, faiss-cpu and requests in the integrations/langchain_rag directory using pip install -r requirements.txt. You do not need any new AI frameworks.`,
         },
         {
           name: `Configure the Warden client`,
-          text: `Create a WardenClient instance pointing to your Warden Engine API URL. The client polls the /drift endpoint and returns a typed DriftStatus object containing the current drift index and gate status.`,
+          text: `Create a WardenClient instance pointing to your Warden Engine API URL. The client polls the /drift endpoint and returns a typed DriftStatus object with the current drift index and gate status.`,
         },
         {
           name: `Add the LangChain EU AI Act callback handler`,
@@ -459,14 +566,14 @@ DEMO_MODE=true ./dev.sh`,
         },
         {
           name: `Wire the handler into your LangChain chain`,
-          text: `Pass the handler to any LCEL chain, LangGraph graph, or LangChain agent using with_config(callbacks=[handler]). The chain itself is unchanged — the Warden observes it from outside.`,
+          text: `Pass the handler to any LCEL chain, LangGraph graph or LangChain agent using with_config(callbacks=[handler]). The chain itself is unchanged. The Warden observes it from outside.`,
         },
       ],
     },
     content: [
       {
         type: `paragraph`,
-        text: `For context on how the Spec-Drift Chronometer implements EU AI Act Articles 12, 13, and 14 architecturally, see the full technical deep dive at aevoxis.de/insights/eu-ai-act-articles-12-13-14-technical-implementation. This article focuses specifically on the production integration with LangChain RAG systems.`,
+        text: `This article is about the production integration with LangChain RAG systems. For how the Spec-Drift Chronometer implements EU AI Act Articles 12, 13 and 14 at the architecture level, see the full technical deep dive at aevoxis.de/insights/eu-ai-act-articles-12-13-14-technical-implementation.`,
       },
       {
         type: `h2`,
@@ -474,19 +581,27 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `paragraph`,
-        text: `Enterprise teams building AI systems in 2026 have two parallel conversations happening in the same company and almost never in the same room.`,
+        text: `Enterprise teams building AI systems in 2026 have two conversations going on in the same company. They almost never happen in the same room.`,
       },
       {
         type: `paragraph`,
-        text: `The compliance team is mapping obligations from EU AI Act Articles 12, 13, 14, and 50. They are producing gap analyses, risk registers, and conformity frameworks. They know exactly what human oversight must look like on paper.`,
+        text: `The compliance team maps obligations from EU AI Act Articles 12, 13, 14 and 50. They produce gap analyses, risk registers and conformity frameworks. They know exactly what human oversight must look like on paper.`,
       },
       {
         type: `paragraph`,
-        text: `The engineering team is running a LangChain RAG chatbot in production. It handles customer queries, internal knowledge retrieval, or document summarisation at scale. It is the AI system the regulation actually applies to.`,
+        text: `The engineering team runs a LangChain RAG chatbot in production. It handles customer queries, internal knowledge retrieval or document summarization at scale. It is the AI system the regulation actually applies to.`,
       },
       {
         type: `paragraph`,
-        text: `The gap is that nobody has documented how to connect the governance framework to the running system. The compliance artefacts describe what must happen. The chatbot is what is happening. Between those two things is usually a process document, a ticketing workflow, and a lot of trust.`,
+        text: `Nobody has documented how to connect the governance framework to the running system. The compliance artifacts describe what must happen. The chatbot is what is happening.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Between those two things there is usually a process document, a ticketing workflow and a lot of trust.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Let's take the example of Company A (a fictional company). Its compliance team has a signed-off oversight policy. One Friday, an engineer changes the chatbot's system prompt to widen its scope. Nobody outside engineering finds out.`,
       },
       {
         type: `paragraph`,
@@ -498,24 +613,28 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `paragraph`,
-        text: `Article 14 of the EU AI Act mandates human oversight over high-risk AI systems. Specifically, it requires that humans be able to:`,
+        text: `Article 14 of the EU AI Act requires human oversight over high-risk AI systems. In particular, humans must be able to:`,
       },
       {
         type: `unordered-list`,
         items: [
           `Monitor the AI system's operation in real time`,
           `Understand the system's outputs and their significance`,
-          `Override, interrupt, or halt the system when necessary`,
-          `Detect and address failures, including unexpected behaviour`,
+          `Override, interrupt or halt the system when necessary`,
+          `Detect and address failures, including unexpected behavior`,
         ],
       },
       {
         type: `paragraph`,
-        text: `The key phrase is "implemented into the AI system by the provider." This is not a governance document requirement. It is an engineering requirement. The oversight mechanism must be built into how the system executes, not bolted on afterwards via process.`,
+        text: `The key phrase is "implemented into the AI system by the provider." That makes it an engineering requirement, not a governance document requirement.`,
       },
       {
         type: `paragraph`,
-        text: `For a LangChain RAG chatbot, this means the human oversight gate must live inside the chain execution path, not in a spreadsheet that someone reviews monthly.`,
+        text: `The oversight mechanism must be built into how the system executes. It cannot be bolted on afterwards through a process.`,
+      },
+      {
+        type: `paragraph`,
+        text: `For a LangChain RAG chatbot, this means the human oversight gate lives inside the chain execution path. A spreadsheet that someone reviews monthly is not the place for it.`,
       },
       {
         type: `h2`,
@@ -523,7 +642,7 @@ DEMO_MODE=true ./dev.sh`,
       },
       {
         type: `paragraph`,
-        text: `The Spec-Drift Chronometer implements this as a governance sidecar. The chatbot does not check its own compliance — instead it consults an independent Warden Engine on every execution.`,
+        text: `The Spec-Drift Chronometer does this with a governance sidecar. The chatbot does not check its own compliance. Instead, it consults an independent Warden Engine on every execution.`,
       },
       {
         type: `paragraph`,
@@ -550,7 +669,15 @@ Retrieval → Generation → Response`,
       },
       {
         type: `paragraph`,
-        text: `The Warden Engine monitors the divergence between the production codebase and the human-authored specification files stored in .kiro/steering/. When a developer changes the chatbot's system prompt, swaps out the embedding model, or modifies retrieval parameters without governance sign-off, the drift index rises. When it crosses the sovereign threshold, the gate triggers and every subsequent chain execution is blocked until a human completes the justification workflow.`,
+        text: `The Warden Engine monitors the divergence between the production codebase and the human-authored specification files stored in .kiro/steering/.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Say a developer changes the chatbot's system prompt, swaps out the embedding model or modifies retrieval parameters without governance sign-off. The drift index rises.`,
+      },
+      {
+        type: `paragraph`,
+        text: `When it crosses the sovereign threshold, the gate triggers. Every chain execution after that is blocked until a human completes the justification workflow.`,
       },
       {
         type: `paragraph`,
@@ -562,11 +689,15 @@ Retrieval → Generation → Response`,
       },
       {
         type: `paragraph`,
-        text: `Before showing the integration, it helps to understand what the Warden is actually measuring.`,
+        text: `Before the integration, let's take a look at what the Warden actually measures.`,
       },
       {
         type: `paragraph`,
-        text: `The drift score is the fraction of meaningful tokens in the latest code change that are absent from the vocabulary of the human-authored spec files. A change that introduces new architectural concepts not covered by the approved spec scores higher. A refactor that uses only terms already present in the spec scores lower.`,
+        text: `The drift score is the fraction of meaningful tokens in the latest code change that are absent from the vocabulary of the human-authored spec files.`,
+      },
+      {
+        type: `paragraph`,
+        text: `A change that introduces new architectural concepts not covered by the approved spec scores higher. A refactor that only uses terms already in the spec scores lower.`,
       },
       {
         type: `h3`,
@@ -592,12 +723,16 @@ Retrieval → Generation → Response`,
           `Dependency version bumps that do not change API surface`,
           `Logging and observability additions`,
           `Fixing a spelling error in a document`,
-          `Performance optimisations using the same approved approach`,
+          `Performance optimizations using the same approved approach`,
         ],
       },
       {
         type: `paragraph`,
-        text: `The Warden does not require you to enumerate these categories manually. It reads your spec files, reads the git diff, and computes the divergence. The human-authored specs in .kiro/steering/ are the source of truth.`,
+        text: `Company A's Friday prompt change is in the first list. It gives the chatbot a different scope, so it would typically need human sign-off.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Note: You do not have to list these categories by hand. The Warden reads your spec files, reads the git diff and computes the divergence. The human-authored specs in .kiro/steering/ are the source of truth.`,
       },
       {
         type: `h2`,
@@ -615,7 +750,7 @@ pip install -r requirements.txt`,
       },
       {
         type: `paragraph`,
-        text: `The dependencies are langchain-core, langchain-community, faiss-cpu, and requests. No new AI frameworks are required.`,
+        text: `The dependencies are langchain-core, langchain-community, faiss-cpu and requests. You do not need any new AI frameworks.`,
       },
       {
         type: `h3`,
@@ -623,7 +758,11 @@ pip install -r requirements.txt`,
       },
       {
         type: `paragraph`,
-        text: `warden_client.py is a 50-line HTTP wrapper. It polls the Warden Engine's /drift endpoint and returns a typed DriftStatus object. It also exposes submit_justification for programmatic approval workflows.`,
+        text: `warden_client.py is a 50-line HTTP wrapper. It polls the Warden Engine's /drift endpoint and returns a typed DriftStatus object.`,
+      },
+      {
+        type: `paragraph`,
+        text: `It also exposes submit_justification for programmatic approval workflows.`,
       },
       {
         type: `code`,
@@ -640,7 +779,7 @@ print(status.gate)    # "TRIGGERED"`,
       },
       {
         type: `paragraph`,
-        text: `warden_callback.py implements BaseCallbackHandler. The one method that matters is on_chain_start — it fires before every chain execution and checks the gate.`,
+        text: `warden_callback.py implements BaseCallbackHandler. The one method that matters is on_chain_start. It fires before every chain execution and checks the gate.`,
       },
       {
         type: `code`,
@@ -654,7 +793,7 @@ class WardenCallbackHandler(BaseCallbackHandler):
       },
       {
         type: `paragraph`,
-        text: `The full implementation handles connectivity failures, warning-only mode, and structured error messages that tell the operator exactly what to do.`,
+        text: `The full implementation also handles connectivity failures, warning-only mode and structured error messages. Those messages tell the operator exactly what to do.`,
       },
       {
         type: `h3`,
@@ -681,7 +820,11 @@ rag_chain = (your_existing_rag_chain).with_config(callbacks=[handler])`,
       },
       {
         type: `paragraph`,
-        text: `The with_config(callbacks=[handler]) pattern works with any LCEL chain, LangGraph graph, or LangChain agent. The chain itself does not change. The Warden observes it from outside.`,
+        text: `The with_config(callbacks=[handler]) pattern works with any LCEL chain, LangGraph graph or LangChain agent. The chain itself does not change. The Warden observes it from outside.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Protip: skip_on_warden_unavailable=True keeps the chatbot running if the Warden is down. For high-risk systems, read the deployment section below before you go live.`,
       },
       {
         type: `h2`,
@@ -689,7 +832,7 @@ rag_chain = (your_existing_rag_chain).with_config(callbacks=[handler])`,
       },
       {
         type: `paragraph`,
-        text: `When a developer commits an unapproved change and the drift crosses the sovereign threshold, the next API call to the chatbot returns this instead of a generated answer:`,
+        text: `Back to Company A. The engineer commits the unapproved prompt change and the drift crosses the sovereign threshold. The next API call to the chatbot returns this instead of a generated answer:`,
       },
       {
         type: `preformatted`,
@@ -705,15 +848,23 @@ rag_chain = (your_existing_rag_chain).with_config(callbacks=[handler])`,
       },
       {
         type: `paragraph`,
-        text: `The operator opens the dashboard, sees the drift chart, reads the Warden activity log showing which file changed, and submits a justification explaining the change. The Warden Agent evaluates the justification against the spec files and returns an Intent Alignment Score. A substantive justification — for example: "Migrating from GPT-3.5 to GPT-4o-mini, approved by architecture review board 2026-06-10, ticket ARCH-291" — scores 91/100 and is APPROVED. A weak one ("updated model") scores 29/100 and is REJECTED.`,
+        text: `The operator opens the dashboard and sees the drift chart. The Warden activity log shows which file changed. The operator then submits a justification that explains the change.`,
       },
       {
         type: `paragraph`,
-        text: `Once APPROVED, the gate clears. The chatbot resumes accepting queries on the next execution.`,
+        text: `The Warden Agent evaluates the justification against the spec files and returns an Intent Alignment Score.`,
       },
       {
         type: `paragraph`,
-        text: `Every gate event — justification text, drift value, Warden decision, reasoning trace, SHA-256 verification hash — is written to .kiro/audit/last_sync.audit and can be downloaded directly from the dashboard. This is the Article 12 record-keeping artefact.`,
+        text: `Example: A substantive justification such as "Migrating from GPT-3.5 to GPT-4o-mini, approved by architecture review board 2026-06-10, ticket ARCH-291" scores 91/100 and is APPROVED. A weak one ("updated model") scores 29/100 and is REJECTED.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Once a justification is APPROVED, the gate clears. The chatbot accepts queries again on the next execution.`,
+      },
+      {
+        type: `paragraph`,
+        text: `Every gate event is written to .kiro/audit/last_sync.audit: the justification text, drift value, Warden decision, reasoning trace and SHA-256 verification hash. You can download the file directly from the dashboard. This is the Article 12 record-keeping artifact.`,
       },
       {
         type: `h2`,
@@ -721,7 +872,7 @@ rag_chain = (your_existing_rag_chain).with_config(callbacks=[handler])`,
       },
       {
         type: `paragraph`,
-        text: `The repository includes a complete working RAG chatbot with FAISS vector store and the Warden integration pre-wired.`,
+        text: `The repository includes a complete working RAG chatbot with a FAISS vector store. The Warden integration is already wired in.`,
       },
       {
         type: `code`,
@@ -746,7 +897,7 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `Run python check.py from the integrations/langchain_rag/ directory before anything else. It checks every dependency and prints a specific fix for each failure. The scenarios below map to what it reports.`,
+        text: `Run python check.py from the integrations/langchain_rag/ directory before anything else. It checks every dependency and prints a specific fix for each failure. The cases below match what it reports.`,
       },
       {
         type: `h3`,
@@ -754,7 +905,7 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `You have not copied the example file yet. Run cp .env.example .env — then open .env and fill in your OPENAI_API_KEY.`,
+        text: `You have not copied the example file yet. Run cp .env.example .env. Then open .env and fill in your OPENAI_API_KEY.`,
       },
       {
         type: `h3`,
@@ -770,7 +921,7 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `OpenAI rejected the key. Either there is a typo, the key has been revoked, or you copied the wrong value. Generate a new key at platform.openai.com and paste it into .env.`,
+        text: `OpenAI rejected the key. There may be a typo, the key may have been revoked or you may have copied the wrong value. Generate a new key at platform.openai.com and paste it into .env.`,
       },
       {
         type: `h3`,
@@ -778,7 +929,11 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `Your account cannot access gpt-4o-mini. This model requires a paid OpenAI account with a positive credit balance. If you are on a free tier, change the model in rag_chatbot.py and langgraph_example.py to one your account can access — gpt-3.5-turbo is a common alternative.`,
+        text: `Your account cannot access gpt-4o-mini. This model requires a paid OpenAI account with a positive credit balance.`,
+      },
+      {
+        type: `paragraph`,
+        text: `If you are on a free tier, change the model in rag_chatbot.py and langgraph_example.py to one your account can access. A common alternative is gpt-3.5-turbo.`,
       },
       {
         type: `h3`,
@@ -794,7 +949,11 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `The chatbot will still run but governance checks will be skipped. To enable the full governance demo, start the Warden Engine first from the repository root: DEMO_MODE=true ./dev.sh — then re-run python check.py to confirm it is reachable before starting the chatbot.`,
+        text: `The chatbot still runs, but governance checks are skipped. To enable the full governance demo, first start the Warden Engine from the repository root with DEMO_MODE=true ./dev.sh`,
+      },
+      {
+        type: `paragraph`,
+        text: `Then re-run python check.py and confirm the Warden is reachable before you start the chatbot.`,
       },
       {
         type: `h2`,
@@ -802,19 +961,19 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `Warden API availability. The skip_on_warden_unavailable=True default allows the chatbot to continue if the Warden is unreachable. For high-risk systems, set this to False to enforce strict mode — any connectivity loss halts execution.`,
+        text: `Warden API availability: The skip_on_warden_unavailable=True default lets the chatbot continue if the Warden is unreachable. For high-risk systems, set it to False to enforce strict mode. Any loss of connectivity then halts execution.`,
       },
       {
         type: `paragraph`,
-        text: `Latency. The /drift poll adds one HTTP round trip per chain invocation. The Warden API is designed to respond within 200 ms. For high-throughput systems, cache the gate status with a short TTL of 5 to 10 seconds rather than polling on every call.`,
+        text: `Latency: The /drift poll adds one HTTP round trip per chain invocation. The Warden API is designed to respond within 200 ms. For high-throughput systems, cache the gate status with a short TTL of 5 to 10 seconds instead of polling on every call.`,
       },
       {
         type: `paragraph`,
-        text: `Multi-tenant deployments. Each project should have its own Warden instance and its own .kiro/steering/ spec vault. The spec files define what sovereign looks like for that specific system, so sharing them across products produces meaningless drift scores.`,
+        text: `Multi-tenant deployments: Give each project its own Warden instance and its own .kiro/steering/ spec vault. The spec files define what sovereign looks like for that one system. If you share them across products, the drift scores become meaningless.`,
       },
       {
         type: `paragraph`,
-        text: `DynamoDB audit trail. In production, set DYNAMODB_TABLE_NAME and AWS credentials to persist every gate event to DynamoDB with a configurable retention TTL. This produces a durable, queryable audit trail useful for regulatory inspections and incident reviews.`,
+        text: `DynamoDB audit trail: In production, set DYNAMODB_TABLE_NAME and AWS credentials. Every gate event is then stored in DynamoDB with a configurable retention TTL. That gives you a durable, queryable audit trail for regulatory inspections and incident reviews.`,
       },
       {
         type: `h2`,
@@ -822,60 +981,60 @@ python rag_chatbot.py`,
       },
       {
         type: `paragraph`,
-        text: `If your legal team asks what Article 14 evidence you can produce for a conformity assessment, the answer with this integration is:`,
+        text: `Your legal team may ask what Article 14 evidence you can produce for a conformity assessment. With this integration, the answer is:`,
       },
       {
         type: `unordered-list`,
         items: [
-          `Gate log. A timestamped record of every execution that was blocked, the justification submitted, the Warden reasoning trace, and the APPROVED or REJECTED decision.`,
-          `Audit trail. A downloadable SHA-256-verified file covering every governance event in the session.`,
-          `Architecture documentation. The Warden callback is in the production code path, not a process document. Human oversight is enforced at execution, not at review.`,
-          `Spec vault. The human-authored specifications that define what compliant behaviour looks like are version-controlled, timestamped, and referenced in every Warden decision.`,
+          `Gate log: A timestamped record of every execution that was blocked, the justification submitted, the Warden reasoning trace and the APPROVED or REJECTED decision.`,
+          `Audit trail: A downloadable SHA-256-verified file covering every governance event in the session.`,
+          `Architecture documentation: The Warden callback is in the production code path, not in a process document. Human oversight is enforced at execution, not at review.`,
+          `Spec vault: The human-authored specifications that define compliant behavior are version-controlled, timestamped and referenced in every Warden decision.`,
         ],
       },
       {
         type: `paragraph`,
-        text: `This is the difference between documenting compliance and engineering it.`,
+        text: `I recommend one simple rule: count an oversight check as Article 14 evidence only if it sits in the code path and can block execution.`,
       },
       {
         type: `faq`,
         items: [
           {
             question: `Does this work with LangGraph as well as standard LangChain chains?`,
-            answer: `Yes. The with_config(callbacks=[handler]) pattern is supported across LCEL chains, LangGraph graphs, and LangChain agents. The Warden callback fires on chain start regardless of the graph structure. See the repository for a LangGraph example.`,
+            answer: `Yes. The with_config(callbacks=[handler]) pattern is supported across LCEL chains, LangGraph graphs and LangChain agents. The Warden callback fires on chain start regardless of the graph structure. The repository includes a LangGraph example.`,
           },
           {
             question: `What happens if the Warden Engine is unavailable?`,
-            answer: `By default, skip_on_warden_unavailable=True means the chatbot continues operating if the Warden cannot be reached. This is appropriate for systems where availability is the primary concern. For high-risk systems where oversight is mandatory, set skip_on_warden_unavailable=False — the chatbot will refuse to execute until the Warden is reachable.`,
+            answer: `By default, skip_on_warden_unavailable=True means the chatbot keeps running if the Warden cannot be reached. That suits systems where availability is the main concern. For high-risk systems where oversight is mandatory, set skip_on_warden_unavailable=False. The chatbot will then refuse to execute until the Warden is reachable.`,
           },
           {
             question: `Does this integration satisfy Article 14 on its own or are additional measures needed?`,
-            answer: `This integration addresses the technical enforcement dimension of Article 14 — ensuring human sign-off is required before architectural changes take effect in production. It does not address the full scope of Article 14, which also includes risk management documentation, user interface oversight tools, and operator training. For high-risk AI systems under Annex III, this integration is one component of a broader compliance programme.`,
+            answer: `This integration covers the technical enforcement side of Article 14. It makes sure human sign-off is required before architectural changes take effect in production. It does not cover the full scope of Article 14, which also includes risk management documentation, user interface oversight tools and operator training. For high-risk AI systems under Annex III, this integration is one part of a broader compliance program.`,
           },
           {
             question: `What is the performance overhead of the Warden callback?`,
-            answer: `One HTTP round trip per chain invocation, typically under 200 ms in a local deployment and under 50 ms when the Warden is co-located in the same cloud region. For high-throughput systems exceeding 100 requests per second, cache the gate status with a 5 to 10 second TTL to reduce overhead while maintaining meaningful oversight granularity.`,
+            answer: `One HTTP round trip per chain invocation. That is typically under 200 ms in a local deployment and under 50 ms when the Warden is co-located in the same cloud region. For high-throughput systems above 100 requests per second, cache the gate status with a 5 to 10 second TTL. That reduces the overhead and still keeps the oversight granular enough to mean something.`,
           },
           {
             question: `Can this be used with non-LangChain AI frameworks?`,
-            answer: `The Warden Engine exposes a standard REST API. Any framework capable of making an HTTP GET request before executing an AI chain can integrate with it. The LangChain callback is the reference implementation. Integrations for LlamaIndex and direct OpenAI API usage are on the roadmap.`,
+            answer: `The Warden Engine exposes a standard REST API. Any framework that can make an HTTP GET request before executing an AI chain can integrate with it. The LangChain callback is the reference implementation. Integrations for LlamaIndex and direct OpenAI API usage are on the roadmap.`,
           },
           {
             question: `Does the integration store any personal data from chatbot queries?`,
-            answer: `The gate log records drift values, justification text, and Warden decisions. It does not record user queries or chatbot responses by default. In production deployments processing personal data, apply your standard GDPR data minimisation and retention policies to the DynamoDB audit table.`,
+            answer: `The gate log records drift values, justification text and Warden decisions. By default, it does not record user queries or chatbot responses. If your production deployment processes personal data, apply your standard GDPR data minimization and retention policies to the DynamoDB audit table.`,
           },
         ],
       },
       {
         type: `cta`,
         heading: `Ready to Wire Compliance Into Your LangChain System?`,
-        body: `The full integration code is in integrations/langchain_rag/ on GitHub. Try the live demo at spec-drift-chronometer.aevoxis.de to observe the full governance cycle in real time. For commercial deployment, enterprise licensing, or a technical readiness assessment, contact the Aevoxis team.`,
+        body: `The full integration code is in integrations/langchain_rag/ on GitHub. Try the live demo at spec-drift-chronometer.aevoxis.de to watch the full governance cycle in real time. For commercial deployment, enterprise licensing or a technical readiness assessment, get in touch with me.`,
         linkText: `Get in Touch`,
         linkHref: `/contact`,
       },
       {
         type: `author-bio`,
-        text: `Vinita Silaparasetty is an AI Governance Engineer at Aevoxis Solutions (aevoxis.de), specialising in EU AI Act compliance architecture for enterprise AI deployments. Published author (Apress), Google Developer Expert (ML), M.Sc. Data Science Newcastle University. The Spec-Drift Chronometer is a Top 300 finalist in the AWS 10,000 AIdeas Competition 2025.`,
+        text: `Vinita Silaparasetty is an AI Governance Engineer working under the Aevoxis Solutions name (aevoxis.de) as a member of SMartDE eG, Germany. She specializes in EU AI Act compliance architecture for enterprise AI deployments. Published author (Apress), Google Developer Expert (ML), M.Sc. Data Science Newcastle University. The Spec-Drift Chronometer is a Top 300 finalist in the AWS 10,000 AIdeas Competition 2025.`,
         disclosure: `Parts of this article were written with AI writing assistance (Claude, Anthropic). All technical concepts, integration architecture, code examples, and intellectual content are original work by the author. This article does not constitute legal advice.`,
       },
     ],
